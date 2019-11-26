@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+
 import "./../sass/style.scss"; // adres do głównego pliku SASS
+import IntroText from "./components/IntroText";
+import Background from "./components/Background"
+
 
 class StartingPage extends Component {
   render() {
@@ -10,27 +14,16 @@ class StartingPage extends Component {
         <section className="welcoming-page">
           <Background />
           <SkipIntro/>
+          <IntroText text="Hi ! To help You with shopping, answear if You are:"/>
+          <ChooseOptions/>
         </section>
       </>
     );
   }
 }
 
-class Background extends Component {
-  render() {
-    return (
-      <>
-        <div className="snow-is-falling">
-          <div className="snow snow--mid"></div>
-          <div className="snow snow--mid snow--alt"></div>
-          <div className="snow snow--far"></div>
-          <div className="snow snow--far snow--alt"></div>
-        </div>
-        <div className="snowboarder"></div>
-      </>
-    );
-  }
-}
+
+
 class SkipIntro extends Component {
 
     handleSkipButton = (e) => {
@@ -49,6 +42,47 @@ class SkipIntro extends Component {
     );
   }
 }
+class ChooseOptions extends Component{
+  render(){
+    return(
+      <>
+      <div className="intro_btn_position">
+        <BegginerSection/>
+        <IntermediateSection/>
+      </div>
+      </>
+    )
+  }
+}
+
+
+  class BegginerSection extends Component{
+    handleBegginerBtn=()=>{
+
+    }
+    render(){
+      return(
+        <>
+        <div className="shape_for_text">
+          
+<button className="beginner_btn">Beginner</button>
+        </div>
+        </>
+      )
+    }
+  }
+
+  class IntermediateSection extends Component{
+    render(){
+      return(
+        <>
+        <div className="shape_for_text">
+<button className="intermediate_btn">More than Beginner</button>
+        </div>
+        </>
+      )
+    }
+  }
 
 class App extends Component {
   render() {

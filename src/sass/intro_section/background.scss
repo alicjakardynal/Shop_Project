@@ -1,0 +1,94 @@
+.welcoming-page {
+    background-image: url('../images/vectorstock_16566698.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+%on-top {
+  z-index: 100;
+  pointer-events: none;
+}
+
+
+.snow-is-falling {
+  @extend %on-top;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+
+}
+
+
+.snow {
+  @extend %on-top;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  animation: falling linear infinite both;
+  transform: translate3D(0,-100%,0);
+    
+ 
+    
+  &--mid {
+    animation-duration: 20s;
+    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png');
+    background-size: contain;
+    
+    & + .snow--alt {
+      animation-delay: 10s;
+    }
+  }
+    
+  &--far {
+    animation-duration: 30s;
+    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png');
+    background-size: contain;
+    
+    & + .snow--alt {
+      animation-delay: 15s;
+    }
+  }
+}
+      
+@keyframes falling {
+  0% {
+    transform: translate3D(-7.5%,-100%, 0);
+  }
+      
+  100% {
+    transform: translate3D(7.5%,100%, 0);
+  }  
+}
+
+.snowboarder{
+    background-image: url(../images/5ddad188bb6e1.png);
+    background-size: cover;
+    width: 150px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    animation: startRiding 4s 1 both ;
+
+}
+
+@keyframes startRiding{
+    0%{top: 50%;
+    left: 0}
+
+    30%{
+        top:50%;
+        left: 10%;
+        transform: rotate(45deg)
+    }
+
+    100%{
+        top: 70%;
+        left:40%;
+        transform: scale(3)
+    }
+}
