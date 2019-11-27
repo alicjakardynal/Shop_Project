@@ -20,7 +20,10 @@
 	border-radius: 0;
     box-shadow: inset 0 0 0 2px currentcolor;
 	transition: background-color .8s ease;
-	
+	.link{
+        padding: 15px;
+        color:#1459b3
+    }
 	&:hover {
 		background: rgba(81, 231, 43, 0.03);
     }
