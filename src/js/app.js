@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import { HashRouter, Route, Switch, NavLink } from "react-router-dom";
-import "./../sass/style.scss"; // adres do głównego pliku SASS
+import "./../sass/style.scss"; 
+
+
 import IntroText from "./components/IntroText";
 import Background from "./components/Background";
+import BeginnerPage from "./components/BeginnerPage";
+import IntermediatePage from "./components/IntermediatePage";
 import { Hash } from "crypto";
 
 class StartingPage extends Component {
@@ -14,13 +18,17 @@ class StartingPage extends Component {
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route exact path="/beginner" component={BeginnerPage} />
-          <Route exact path="/itermediate" component={IntermediatePage} />
+          <Route exact path="/intermediate" component={IntermediatePage} />
           <Route exact path="/shop" component={Shop} />
+          <Route exact path="/freeride" component={FreeridePage} />
+          <Route exact path="/freestyle" component={FreestylePage} />
+          
         </Switch>
       </HashRouter>
     );
   }
 }
+
 
 class Welcome extends Component {
   render() {
@@ -35,36 +43,8 @@ class Welcome extends Component {
   }
 }
 
-class BeginnerPage extends Component {
-  render() {
-    return ( 
-      <section className="firstView">
-        <div className="snowboard_gif"></div>
-        <section className="slide">
-        <div className="beginner-text">
-          <p>
-            <span>SNOWBOARD:</span> Recommended type -        All Mountain - category of the most universal boards.<br></br>1-4 in softness FLEX scale</p>
-          <p> <span>SHOES:</span> Recommended a hardness from 1 to 4 in softness FLEX scale.</p>
-          <p> <span> BLINDINGS:</span> Snowboard bindings should be selected for the specific board.
-             Recommended soft bindings for soft boards and vice versa - hard to hard.
-          </p>
-        </div>
-        </section>
-        <span className="goToIntermediate">
-          <NavLink className="link_intermediate" exact to="/intermediate">Go to Intermediate</NavLink>
-        </span>
-        <SkipIntro colorclass="beginner"/>
-        </section>
-     
-    );
-  }
-}
 
-class IntermediatePage extends Component {
-  render() {
-    return <h1>intermediate</h1>;
-  }
-}
+
 
 class SkipIntro extends Component {
   render() {
@@ -86,7 +66,7 @@ class ChooseOptions extends Component {
     return (
       <>
         <div className="intro_btn_position">
-          <BegginerButton />
+          <BeginnerButton />
           <IntermediateButton />
         </div>
       </>
@@ -94,7 +74,7 @@ class ChooseOptions extends Component {
   }
 }
 
-class BegginerButton extends Component {
+class BeginnerButton extends Component {
   render() {
     return (
       <HashRouter>
@@ -136,6 +116,37 @@ class IntermediateButton extends Component {
   }
 }
 
+class FreeridePage extends Component{
+  render(){
+    return(
+      <section className="firstView">
+        <SkipIntro colorclass="beginner"/>
+        <section>
+          <div className="snowboard_gif freeride_gif"></div>
+          <section className="slide freeride_slide">
+          <div className="beginner-text">
+            <p>
+              <span>SNOWBOARD:</span> Recommended type -        Freeride - boards designed for riding in all conditions, mainly for fast driving on
+                slopes and off-piste in virgin powder.</p>
+            <p> <span>SHOES:</span> Recommended a hardness from 6 to 10 in softness FLEX scale.</p>
+            <p> <span> BLINDINGS:</span> Snowboard bindings should be selected for the specific board.
+               Recommended soft bindings for soft boards and vice versa - hard to hard.
+            </p>
+          </div></section>
+          </section>
+          
+          </section>
+    )
+  }
+}
+class FreestylePage extends Component{
+  render(){
+    return
+  }
+}
+
+
+
 
 class Shop extends Component{
   render(){
@@ -147,10 +158,14 @@ class App extends Component {
     return (
       <>
         <StartingPage />
+
       </>
     );
   }
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
   ReactDOM.render(<App />, document.getElementById("app"));
