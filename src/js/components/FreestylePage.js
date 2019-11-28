@@ -43,7 +43,7 @@ linkDisapear=()=>{
           <div className="beginner-text">
             <h1>Freestyle Rider</h1>
             <p>
-              <span>SNOWBOARD:</span> Recommended type -        Freestyle - these are usually soft boards in the shape of a double tip 
+              <span>SNOWBOARD:</span> Recommended type - Freestyle - these are usually soft boards in the shape of a double tip 
               that work well in a snowpark.<br></br><br></br>Jibbing - boards slightly shorter, usually have a few degrees raised edges,
                which makes it easier to slide along handrails and walls.</p>
             <p> <span>SHOES:</span> Recommended a hardness from 1 to 4 in softness FLEX scale.</p>
@@ -52,7 +52,7 @@ linkDisapear=()=>{
             </p>
           </div>
           </section>
-          <span onMouseEnter={this.linkApear1} onMouseLeave={this.linkDisapear} className="goTo freestyleToFreeride">
+          <span onMouseEnter={this.linkApear1} data-index="1"onMouseLeave={this.linkDisapear} className="goTo freestyleToFreeride">
           {this.state.render1=== true && <NavLink className="link_goto link_toFreeride fromFreestyle" exact to="/freeride">Go to Freeride</NavLink> }
           </span>
           <span onMouseEnter={this.linkApear2} onMouseLeave={this.linkDisapear} className="goTo freestyleToShop">

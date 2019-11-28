@@ -127,18 +127,18 @@ body {
 
 .freeride_image {
   position: relative;
-  left: -200%;
+  left: -100%;
   height: 100vh;
   width: 50%;
   background-image: url("../images/5ddec81982253.jpg");
   background-position: right;
   background-size: cover;
   border-right: 10px solid white;
-  -webkit-animation-name: freerideImg;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-timing-function: linear;
+ animation-name: freerideImg;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
   p {
     position: absolute;
     top: 70%;
@@ -213,7 +213,7 @@ body {
     right: -100%;
   }
   100% {
-    left: 0;
+    right: 0;
   }
 }
 
@@ -316,15 +316,18 @@ body {
   background-color: #d6e0ee;
   width: 85%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; 
+  align-items: flex-start;
+  
 }
 .shop_position {
   display: flex;
   justify-content: space-between;
+ 
 }
 .product {
   margin: 20px 0 20px 0;
-  height: 40%;
+  width: 30%;
   //tutaj jak zmienie ze nie ma ma wysokosci to leci na sam dół
   border: 2px solid black;
   h2 {
@@ -332,10 +335,11 @@ body {
     padding: 15px;
   }
   .product_image {
-    background-image: url("../images/5ddfa112e7003.png");
+    
     height: 240px;
     width: 38%;
-    background-size: contain;
+    border: none;
+
     position: relative;
     left: 30%;
   }
@@ -349,6 +353,6 @@ body {
     border-radius: 20px;
     padding: 10px;
     position: relative;
-    left: 35%;
+    left: 40%;
   }
 }
