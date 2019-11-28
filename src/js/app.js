@@ -7,8 +7,11 @@ import "./../sass/style.scss";
 
 import IntroText from "./components/IntroText";
 import Background from "./components/Background";
+import SkipIntro from "./components/SkipIntro";
 import BeginnerPage from "./components/BeginnerPage";
 import IntermediatePage from "./components/IntermediatePage";
+import FreeridePage from "./components/FreeridePage";
+import FreestylePage from "./components/FreestylePage";
 import { Hash } from "crypto";
 
 class StartingPage extends Component {
@@ -45,22 +48,6 @@ class Welcome extends Component {
 
 
 
-
-class SkipIntro extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <button onClick={this.handleSkipButton} className="skip_btn">
-        <NavLink className="link" exact to="/shop">
-              Skip Intro
-            </NavLink>
-          <div className="skip_btn_horizontal"></div>
-          <div className="skip_btn_vertical beginner"></div>
-        </button>
-      </HashRouter>
-    );
-  }
-}
 class ChooseOptions extends Component {
   render() {
     return (
@@ -116,34 +103,7 @@ class IntermediateButton extends Component {
   }
 }
 
-class FreeridePage extends Component{
-  render(){
-    return(
-      <section className="firstView">
-        <SkipIntro colorclass="beginner"/>
-        <section>
-          <div className="snowboard_gif freeride_gif"></div>
-          <section className="slide freeride_slide">
-          <div className="beginner-text">
-            <p>
-              <span>SNOWBOARD:</span> Recommended type -        Freeride - boards designed for riding in all conditions, mainly for fast driving on
-                slopes and off-piste in virgin powder.</p>
-            <p> <span>SHOES:</span> Recommended a hardness from 6 to 10 in softness FLEX scale.</p>
-            <p> <span> BLINDINGS:</span> Snowboard bindings should be selected for the specific board.
-               Recommended soft bindings for soft boards and vice versa - hard to hard.
-            </p>
-          </div></section>
-          </section>
-          
-          </section>
-    )
-  }
-}
-class FreestylePage extends Component{
-  render(){
-    return
-  }
-}
+
 
 
 

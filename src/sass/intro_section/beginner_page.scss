@@ -1,10 +1,5 @@
 .firstView{
     height: 100vh;
-    section{
-        display: flex;
-        height: 100%;;
-        position: relative;
-    }
   
     .goToIntermediate{
       position: absolute;
@@ -43,16 +38,22 @@
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    &.freestyle_slide{
+        background-image: linear-gradient(to right top, #ccdbde, #a8cad2, #83bac8, #58a9be, #0f98b5);
+    }
     &.freeride_slide{
 left: 50%;
         background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);    }
-   
+   animation-name: slide;
+   animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
   .snowboard_gif{
     width:500px;
     position: absolute;
     height:45%;
-    left: 10%;
+    left: 60%;
     top:20%;
     margin:0 auto;
     background-image:url("../images/5dde49c4d887b.png");
@@ -69,9 +70,13 @@ left: 50%;
         width: 400px;
         height: 30%;
         top:30%;
+        left:10%;
         background-image:url("../images/5ddefc043408c.png");
     
           
+    }
+    &.freestyle_gif{
+        background-image:url("../images/5ddf09b868b1f.png");
     }
     
   }
@@ -108,7 +113,13 @@ left: 50%;
     animation-delay: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-      
+      h1{
+          position: absolute;
+          text-align: center;
+          font-size: 4rem;
+          top:10%;
+          
+      }
   
       p{
         font-size: 1.5rem;

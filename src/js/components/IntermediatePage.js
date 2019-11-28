@@ -15,7 +15,7 @@ class IntermediatePage extends Component {
               <p>If you like riding outside the slopes </p>
            </div>
           <div className="freestyle_image">
-          <NavLink className="freestyle_link" exact to="/freeride">
+          <NavLink className="freestyle_link" exact to="/freestyle">
                 FREESTYLE
               </NavLink>
               <p>If You like riding in snowparks</p>
