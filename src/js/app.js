@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import { HashRouter, Route, Switch, NavLink } from "react-router-dom";
-import "./../sass/style.scss"; 
-
+import "./../sass/style.scss";
 
 import IntroText from "./components/IntroText";
 import Background from "./components/Background";
@@ -25,13 +24,11 @@ class StartingPage extends Component {
           <Route exact path="/shop" component={Shop} />
           <Route exact path="/freeride" component={FreeridePage} />
           <Route exact path="/freestyle" component={FreestylePage} />
-          
         </Switch>
       </HashRouter>
     );
   }
 }
-
 
 class Welcome extends Component {
   render() {
@@ -45,8 +42,6 @@ class Welcome extends Component {
     );
   }
 }
-
-
 
 class ChooseOptions extends Component {
   render() {
@@ -103,29 +98,98 @@ class IntermediateButton extends Component {
   }
 }
 
-
-
-
-
-
-class Shop extends Component{
-  render(){
-    return<h1>TUTAJ BEDZIE</h1>
+class Shop extends Component {
+  render() {
+    return (
+      <section className="firstView">
+        <Basket />
+        <div className="shop_position">
+       <Navigation />
+         <ShopBackground />
+        </div>
+      </section>
+      /* <HashRouter>
+  <Switch>
+     <Route exact path="/basket" component={Welcome} />
+       <Route exact path="/snowboards" component={BeginnerPage} />
+     <Route exact path="/shoes" component={IntermediatePage} />
+     <Route exact path="/blindings" component={Shop} />
+    
+        
+     </Switch>
+ </HashRouter>  */
+    );
   }
 }
+class ShopBackground extends Component {
+  render() {
+    return <div className="shop_background">
+      <Item/>
+      <Item/>
+      <Item/>
+    </div>;
+  }
+}
+
+class Item extends Component{
+  render() {
+    return (
+      <section className="product">
+        <h2>Snowboard Burton Flex:4</h2>
+<div className="product_image"></div>
+<p className="price">1500$</p>
+<a class="btn">Kupuję</a>
+<NavLink exact to="/product"></NavLink>
+      </section>
+       
+    );
+  }
+}
+class Navigation extends Component {
+  render() {
+    return (
+      <div className="navigation">
+        <ul>
+          <li>
+            <NavLink className="navigation_options" exact to="/snowboards">
+              Snowboards
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navigation_options" exact to="/shoes">
+              Shoes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navigation_options" exact to="/blindings">
+              Blindings
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+class Basket extends Component {
+  render() {
+    return (
+      <section className="entering_stripe">
+        <i className="fas fa-shopping-basket"></i>
+      </section>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <>
         <StartingPage />
-
       </>
     );
   }
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
   ReactDOM.render(<App />, document.getElementById("app"));

@@ -3,19 +3,37 @@ import { NavLink } from "react-router-dom";
 import SkipIntro from "./SkipIntro";
 
 class FreestylePage extends Component{
-    state={
-      render: false
-    }
-  linkApear=()=>{
-    this.setState({
-      render: true })
+  state={
+    render1: false,
+    render2: false,
+    render3: false,
   }
-  
-  linkDisapear=()=>{
-    this.setState({
-      render: false
-  })
-  }
+linkApear1=()=>{
+  this.setState({
+    render1: true,
+   
+   })
+}
+linkApear2=()=>{
+  this.setState({
+    render2: true,
+   
+   })
+}
+linkApear3=()=>{
+  this.setState({
+    
+    render3: true
+   })
+}
+
+linkDisapear=()=>{
+  this.setState({
+    render1: false,
+    render2: false,
+    render3: false
+})
+}
   
     render() {
       return ( 
@@ -34,8 +52,14 @@ class FreestylePage extends Component{
             </p>
           </div>
           </section>
-          <span onMouseEnter={this.linkApear} onMouseLeave={this.linkDisapear} className="goToIntermediate">
-          {this.state.render=== true && <NavLink className="link_intermediate" exact to="/shop">Go to Shop</NavLink> }
+          <span onMouseEnter={this.linkApear1} onMouseLeave={this.linkDisapear} className="goTo freestyleToFreeride">
+          {this.state.render1=== true && <NavLink className="link_goto link_toFreeride fromFreestyle" exact to="/freeride">Go to Freeride</NavLink> }
+          </span>
+          <span onMouseEnter={this.linkApear2} onMouseLeave={this.linkDisapear} className="goTo freestyleToShop">
+          {this.state.render2=== true && <NavLink className="link_goto link_toShop fromFreestyle" exact to="/shop">Go to Shop</NavLink> }
+          </span>
+          <span onMouseEnter={this.linkApear3} onMouseLeave={this.linkDisapear} className="goTo freestyleToBeginner">
+          {this.state.render3=== true && <NavLink className="link_goto link_toBeginner fromFreestyle" exact to="/beginner">Go to Beginner</NavLink> }
           </span>
           <SkipIntro colorclass="beginner"/>
           </section>
