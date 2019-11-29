@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { NavLink } from "react-router-dom";
+import { Switch, NavLink, Redirect } from "react-router-dom";
 import SkipIntro from "./SkipIntro";
 
 class FreeridePage extends Component{
@@ -34,6 +34,32 @@ class FreeridePage extends Component{
       render3: false
   })
   }
+ 
+  componentDidMount(){
+
+document.addEventListener('keydown', function(event) {
+   switch (event.which) {
+          case 37:
+              {  <Redirect to="/beginner"/>
+                  break;
+              }
+          case 39:
+              {
+                  console.log("whyyyyyyyyy")
+                  break;
+              }
+        
+      }
+})
+ 
+ 
+}
+
+
+
+componentWillUnmount() {
+    document.removeEventListener("keydown", this._handleKeyDown);
+}
     render(){
       return(
         <section className="firstView">

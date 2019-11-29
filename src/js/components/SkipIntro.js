@@ -5,7 +5,7 @@ class SkipIntro extends Component {
     render() {
       return (
         <>
-          <button onClick={this.handleSkipButton} className="skip_btn">
+          <button  className="skip_btn">
           <NavLink className="link" exact to="/shop">
                 Skip Intro
               </NavLink>

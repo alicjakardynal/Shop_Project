@@ -154,25 +154,23 @@ class ShopBackground extends Component {
 
 class Item1 extends Component {
   state={
-    name:"Snowboard Burton Flex:4",
-    price: "1500$"
+    object:{name:"Snowboard Burton Flex:4",
+    price: "1500$",
+    imageSourse: "../images/5dde49c4d887b.png"}
 
   }
   handleBuyButton = () => {
     const {addItems} = this.props;
-    addItems(this.state.name
-      // name:this.state.name,
-      // price:this.state.price
-    );
+    addItems(this.state.object);
     console.log("działa")
   };
   render() {
     return (
       <section className="product">
-        <h2>{this.state.name}</h2>
-        <img src="images/5ddfa112e7003.png" className="product_image"></img>
-        <p className="price">{this.state.price}</p>
-        <a onClick={this.handleBuyButton}className="btn">Buy</a>
+        <h2>{this.state.object.name}</h2>
+        <img src={this.state.object.imageSourse} className="product_image"></img>
+        <p className="price">{this.state.object.price}</p>
+        <a onClick={this.handleBuyButton} className="btn">Buy</a>
         <NavLink exact to="/product"></NavLink>
       </section>
     );
@@ -246,10 +244,28 @@ class Basket extends Component {
 }
  class BasketInside extends Component{
    render() {
+     const {items}=this.props;
      return (
         <section className="firsView">
-          <h1>{this.props.items}</h1>
+          <div>PIĘKNIE WYSTYLIZOWANY BASKET
+         <ul>
+           {items.map(product =>( <li><ImportedProduct  
+           name={product.name} imageSourse={product.imageSourse} price={product.price}/></li>))}
+         </ul>
+          </div>
         </section>
+     );
+   }
+ }
+
+ class ImportedProduct extends Component{
+   render() {
+     return (<>
+       <div className="item_in_basket"><img className="item_img_in_basket" src={this.props.imageSourse}></img>
+        <h2 class="item_name_in_basket">{this.props.name}  </h2>
+        <p class="item_price_in_basket">Price: {this.props.price}</p>
+        <button>Delate Product</button></div>
+        </>
      );
    }
  }

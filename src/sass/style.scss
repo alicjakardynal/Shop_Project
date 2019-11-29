@@ -337,11 +337,11 @@ body {
   .product_image {
     
     height: 240px;
-    width: 38%;
+    width: 60%;
     border: none;
-
     position: relative;
-    left: 30%;
+    left: 15%;
+    
   }
   .price {
     font-size: 1rem;
@@ -354,5 +354,26 @@ body {
     padding: 10px;
     position: relative;
     left: 40%;
+    transition: 1s;
+    &:hover{
+      transform: scale(1.5)
+    }
+    &:active{
+      transform: scale(0.98)
+
+    }
   }
+}
+.item_in_basket{
+display: flex;
+align-items: center;
+justify-content: space-around;
+border: 2px solid black;
+margin: 10px;
+
+  .item_img_in_basket{
+    height: 100px;
+    widows: 100px;
+  
+}
 }
