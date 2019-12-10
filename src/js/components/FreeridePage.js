@@ -7,6 +7,7 @@ class FreeridePage extends Component{
       render1: false,
       render2: false,
       render3: false,
+      path:""
     }
   linkApear1=()=>{
     this.setState({
@@ -34,34 +35,46 @@ class FreeridePage extends Component{
       render3: false
   })
   }
- 
-  componentDidMount(){
-
-document.addEventListener('keydown', function(event) {
+ handleKeyDown =(event)=>{
    switch (event.which) {
           case 37:
-              {  <Redirect to="/beginner"/>
+              {  
+                this.setState({
+                  path:"/beginner"
+                })
+              
                   break;
               }
           case 39:
               {
-                  console.log("whyyyyyyyyy")
+                this.setState({
+                  path:"/freestyle"
+                })
                   break;
               }
         
       }
-})
- 
+ }
+
+
+componentDidMount(){
+
+document.addEventListener('keydown', this.handleKeyDown)
  
 }
 
 
 
 componentWillUnmount() {
-    document.removeEventListener("keydown", this._handleKeyDown);
+    document.removeEventListener("keydown",this.handleKeyDown );
+    console.log("willunmount")
 }
     render(){
+if(this.state.path != ""){
+  return <Redirect to={this.state.path}/>
+}
       return(
+        
         <section className="firstView">
             <div className="snowboard_gif freeride_gif"></div>
             <section className="slide freeride_slide">
@@ -71,7 +84,7 @@ componentWillUnmount() {
                 <span>SNOWBOARD:</span> Recommended type -        Freeride - boards designed for riding in all conditions, mainly for fast driving on
                   slopes and off-piste in virgin powder.</p>
               <p> <span>SHOES:</span> Recommended a hardness from 6 to 10 in softness FLEX scale.</p>
-              <p> <span> BLINDINGS:</span> Snowboard bindings should be selected for the specific board.
+              <p> <span> BINDINGS:</span> Snowboard bindings should be selected for the specific board.
                  Recommended soft bindings for soft boards and vice versa - hard to hard.
               </p>
             </div>

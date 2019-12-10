@@ -285,6 +285,10 @@ body {
 
 
 //SHOP
+.shopView{
+height: 100vh;
+width: 100vw;
+}
 .entering_stripe {
   height: 10%;
   width: 100vw;
@@ -333,6 +337,7 @@ body {
   h2 {
     font-size: 1rem;
     padding: 15px;
+    text-align: center;
   }
   .product_image {
     
@@ -341,6 +346,8 @@ body {
     border: none;
     position: relative;
     left: 15%;
+
+  
     
   }
   .price {
@@ -348,20 +355,23 @@ body {
     padding: 20px;
     text-align: center;
   }
-  .btn {
+  .btn_shop {
     border: 2px solid black;
-    border-radius: 20px;
-    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px 20px;
     position: relative;
     left: 40%;
-    transition: 1s;
+    display: inline-block;
+  
     &:hover{
-      transform: scale(1.5)
+      color: #8397b1;
+      border-color: #8397b1;
     }
     &:active{
-      transform: scale(0.98)
-
-    }
+      transform: scale(0.95);
+      
+  }
   }
 }
 .item_in_basket{
@@ -374,6 +384,40 @@ margin: 10px;
   .item_img_in_basket{
     height: 100px;
     widows: 100px;
+    &:hover{
+      transform: scale(2);
+    }
   
+}
+  .item_name_in_basket{
+font-size: 1rem;
+
+}
+.item_price_in_basket{
+  font-size: 1rem;
+}
+.btn_delete{
+	display: block;
+	position: relative;
+	padding: 1em 2em;
+	appearance: none;
+	border: 0;
+	background: white;
+	color: black;
+	text-transform: uppercase;
+	
+	outline: none;
+
+	font-weight: bold;
+	border-radius: 0;
+    box-shadow: inset 0 0 0 2px currentcolor;
+  transition: background-color .8s ease;
+  
+  &:hover{
+    background: #b3c6df;
+  }
+  &:active{
+    transform: scale(0.95)
+  }
 }
 }

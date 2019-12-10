@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink,Redirect } from "react-router-dom";
 import SkipIntro from "./SkipIntro";
 
 class FreestylePage extends Component{
@@ -7,6 +7,7 @@ class FreestylePage extends Component{
     render1: false,
     render2: false,
     render3: false,
+    path:""
   }
 linkApear1=()=>{
   this.setState({
@@ -34,8 +35,43 @@ linkDisapear=()=>{
     render3: false
 })
 }
+handleKeyDown =(event)=>{
+  switch (event.which) {
+         case 37:
+             {  
+               this.setState({
+                 path:"/freeride"
+               })
+             
+                 break;
+             }
+         case 39:
+             {
+               this.setState({
+                 path:"/shop"
+               })
+                 break;
+             }
+       
+     }
+}
+componentDidMount(){
+
+  document.addEventListener('keydown', this.handleKeyDown)
+   
+  }
+  
+  
+  
+  componentWillUnmount() {
+      document.removeEventListener("keydown",this.handleKeyDown );
+      console.log("willunmount")
+  }
   
     render() {
+      if(this.state.path != ""){
+        return <Redirect to={this.state.path}/>
+      }
       return ( 
         <section className="firstView">
           <div className="snowboard_gif freestyle_gif"></div>
@@ -47,7 +83,7 @@ linkDisapear=()=>{
               that work well in a snowpark.<br></br><br></br>Jibbing - boards slightly shorter, usually have a few degrees raised edges,
                which makes it easier to slide along handrails and walls.</p>
             <p> <span>SHOES:</span> Recommended a hardness from 1 to 4 in softness FLEX scale.</p>
-            <p> <span> BLINDINGS:</span> Snowboard bindings should be selected for the specific board.
+            <p> <span> BINDINGS:</span> Snowboard bindings should be selected for the specific board.
                Recommended soft bindings for soft boards and vice versa - hard to hard.
             </p>
           </div>

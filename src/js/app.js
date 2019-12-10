@@ -13,8 +13,7 @@ import FreeridePage from "./components/FreeridePage";
 import FreestylePage from "./components/FreestylePage";
 import { Hash } from "crypto";
 
-/*coś tutaj z SHop component inne renderowanie bo nie będę tworzyć jednego componentu tylko
-tam przekazyac różne ...*/
+
 class StartingPage extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +30,18 @@ class StartingPage extends Component {
         })
     
 }
+deleteObject = (id) =>{
+  console.log(this.id);
+  const newBasket = this.state.objectArray.filter(product => {
+      return product.id !== id;  /*jak się odnieść do key  */
+      
+  });
+  this.setState({
+      objectArray: newBasket
+  });
+  console.log("coś się usunęło")
+}
+
 
   render() {
     return (
@@ -39,10 +50,10 @@ class StartingPage extends Component {
           <Route exact path="/" component={Welcome} />
           <Route exact path="/beginner" component={BeginnerPage} />
           <Route exact path="/intermediate" component={IntermediatePage} />
-          <Route exact path="/shop" render={props => <Shop {...props} addItems={this.addObject}/>} />
+          <Route exact path="/shop" render={props => <Shop {...props} addItems={this.addObject} items={this.state.objectArray}/>} />
           <Route exact path="/freeride" component={FreeridePage} />
           <Route exact path="/freestyle" component={FreestylePage} />
-          <Route exact path ="/basket" render={props => <BasketInside {...props} items={this.state.objectArray}/>}/>
+          <Route exact path ="/basket" render={props => <BasketInside {...props} items={this.state.objectArray} delete={this.deleteObject}/>}/>
         </Switch>
       </HashRouter>
     );
@@ -120,11 +131,12 @@ class IntermediateButton extends Component {
 class Shop extends Component {
   render() {
     return (
-      <section className="firstView">
-        <Basket />
+      <section className="shopView">
+        <Basket items={this.props.items}/>
         <div className="shop_position">
           <Navigation />
-          <ShopBackground addItems={this.props.addItems}/>
+          <ShopBackground addItems={this.props.addItems} />
+         
         </div>
       </section>
       /* <HashRouter>
@@ -145,8 +157,8 @@ class ShopBackground extends Component {
     return (
       <div className="shop_background">
         <Item1 addItems={this.props.addItems}/>
-        <Item2 />
-        <Item3 />
+        <Item2 addItems={this.props.addItems}/>
+        <Item3 addItems={this.props.addItems}/>
       </div>
     );
   }
@@ -170,35 +182,57 @@ class Item1 extends Component {
         <h2>{this.state.object.name}</h2>
         <img src={this.state.object.imageSourse} className="product_image"></img>
         <p className="price">{this.state.object.price}</p>
-        <a onClick={this.handleBuyButton} className="btn">Buy</a>
+        <a onClick={this.handleBuyButton} className="btn_shop">Buy</a>
         <NavLink exact to="/product"></NavLink>
       </section>
     );
   }
 }
 class Item2 extends Component {
-  handleBuyButton = () => {};
+  state={
+    object:{name:"Snowboard Roxy Flex:7",
+    price: "1000$",
+    imageSourse: "../images/5dde49c4d887b.png"}
+
+  }
+  handleBuyButton = () => {
+    const {addItems} = this.props;
+    addItems(this.state.object);
+    console.log("działa")
+  };
+  
   render() {
     return (
       <section className="product">
-        <h2>Snowboard Roxy Flex:7</h2>
-        <img src="images/5ddfa112e7003.png" className="product_image"></img>
-        <p className="price">1000$</p>
-        <a className="btn">Buy</a>
+        <h2>{this.state.object.name}</h2>
+        <img src={this.state.object.imageSourse} className="product_image"></img>
+        <p className="price">{this.state.object.price}</p>
+        <a onClick={this.handleBuyButton} className="btn_shop">Buy</a>
         <NavLink exact to="/product"></NavLink>
       </section>
     );
   }
 }
 class Item3 extends Component {
-  handleBuyButton = () => {};
+  state={
+    object:{name:"Snowboard Nitro N Flex:5",
+    price: "700$",
+    imageSourse: "../images/5dde49c4d887b.png"}
+
+  }
+  handleBuyButton = () => {
+    const {addItems} = this.props;
+    addItems(this.state.object);
+    console.log("działa")
+  };
+  
   render() {
     return (
       <section className="product">
-        <h2>Snowboard Head Flex:5</h2>
-        <img src="images/5ddfa112e7003.png" className="product_image"></img>
-        <p className="price">700$</p>
-        <a className="btn">Buy</a>
+        <h2>{this.state.object.name}</h2>
+        <img src={this.state.object.imageSourse} className="product_image"></img>
+        <p className="price">{this.state.object.price}</p>
+        <a  onClick={this.handleBuyButton} className="btn_shop">Buy</a>
         <NavLink exact to="/product"></NavLink>
       </section>
     );
@@ -234,24 +268,27 @@ class Navigation extends Component {
 }
 
 class Basket extends Component {
+  
   render() {
+    const {items}=this.props;
     return (
       <section className="entering_stripe">
-        <NavLink exact to="/basket"><i className="fas fa-shopping-basket"></i></NavLink>
+        <NavLink exact to="/basket"><i className="fas fa-shopping-basket"><span>({items.length})</span></i></NavLink>
       </section>
     );
   }
 }
  class BasketInside extends Component{
+  
    render() {
      const {items}=this.props;
      return (
         <section className="firsView">
           <div>PIĘKNIE WYSTYLIZOWANY BASKET
-         <ul>
-           {items.map(product =>( <li><ImportedProduct  
-           name={product.name} imageSourse={product.imageSourse} price={product.price}/></li>))}
-         </ul>
+         <ol>
+           {items.map((product,index) =>(  <ImportedProduct 
+           key={index} name={product.name} imageSourse={product.imageSourse} price={product.price} remove={this.props.delete}/>))}
+         </ol>
           </div>
         </section>
      );
@@ -259,12 +296,20 @@ class Basket extends Component {
  }
 
  class ImportedProduct extends Component{
+handleDeleteBtn = (id)=>{
+this.props.remove(id);
+console.log(id)
+
+}
+
    render() {
      return (<>
-       <div className="item_in_basket"><img className="item_img_in_basket" src={this.props.imageSourse}></img>
-        <h2 class="item_name_in_basket">{this.props.name}  </h2>
-        <p class="item_price_in_basket">Price: {this.props.price}</p>
-        <button>Delate Product</button></div>
+       <div className="item_in_basket">
+        <img className="item_img_in_basket" src={this.props.imageSourse}></img>
+        <h2 className="item_name_in_basket">{this.props.name}</h2>
+        <p className="item_price_in_basket">Price: {this.props.price}</p>
+        <button onClick={()=>this.handleDeleteBtn(this.props.name)} className="btn_delete">Delete Product</button>
+        </div>
         </>
      );
    }
