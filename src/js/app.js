@@ -31,9 +31,9 @@ class StartingPage extends Component {
     
 }
 deleteObject = (id) =>{
-  console.log(this.id);
+  
   const newBasket = this.state.objectArray.filter(product => {
-      return product.id !== id;  /*jak się odnieść do key  */
+      return product.id  !== id 
       
   });
   this.setState({
@@ -168,13 +168,14 @@ class Item1 extends Component {
   state={
     object:{name:"Snowboard Burton Flex:4",
     price: "1500$",
-    imageSourse: "../images/5dde49c4d887b.png"}
+    imageSourse: "../images/5dde49c4d887b.png",
+    id:1}
 
   }
   handleBuyButton = () => {
     const {addItems} = this.props;
     addItems(this.state.object);
-    console.log("działa")
+    
   };
   render() {
     return (
@@ -192,13 +193,14 @@ class Item2 extends Component {
   state={
     object:{name:"Snowboard Roxy Flex:7",
     price: "1000$",
-    imageSourse: "../images/5dde49c4d887b.png"}
+    imageSourse: "../images/5dde49c4d887b.png",
+    id:2}
 
   }
   handleBuyButton = () => {
     const {addItems} = this.props;
     addItems(this.state.object);
-    console.log("działa")
+    
   };
   
   render() {
@@ -217,13 +219,14 @@ class Item3 extends Component {
   state={
     object:{name:"Snowboard Nitro N Flex:5",
     price: "700$",
-    imageSourse: "../images/5dde49c4d887b.png"}
+    imageSourse: "../images/5dde49c4d887b.png",
+    id:3}
 
   }
   handleBuyButton = () => {
     const {addItems} = this.props;
     addItems(this.state.object);
-    console.log("działa")
+    
   };
   
   render() {
@@ -239,7 +242,7 @@ class Item3 extends Component {
   }
 }
 
-//na btn musze zrobic on click ktory wysyła wtedy caly item do koszyka
+
 
 class Navigation extends Component {
   render() {
@@ -279,7 +282,7 @@ class Basket extends Component {
   }
 }
  class BasketInside extends Component{
-  
+ 
    render() {
      const {items}=this.props;
      return (
@@ -287,7 +290,7 @@ class Basket extends Component {
           <div>PIĘKNIE WYSTYLIZOWANY BASKET
          <ol>
            {items.map((product,index) =>(  <ImportedProduct 
-           key={index} name={product.name} imageSourse={product.imageSourse} price={product.price} remove={this.props.delete}/>))}
+           key={index} id={product.id} name={product.name} imageSourse={product.imageSourse} price={product.price} delete={this.props.delete} />))}
          </ol>
           </div>
         </section>
@@ -297,8 +300,7 @@ class Basket extends Component {
 
  class ImportedProduct extends Component{
 handleDeleteBtn = (id)=>{
-this.props.remove(id);
-console.log(id)
+this.props.delete(id);
 
 }
 
@@ -308,7 +310,7 @@ console.log(id)
         <img className="item_img_in_basket" src={this.props.imageSourse}></img>
         <h2 className="item_name_in_basket">{this.props.name}</h2>
         <p className="item_price_in_basket">Price: {this.props.price}</p>
-        <button onClick={()=>this.handleDeleteBtn(this.props.name)} className="btn_delete">Delete Product</button>
+        <button onClick={()=>this.handleDeleteBtn(this.props.id)} className="btn_delete">Delete Product</button>
         </div>
         </>
      );
