@@ -8,7 +8,7 @@ I focused on the animated intro that starts the page. The intention was to facil
 
 There is possibility to add and delete products from basket, but im still working on  functionality of this online store.
 
-You can check on: https://alicjakardynal.github.io/Shop_Project/
+You can check the view on: https://alicjakardynal.github.io/Shop_Project/
 
 
  
