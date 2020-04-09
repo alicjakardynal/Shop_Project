@@ -11,15 +11,15 @@ body {
 @import "./intro_section/beginner_page.scss";
 
 .intro_text {
-  width: 30%;
+  width: 40%;
   position: relative;
-  left: 55%;
+  left: 39%;
   top: 10%;
 
   h1 {
-    font-family: "Cabin Sketch", cursive;
-    font-size: 2.5rem;
-    color: black;
+    font-family: 'VT323', monospace;
+    font-size: 4rem;
+    color: white;
     font-weight: 700;
   }
 }
@@ -27,7 +27,7 @@ body {
 .shape_for_text {
   position: relative;
   width: 40%;
-  left: 70%;
+  left: 50%;
   transition: 4s;
   transform: scale(0);
 
@@ -41,7 +41,7 @@ body {
     background-color: transparent;
     position: relative;
     border: 0;
-    font-family: "Cabin Sketch", cursive;
+    font-family: 'VT323', monospace;
     font-size: 3rem;
     top: 20%;
     outline: none;
@@ -55,6 +55,9 @@ body {
 
 .beginner_btn,
 .intermediate_btn {
+  .link{
+    color: white;
+  }
   &:hover {
     animation: hover 1s 1 forwards;
   }
@@ -80,7 +83,7 @@ body {
 .intro_btn_position {
   position: relative;
   top: 15%;
-  left: 10%;
+  left: 0%;
   width: 50%;
   display: flex;
   justify-content: space-around;

@@ -1,8 +1,10 @@
 .welcoming-page {
     background-image: url('../images/vectorstock_16566698.png');
+    background-image: url('../images/5e8f2cd1ca9b7.jpg');
     background-size: cover;
+    background-position-y: 70%;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 }
 
 
@@ -64,31 +66,35 @@
   }  
 }
 
-.snowboarder{
-    background-image: url(../images/5ddad188bb6e1.png);
-    background-size: cover;
-    width: 150px;
-    height: 90px;
-    position: absolute;
-    top: 50%;
-    left: -10%;
-    animation: startRiding 3s 1 both ;
 
-}
 
-@keyframes startRiding{
-    0%{top: 50%;
-    left: 0}
 
-    30%{
-        top:50%;
-        left: 10%;
-        transform: rotate(45deg)
-    }
+//SNOWBOARDER WHO IS RIDING THROUGH
+// .snowboarder{
+//     background-image: url(../images/5ddad188bb6e1.png);
+//     background-size: cover;
+//     width: 150px;
+//     height: 90px;
+//     position: absolute;
+//     top: 50%;
+//     left: -10%;
+//     animation: startRiding 3s 1 both ;
 
-    100%{
-        top: 70%;
-        left:40%;
-        transform: scale(3)
-    }
-}
+// }
+
+// @keyframes startRiding{
+//     0%{top: 50%;
+//     left: 0}
+
+//     30%{
+//         top:50%;
+//         left: 10%;
+//         transform: rotate(45deg)
+//     }
+
+//     100%{
+//         top: 70%;
+//         left:40%;
+//         transform: scale(3)
+//     }
+// }
