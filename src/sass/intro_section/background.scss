@@ -1,17 +1,110 @@
 .welcoming-page {
-    background-image: url('../images/vectorstock_16566698.png');
-    background-image: url('../images/5e8f2cd1ca9b7.jpg');
-    background-size: cover;
-    background-position-y: 70%;
-    height: 100vh;
-    width: 100vw;
+  background-image: url("../images/vectorstock_16566698.png");
+  background-image: url("../images/5ddec61d13239.jpg");
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 41%;
+  height: 100vh;
+  width: 100vw;
 }
-
 
 %on-top {
   z-index: 100;
   pointer-events: none;
 }
+.intro_text_area {
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  left: 40%;
+  top: 15%;
+  text-align: center;
+  .intro_text {
+    text-align: center;
+    position:  relative;
+    top: 15%;
+
+    h1 {
+      font-family: "VT323", monospace;
+      font-size: 4rem;
+      color: white;
+      font-weight: 700;
+    }
+  }
+}
+.intro_btn_position {
+  position: relative;
+  top: -8%;
+  left: 25%;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+.shape_for_text {
+  position: relative;
+  width: 50%;
+  left: 50%;
+  transition: 4s;
+  transform: scale(0);
+
+  animation-name: apearBtn;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  button {
+    background-color: transparent;
+    position: relative;
+    border: 0;
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    top: 20%;
+    outline: none;
+
+    &:active {
+      transform: scale(0.9);
+      border-color: none;
+    }
+  }
+}
+
+// .beginner_btn,
+.intermediate_btn {
+  .link{
+    color: white;
+    cursor: pointer;
+  }
+  &::before{
+    position: absolute;
+    content:"More t"
+
+  }
+  &:hover {
+    // animation: hover 1s 1 forwards;
+    filter: blur(1px);
+
+  }
+}
+
+@keyframes hover {
+  0% {
+  }
+  100% {
+    font-size: 3.3rem;
+  }
+}
+
+@keyframes apearBtn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 
 .snow-is-falling {
@@ -22,52 +115,48 @@
   height: 100%;
   width: 100%;
   max-width: 100%;
-
 }
-
 
 .snow {
   @extend %on-top;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   animation: falling linear infinite both;
-  transform: translate3D(0,-100%,0);
-    
- 
-    
+  transform: translate3D(0, -100%, 0);
+
   &--mid {
     animation-duration: 20s;
-    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png');
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
     background-size: contain;
-    
+
     & + .snow--alt {
       animation-delay: 10s;
     }
   }
-    
+
   &--far {
     animation-duration: 30s;
-    background-image: url('https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png');
+    background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png");
     background-size: contain;
-    
+
     & + .snow--alt {
       animation-delay: 15s;
     }
   }
 }
-      
+
 @keyframes falling {
   0% {
-    transform: translate3D(-7.5%,-100%, 0);
+    transform: translate3D(-7.5%, -100%, 0);
   }
-      
+
   100% {
-    transform: translate3D(7.5%,100%, 0);
-  }  
+    transform: translate3D(7.5%, 100%, 0);
+  }
 }
-
-
-
 
 //SNOWBOARDER WHO IS RIDING THROUGH
 // .snowboarder{

@@ -10,84 +10,8 @@ body {
 @import "./intro_section/skip_btn.scss";
 @import "./intro_section/beginner_page.scss";
 
-.intro_text {
-  width: 40%;
-  position: relative;
-  left: 39%;
-  top: 10%;
 
-  h1 {
-    font-family: 'VT323', monospace;
-    font-size: 4rem;
-    color: white;
-    font-weight: 700;
-  }
-}
 
-.shape_for_text {
-  position: relative;
-  width: 40%;
-  left: 50%;
-  transition: 4s;
-  transform: scale(0);
-
-  animation-name: apearBtn;
-  animation-delay: 2s;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  button {
-    background-color: transparent;
-    position: relative;
-    border: 0;
-    font-family: 'VT323', monospace;
-    font-size: 3rem;
-    top: 20%;
-    outline: none;
-
-    &:active {
-      transform: scale(0.9);
-      border-color: none;
-    }
-  }
-}
-
-.beginner_btn,
-.intermediate_btn {
-  .link{
-    color: white;
-  }
-  &:hover {
-    animation: hover 1s 1 forwards;
-  }
-}
-
-@keyframes hover {
-  0% {
-  }
-  100% {
-    font-size: 3.3rem;
-  }
-}
-
-@keyframes apearBtn {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.intro_btn_position {
-  position: relative;
-  top: 15%;
-  left: 0%;
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
 
 .beginner-page {
   display: none;
@@ -184,15 +108,15 @@ body {
     position: absolute;
     top: 70%;
     left: 30%;
-    color: #1459b3;
+    color: black;
     font-size: 1rem;
   }
   .freestyle_link {
     text-decoration: none;
-    color: #1459b3;
+    color: black;
 
     padding: 20px;
-    border: 3px solid #1459b3;
+    border: 3px solid black;
     font-size: 2rem;
     position: absolute;
     top: 55%;
@@ -227,7 +151,7 @@ body {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  border: 2px solid #1459b3;
+  border: 2px solid black;
 
   &.freerideToFreestyle {
     top: 48%;
@@ -243,20 +167,20 @@ body {
   }
   &.freestyleToFreeride {
     top: 48%;
-    border: 2px solid #1459b3;
+    border: 2px solid black;
   }
   &.freestyleToShop {
     top: 50%;
-    border: 2px solid #1459b3;
+    border: 2px solid black;
   }
   &.freestyleToBeginner {
     top: 52%;
-    border: 2px solid #1459b3;
+    border: 2px solid black;
   }
   .link_goto {
     left: -100px;
     position: absolute;
-    color: #1459b3;
+    color: black;
     text-decoration: none;
     top: -10px;
 
@@ -281,7 +205,7 @@ body {
       left: -65px;
     }
     &.fromFreestyle{
-  color: #1459b3
+  color: black
 }
   }
 }

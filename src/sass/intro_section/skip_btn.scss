@@ -11,7 +11,7 @@
 	appearance: none;
 	border: 0;
 	background: white;
-	color: #1459b3;
+	color: black;
 	text-transform: uppercase;
 	letter-spacing: .25em;
 	outline: none;
@@ -22,7 +22,7 @@
 	transition: background-color .8s ease;
 	.link{
         padding: 15px;
-        color:#1459b3
+        color:black;
     }
 	&:hover {
 		background: rgba(81, 231, 43, 0.03);

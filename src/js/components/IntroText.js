@@ -25,7 +25,7 @@ class IntroText extends Component{
   }
   
   render(){
-    return <><div className="intro_text"><h1>{this.state.text.substring(0, this.state.length)}</h1></div></>
+    return <><div className="intro_text"><div className="intro_text"><h1>{this.state.text.substring(0, this.state.length)}</h1></div></div></>
   }
     }
   
