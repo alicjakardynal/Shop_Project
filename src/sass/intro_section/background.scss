@@ -23,14 +23,19 @@
   .intro_text {
     text-align: center;
     position:  relative;
-    top: 15%;
+    top: 20%;
+    z-index: 10;
+    
 
     h1 {
       font-family: "VT323", monospace;
       font-size: 4rem;
       color: white;
       font-weight: 700;
-    }
+      z-index: 100;
+   
+
+  }
   }
 }
 .intro_btn_position {
@@ -50,7 +55,7 @@
 
   animation-name: apearBtn;
   animation-delay: 2s;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 
@@ -70,7 +75,7 @@
   }
 }
 
-// .beginner_btn,
+.beginner_btn,
 .intermediate_btn {
   .link{
     color: white;
@@ -78,14 +83,89 @@
   }
   &::before{
     position: absolute;
-    content:"More t"
+    content:"More than Beginner";
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    
+
+  }
+  &::after{
+    position: absolute;
+    content:"More than Beginner";
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    
+
+  }
+  &::before{
+    color: #0ff;
+    z-index: -1;
+
+  }
+  &::after{
+    color: #f0f;
+    z-index: -2;
 
   }
   &:hover {
-    // animation: hover 1s 1 forwards;
-    filter: blur(1px);
-
+    
+&::after{
+  animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+}
+&::before{
+  animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
   }
+}
+.beginner_btn{
+  &::before{
+    
+    content:"Beginner";
+  }
+  &::after{
+  
+    content:"Beginner";
+  }
+}
+
+@keyframes glitch{
+  0%{
+    transform: translate(0)
+  }
+  20%{
+    transform: translate(-2px,2px)
+  }
+  40%{
+    transform: translate(-2px,-2px)
+  }
+  60%{
+    transform: translate(2px,2px)
+  }
+  80%{
+    transform: translate(2px,-2px)
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+.link:hover::before{
+  
+  animation: hover 1s 1 forwards;
+
+}
+.link:hover::after {
+  animation: glitch 1s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+
 }
 
 @keyframes hover {
