@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import { NavLink,Redirect } from "react-router-dom";
-import SkipIntro from "./SkipIntro";
+import SkipIntro from "../IntroSection/SkipIntro";
 
 class FreestylePage extends Component{
   state={

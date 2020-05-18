@@ -4,13 +4,15 @@ import ReactDOM from "react-dom";
 import { HashRouter, Route, Switch, NavLink } from "react-router-dom";
 import "./../sass/style.scss";
 
-import IntroText from "./components/IntroText";
-import Background from "./components/Background";
-import SkipIntro from "./components/SkipIntro";
-import BeginnerPage from "./components/BeginnerPage";
-import IntermediatePage from "./components/IntermediatePage";
-import FreeridePage from "./components/FreeridePage";
-import FreestylePage from "./components/FreestylePage";
+import Welcome from "./components/IntroSection/Welcome";
+// import IntroText from "./components/IntroSection/IntroText";
+// import Background from "./components/IntroSection/Background";
+// import SkipIntro from "./components/IntroSection/SkipIntro";
+import BeginnerPage from "./components/IntroSection/BeginnerPage";
+import IntermediatePage from "./components/IntroSection/IntermediatePage";
+import FreeridePage from "./components/IntroSection/FreeridePage";
+import FreestylePage from "./components/IntroSection/FreestylePage";
+// import ChooseOptions from "./components/IntroSection/ChooseOptions";
 import { Hash } from "crypto";
 
 
@@ -60,73 +62,8 @@ deleteObject = (id) =>{
   }
 }
 
-class Welcome extends Component {
-  render() {
-    return (
-      <section className="welcoming-page">
-        <Background />
-        <SkipIntro />
-        <IntroText text="Hi ! Choose if You are:" />
-        <ChooseOptions />
-      </section>
-    );
-  }
-}
 
-class ChooseOptions extends Component {
-  render() {
-    return (
-      <>
-        <div className="intro_btn_position">
-          <BeginnerButton />
-          <IntermediateButton />
-        </div>
-      </>
-    );
-  }
-}
 
-class BeginnerButton extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <div className="shape_for_text">
-          <button className="beginner_btn">
-            <NavLink className="link" exact to="/beginner">
-              Beginner
-            </NavLink>
-          </button>
-        </div>
-        <Switch>
-          <Route exact path="/beginner" component={BeginnerPage} />
-        </Switch>
-      </HashRouter>
-    );
-  }
-}
-
-class IntermediateButton extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <div className="shape_for_text">
-          <button className="intermediate_btn">
-            <NavLink className="link" exact to="/intermediate">
-              More than Beginner
-            </NavLink>
-          </button>
-        </div>
-        <Switch>
-          <Route
-            exact
-            path="/intermediate"
-            component={IntermediatePage}
-          ></Route>
-        </Switch>
-      </HashRouter>
-    );
-  }
-}
 
 class Shop extends Component {
   render() {

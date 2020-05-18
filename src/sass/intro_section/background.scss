@@ -15,10 +15,10 @@
 .intro_text_area {
   background-color: black;
   opacity: 0.8;
-  width: 50%;
+  width: 100%;
   height: 50%;
   position: relative;
-  left: 40%;
+  // left: 40%;
   top: 15%;
   text-align: center;
   .intro_text {
@@ -42,7 +42,7 @@
 .intro_btn_position {
   position: relative;
   top: -8%;
-  left: 25%;
+  left: 11%;
   width: 40%;
   display: flex;
   justify-content: space-around;
@@ -55,7 +55,7 @@
   transform: scale(0);
 
   animation-name: apearBtn;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
