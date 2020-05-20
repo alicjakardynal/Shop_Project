@@ -77,6 +77,8 @@ class Shop extends Component {
     return (
       <section className="shopView">
         <ShopHeader/>
+        <ShopBanner/>
+        <Articles/>
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
       /* <HashRouter>
@@ -97,16 +99,47 @@ class ShopHeader extends Component {
   state = {
     pageScrolled: false
   };
+
+  componentDidMount(){
+    document.addEventListener("scroll",()=>{
+      if(window.pageYOffset>0){
+        this.setState({
+          pageScrolled:true
+        })
+      }else{
+        this.setState({
+          pageScrolled:false
+        })
+      }
+    })
+  }
   render() {
     return (
-      <div className="shop_header">
+      <div className={this.state.pageScrolled ? "shop_header shop_header_scrolled" : "shop_header" }>
         <Navigation />
         <AccountStripe items={this.props.items} />
       </div>
     );
   }
 }
-
+ class ShopBanner extends Component{
+   render(){
+     return(
+       <div className="banner">
+         <div>Promka i parallax</div>
+         
+       </div>
+     )
+   }
+ }
+ 
+ class Articles extends Component{
+   render(){
+     return(
+       <div className="articles"></div>
+     )
+   }
+ }
 //THESE THREE PRODUCTS TO MODERETE LATER
 
 // class ShopBackground extends Component {
@@ -121,98 +154,98 @@ class ShopHeader extends Component {
 //   }
 // }
 
-class Item1 extends Component {
-  state = {
-    object: {
-      name: "Snowboard Burton Flex:4",
-      price: "1500$",
-      imageSourse: "../images/5dde49c4d887b.png",
-      id: 1
-    }
-  };
-  handleBuyButton = () => {
-    const { addItems } = this.props;
-    addItems(this.state.object);
-  };
-  render() {
-    return (
-      <section className="product">
-        <h2>{this.state.object.name}</h2>
-        <img
-          src={this.state.object.imageSourse}
-          className="product_image"
-        ></img>
-        <p className="price">{this.state.object.price}</p>
-        <a onClick={this.handleBuyButton} className="btn_shop">
-          Buy
-        </a>
-        <NavLink exact to="/product"></NavLink>
-      </section>
-    );
-  }
-}
-class Item2 extends Component {
-  state = {
-    object: {
-      name: "Snowboard Roxy Flex:7",
-      price: "1000$",
-      imageSourse: "../images/5dde49c4d887b.png",
-      id: 2
-    }
-  };
-  handleBuyButton = () => {
-    const { addItems } = this.props;
-    addItems(this.state.object);
-  };
+// class Item1 extends Component {
+//   state = {
+//     object: {
+//       name: "Snowboard Burton Flex:4",
+//       price: "1500$",
+//       imageSourse: "../images/5dde49c4d887b.png",
+//       id: 1
+//     }
+//   };
+//   handleBuyButton = () => {
+//     const { addItems } = this.props;
+//     addItems(this.state.object);
+//   };
+//   render() {
+//     return (
+//       <section className="product">
+//         <h2>{this.state.object.name}</h2>
+//         <img
+//           src={this.state.object.imageSourse}
+//           className="product_image"
+//         ></img>
+//         <p className="price">{this.state.object.price}</p>
+//         <a onClick={this.handleBuyButton} className="btn_shop">
+//           Buy
+//         </a>
+//         <NavLink exact to="/product"></NavLink>
+//       </section>
+//     );
+//   }
+// }
+// class Item2 extends Component {
+//   state = {
+//     object: {
+//       name: "Snowboard Roxy Flex:7",
+//       price: "1000$",
+//       imageSourse: "../images/5dde49c4d887b.png",
+//       id: 2
+//     }
+//   };
+//   handleBuyButton = () => {
+//     const { addItems } = this.props;
+//     addItems(this.state.object);
+//   };
 
-  render() {
-    return (
-      <section className="product">
-        <h2>{this.state.object.name}</h2>
-        <img
-          src={this.state.object.imageSourse}
-          className="product_image"
-        ></img>
-        <p className="price">{this.state.object.price}</p>
-        <a onClick={this.handleBuyButton} className="btn_shop">
-          Buy
-        </a>
-        <NavLink exact to="/product"></NavLink>
-      </section>
-    );
-  }
-}
-class Item3 extends Component {
-  state = {
-    object: {
-      name: "Snowboard Nitro N Flex:5",
-      price: "700$",
-      imageSourse: "../images/5dde49c4d887b.png",
-      id: 3
-    }
-  };
-  handleBuyButton = () => {
-    const { addItems } = this.props;
-    addItems(this.state.object);
-  };
+//   render() {
+//     return (
+//       <section className="product">
+//         <h2>{this.state.object.name}</h2>
+//         <img
+//           src={this.state.object.imageSourse}
+//           className="product_image"
+//         ></img>
+//         <p className="price">{this.state.object.price}</p>
+//         <a onClick={this.handleBuyButton} className="btn_shop">
+//           Buy
+//         </a>
+//         <NavLink exact to="/product"></NavLink>
+//       </section>
+//     );
+//   }
+// }
+// class Item3 extends Component {
+//   state = {
+//     object: {
+//       name: "Snowboard Nitro N Flex:5",
+//       price: "700$",
+//       imageSourse: "../images/5dde49c4d887b.png",
+//       id: 3
+//     }
+//   };
+//   handleBuyButton = () => {
+//     const { addItems } = this.props;
+//     addItems(this.state.object);
+//   };
 
-  render() {
-    return (
-      <section className="product">
-        <h2>{this.state.object.name}</h2>
-        <img
-          src={this.state.object.imageSourse}
-          className="product_image"
-        ></img>
-        <p className="price">{this.state.object.price}</p>
-        <a onClick={this.handleBuyButton} className="btn_shop">
-          Buy
-        </a>
-        <NavLink exact to="/product"></NavLink>
-      </section>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <section className="product">
+//         <h2>{this.state.object.name}</h2>
+//         <img
+//           src={this.state.object.imageSourse}
+//           className="product_image"
+//         ></img>
+//         <p className="price">{this.state.object.price}</p>
+//         <a onClick={this.handleBuyButton} className="btn_shop">
+//           Buy
+//         </a>
+//         <NavLink exact to="/product"></NavLink>
+//       </section>
+//     );
+//   }
+// }
 
 class Navigation extends Component {
   render() {
