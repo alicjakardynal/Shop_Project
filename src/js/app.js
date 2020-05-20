@@ -5,14 +5,10 @@ import { HashRouter, Route, Switch, NavLink } from "react-router-dom";
 import "./../sass/style.scss";
 
 import Welcome from "./components/IntroSection/Welcome";
-// import IntroText from "./components/IntroSection/IntroText";
-// import Background from "./components/IntroSection/Background";
-// import SkipIntro from "./components/IntroSection/SkipIntro";
 import BeginnerPage from "./components/IntroSection/BeginnerPage";
 import IntermediatePage from "./components/IntroSection/IntermediatePage";
 import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
-// import ChooseOptions from "./components/IntroSection/ChooseOptions";
 import { Hash } from "crypto";
 
 
@@ -69,12 +65,10 @@ class Shop extends Component {
   render() {
     return (
       <section className="shopView">
-        <Basket items={this.props.items}/>
-        <div className="shop_position">
+        <AccountStripe items={this.props.items}/>
           <Navigation />
-          <ShopBackground addItems={this.props.addItems} />
+          {/* <ShopBackground addItems={this.props.addItems} /> */}
          
-        </div>
       </section>
       /* <HashRouter>
   <Switch>
@@ -89,17 +83,36 @@ class Shop extends Component {
     );
   }
 }
-class ShopBackground extends Component {
-  render() {
-    return (
-      <div className="shop_background">
-        <Item1 addItems={this.props.addItems}/>
-        <Item2 addItems={this.props.addItems}/>
-        <Item3 addItems={this.props.addItems}/>
-      </div>
-    );
-  }
-}
+
+// class ShopHeader extends Component{
+//   state={
+//     pageScrolled:false
+//   }
+//   render(){
+//     return(<>
+//     <div className="shop_header">
+      
+
+//     </div>
+//     </>)
+//   }
+// }
+
+
+//THESE THREE PRODUCTS TO MODERETE LATER
+
+
+// class ShopBackground extends Component {
+//   render() {
+//     return (
+//       <div className="shop_background">
+//         <Item1 addItems={this.props.addItems}/>
+//         <Item2 addItems={this.props.addItems}/>
+//         <Item3 addItems={this.props.addItems}/>
+//       </div>
+//     );
+//   }
+// }
 
 class Item1 extends Component {
   state={
@@ -207,15 +220,27 @@ class Navigation extends Component {
   }
 }
 
-class Basket extends Component {
-  
+class AccountStripe extends Component {
+  state={
+    pageScrolled: false
+  }
   render() {
     const {items}=this.props;
     return (
       <section className="entering_stripe">
+        <Account/>
         <NavLink exact to="/basket"><i className="fas fa-shopping-basket"><span>({items.length})</span></i></NavLink>
+  
       </section>
     );
+  }
+}
+
+class Account extends Component{
+  render() {
+    return (
+       <i>Account</i>
+    )
   }
 }
  class BasketInside extends Component{
