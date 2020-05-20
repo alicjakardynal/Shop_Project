@@ -1,0 +1,137 @@
+.shopView{
+    height: 100%;
+    width: 100%;
+    }
+    .entering_stripe {
+      height: 10%;
+      width: 100vw;
+      background-color: grey;
+      background-size: contain;
+      i {
+        font-size: 2rem;
+        position: absolute;
+        right: 2%;
+        top: 2%;
+      }
+    }
+    
+    .navigation {
+      width: 15%;
+      height: 100vh;
+      background-color: #8397b1;
+      li {
+        padding: 20px 0 0 10px;
+      }
+      .navigation_options {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
+    
+    .shop_background {
+      background-color: #d6e0ee;
+      width: 85%;
+      display: flex;
+      justify-content: space-around; 
+      align-items: flex-start;
+      
+    }
+    .shop_position {
+      display: flex;
+      justify-content: space-between;
+     
+    }
+    .product {
+      margin: 20px 0 20px 0;
+      width: 30%;
+      //tutaj jak zmienie ze nie ma ma wysokosci to leci na sam dół
+      border: 2px solid black;
+      h2 {
+        font-size: 1rem;
+        padding: 15px;
+        text-align: center;
+      }
+      .product_image {
+        
+        height: 240px;
+        width: 60%;
+        border: none;
+        position: relative;
+        left: 15%;
+    
+      
+        
+      }
+      .price {
+        font-size: 1rem;
+        padding: 20px;
+        text-align: center;
+      }
+      .btn_shop {
+        border: 2px solid black;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px 20px;
+        position: relative;
+        left: 40%;
+        display: inline-block;
+      
+        &:hover{
+          color: #8397b1;
+          border-color: #8397b1;
+        }
+        &:active{
+          transform: scale(0.95);
+          
+      }
+      }
+    }
+    .item_in_basket{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid black;
+    margin: 10px;
+    
+      .item_img_in_basket{
+        height: 100px;
+        widows: 100px;
+        &:hover{
+          transform: scale(2);
+        }
+      
+    }
+      .item_name_in_basket{
+    font-size: 1rem;
+    
+    }
+    .item_price_in_basket{
+      font-size: 1rem;
+    }
+    .btn_delete{
+        display: block;
+        position: relative;
+        padding: 1em 2em;
+        appearance: none;
+        border: 0;
+        background: white;
+        color: black;
+        text-transform: uppercase;
+        
+        outline: none;
+    
+        font-weight: bold;
+        border-radius: 0;
+        box-shadow: inset 0 0 0 2px currentcolor;
+      transition: background-color .8s ease;
+      
+      &:hover{
+        background: #b3c6df;
+      }
+      &:active{
+        transform: scale(0.95)
+      }
+    }
+    }
+    

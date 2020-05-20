@@ -228,9 +228,10 @@ class AccountStripe extends Component {
     const {items}=this.props;
     return (
       <section className="entering_stripe">
+        <div>
         <Account/>
         <NavLink exact to="/basket"><i className="fas fa-shopping-basket"><span>({items.length})</span></i></NavLink>
-  
+  </div>
       </section>
     );
   }
