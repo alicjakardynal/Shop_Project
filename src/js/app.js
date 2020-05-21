@@ -126,7 +126,15 @@ class ShopHeader extends Component {
    render(){
      return(
        <div className="banner">
-         <div>Promka i parallax</div>
+         <div className="sale">
+           <h1>SALE</h1>
+           <h1>SALE</h1>
+           <h1>SALE</h1>
+           <h1>SALE</h1>
+           <h1>SALE</h1>
+           
+          
+           </div>
          
        </div>
      )

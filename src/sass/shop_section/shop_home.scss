@@ -1,15 +1,18 @@
 .shopView {
   height: 100vh;
   // width: 100%;
+  
   .shop_header {
     height: 10%;
     width: 100%;
     background-color: white;
     position: fixed;
-    overflow: hidden;
+  box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    border: 2px dotted black;
+    border: 2px solid rgb(189, 181, 181);
+    box-shadow: -5px -5px 22px -2px rgba(0,0,0,0.75);
+    z-index: 1;
 
     .entering_stripe {
       position: relative;
@@ -169,10 +172,38 @@
   width: 100%;
   background-image: url("../images/5e8f28609b8b3.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+.sale{
+  height: 5%;;
+  width: 100%;
+  background-color: rgb(50, 196, 171);
+  opacity: 0.4;
+  display: flex;
+  justify-content: space-around;
+align-items:center;
+font-weight: 700;
+font-size: 1.5rem;
+h1{
+  animation: sale 4s linear infinite alternate-reverse;
+  // transform: translateX(300%)
+}
+
+}
 }
 
 .articles{
-    height: 50%;
+    height: 100%;
     width: 100%;
-    background-color: pink;
+    background-color: rgb(156, 223, 211);
+}
+
+@keyframes sale{
+  0%{
+    transform: translateX(100%)
+  }
+  100%{
+    transform: translateX(-100%)
+  }
 }
