@@ -10,7 +10,7 @@ import IntermediatePage from "./components/IntroSection/IntermediatePage";
 import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
 import { Hash } from "crypto";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
 
 class StartingPage extends Component {
   constructor(props) {
@@ -80,7 +80,7 @@ class Shop extends Component {
         <ShopHeader />
         <ShopBanner />
         <NotesWithIcons />
-        <Articles/>
+        <Articles />
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
       /* <HashRouter>
@@ -181,19 +181,34 @@ class NotesWithIcons extends Component {
   }
 }
 
-class Articles extends Component{
-  render(){
-    return(<>
-    <div className="background_for_articles">
-    <Fade left>
-      <div className="first_article"><h2>Check new places to trip around You</h2></div>
-      </Fade>
-      <Fade right>
-      <div className="second_article">rdguiytr</div>
-      </Fade>
-      </div>
+class Articles extends Component {
+  render() {
+    return (
+      <>
+        <section className="background_for_articles">
+          <div className="first_article">
+            <Fade left>
+              <div className="header_for_articles">
+                <h2>Check the best places to ride</h2>
+              </div>
+            </Fade>
+            <Fade right>
+              <div className="img_desert"></div>
+            </Fade>
+          </div>
+          <div className="second_article">
+            <Fade left>
+              <div className="img_snowboard"></div>
+            </Fade>
+            <Fade right>
+              <div className="header_for_articles">
+                <h2>How to care for your equipment out of season</h2>
+              </div>
+            </Fade>
+          </div>
+        </section>
       </>
-    )
+    );
   }
 }
 //THESE THREE PRODUCTS TO MODERETE LATER

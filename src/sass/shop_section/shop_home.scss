@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 .shopView {
   height: 100vh;
   // width: 100%;
@@ -193,20 +194,28 @@ h1{
 }
 //Articles
 .background_for_articles{
-  height: 50%;
+  
+  box-sizing: border-box;
+  
+.first_article{
+  height: 60vh;
   width: 100%;
   display: flex;
   position: relative;
   align-items: center;
-  .first_article{
+  .header_for_articles{
 height: 85%;
 width: 85%;
 background-color: rgb(6, 31, 116);
 text-align: center;
 position: relative;
 left: 15%;
+display: flex;
+align-items: center;
+
+
 }
-.second_article{
+.img_desert{
   width: 50%;
   background-image: url("../images/5ec83cb33ae28.jpg");
   height: 100%;
@@ -214,7 +223,43 @@ left: 15%;
   position: relative;
   right: 10%;
 }
+
 }
+.second_article{
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  .img_snowboard{
+    background-image: url("../images/5ec83c99140e3.jpg");
+    width: 49%;
+    height: 100%;
+    background-size: cover;
+  position: relative;
+  left: 10%
+  }
+  .header_for_articles{
+    height: 69%;
+    width: 36%;
+    background-color: #0f8b51;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: -1;
+  }
+}
+h2{
+  font-size: 1.6rem;
+  color: white;
+  position: relative;
+left: 12%;
+font-family: 'Black Ops One', cursive;
+font-weight: 400;
+}}
+
 
 
 @keyframes sale{
