@@ -202,7 +202,7 @@ class Articles extends Component {
             </Fade>
             <Fade right>
               <div className="header_for_articles">
-                <h2>How to care for your equipment out of season</h2>
+                <h2>Check how to take care of your equipment</h2>
               </div>
             </Fade>
           </div>
