@@ -4,12 +4,14 @@ body {
   font-family: "Permanent Marker", cursive;
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
-  box-sizing: border-box;
-}
+  
+
 
 @import "./intro_section/background.scss";
 @import "./intro_section/skip_btn.scss";
 @import "./intro_section/beginner_page.scss";
 @import "./intro_section/intermediate_page.scss";
 @import "./shop_section/shop_home.scss";
+@import "./shop_section/shop_icons.scss";
 
+}

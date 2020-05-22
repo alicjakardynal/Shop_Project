@@ -10,6 +10,7 @@ import IntermediatePage from "./components/IntroSection/IntermediatePage";
 import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
 import { Hash } from "crypto";
+import Fade from 'react-reveal/Fade';
 
 class StartingPage extends Component {
   constructor(props) {
@@ -79,6 +80,7 @@ class Shop extends Component {
         <ShopHeader />
         <ShopBanner />
         <NotesWithIcons />
+        <Articles/>
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
       /* <HashRouter>
@@ -165,25 +167,33 @@ class NotesWithIcons extends Component {
           </p>
         </div>
         <div>
-        <i class="fas fa-shipping-fast"></i>
-          <h2>
-Fast Shipping</h2>
-          <p>
-          You wait maximum 7 days for your product
-          </p>
+          <i class="fas fa-shipping-fast"></i>
+          <h2>Fast Shipping</h2>
+          <p>You wait maximum 7 days for your product</p>
         </div>
         <div>
-        <i class="fas fa-shipping-fast"></i>
-          <h2>
-
-          Guarantee Of Quality</h2>
-          <p>
-          
-we have products of the highest quality from the best producers
-          </p>
+          <i class="far fa-handshake"></i>
+          <h2>Guarantee Of Quality</h2>
+          <p>We have products of the highest quality from the best producers</p>
         </div>
       </div>
     );
+  }
+}
+
+class Articles extends Component{
+  render(){
+    return(<>
+    <div className="background_for_articles">
+    <Fade left>
+      <div className="first_article"><h2>Check new places to trip around You</h2></div>
+      </Fade>
+      <Fade right>
+      <div className="second_article">rdguiytr</div>
+      </Fade>
+      </div>
+      </>
+    )
   }
 }
 //THESE THREE PRODUCTS TO MODERETE LATER

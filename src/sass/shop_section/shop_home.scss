@@ -191,12 +191,31 @@ h1{
 
 }
 }
-
-.notesWithIcons{
-    height: 30%;
-    width: 100%;
-    
+//Articles
+.background_for_articles{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  .first_article{
+height: 85%;
+width: 85%;
+background-color: rgb(6, 31, 116);
+text-align: center;
+position: relative;
+left: 15%;
 }
+.second_article{
+  width: 50%;
+  background-image: url("../images/5ec83cb33ae28.jpg");
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  right: 10%;
+}
+}
+
 
 @keyframes sale{
   0%{
