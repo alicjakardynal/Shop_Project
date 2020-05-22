@@ -76,9 +76,9 @@ class Shop extends Component {
   render() {
     return (
       <section className="shopView">
-        <ShopHeader/>
-        <ShopBanner/>
-        <Articles/>
+        <ShopHeader />
+        <ShopBanner />
+        <NotesWithIcons />
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
       /* <HashRouter>
@@ -100,54 +100,92 @@ class ShopHeader extends Component {
     pageScrolled: false
   };
 
-  componentDidMount(){
-    document.addEventListener("scroll",()=>{
-      if(window.pageYOffset>0){
+  componentDidMount() {
+    document.addEventListener("scroll", () => {
+      if (window.pageYOffset > 0) {
         this.setState({
-          pageScrolled:true
-        })
-      }else{
+          pageScrolled: true
+        });
+      } else {
         this.setState({
-          pageScrolled:false
-        })
+          pageScrolled: false
+        });
       }
-    })
+    });
   }
   render() {
     return (
-      <div className={this.state.pageScrolled ? "shop_header shop_header_scrolled" : "shop_header" }>
+      <div className="shop_header">
         <Navigation />
         <AccountStripe items={this.props.items} />
       </div>
     );
   }
 }
- class ShopBanner extends Component{
-   render(){
-     return(
-       <div className="banner">
-         <div className="sale">
-           <h1>SALE</h1>
-           <h1>SALE</h1>
-           <h1>SALE</h1>
-           <h1>SALE</h1>
-           <h1>SALE</h1>
-           
+class ShopBanner extends Component {
+  state = {
+    bannerScrolledPosition: 0
+  };
+  componentDidMount() {
+    window.addEventListener("scroll", () => {
+      let scrol = window.pageYOffset;
+      console.log(scrol);
+      this.setState({
+        bannerScrolledPosition: scrol * 0.1
+      });
+    });
+  }
+  render() {
+    return (
+      <div
+        className="banner"
+        style={{ backgroundPositionY: this.state.bannerScrolledPosition }}
+      >
+        <div className="sale">
+          <h1>SALE</h1>
+          <h1>SALE</h1>
+          <h1>SALE</h1>
+          <h1>SALE</h1>
+          <h1>SALE</h1>
+        </div>
+      </div>
+    );
+  }
+}
+
+class NotesWithIcons extends Component {
+  render() {
+    return (
+      <div className="notesWithIcons">
+        <div>
+          <i class="fas fa-undo"></i>
+          <h2>30 Days To Return</h2>
+          <p>
+            You have 30 days to return the product from the day you purchased it
+          </p>
+        </div>
+        <div>
+        <i class="fas fa-shipping-fast"></i>
+          <h2>
+Fast Shipping</h2>
+          <p>
+          You wait maximum 7 days for your product
+          </p>
+        </div>
+        <div>
+        <i class="fas fa-shipping-fast"></i>
+          <h2>
+
+          Guarantee Of Quality</h2>
+          <p>
           
-           </div>
-         
-       </div>
-     )
-   }
- }
- 
- class Articles extends Component{
-   render(){
-     return(
-       <div className="articles"></div>
-     )
-   }
- }
+we have products of the highest quality from the best producers
+          </p>
+        </div>
+      </div>
+    );
+  }
+}
 //THESE THREE PRODUCTS TO MODERETE LATER
 
 // class ShopBackground extends Component {

@@ -36,9 +36,7 @@
       }
     }
   }
-  .shop_header_scrolled{
-    position: fixed;
-      }
+  
     
   
   .navigation {
@@ -70,6 +68,7 @@
     }
   }
 }
+
 .shop_background {
   background-color: #d6e0ee;
   width: 85%;
@@ -193,10 +192,10 @@ h1{
 }
 }
 
-.articles{
-    height: 100%;
+.notesWithIcons{
+    height: 30%;
     width: 100%;
-    background-color: rgb(156, 223, 211);
+    
 }
 
 @keyframes sale{
