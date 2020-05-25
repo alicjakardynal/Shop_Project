@@ -54,17 +54,21 @@
 		border-top: 2px solid currentcolor;
 		border-bottom: 2px solid currentcolor;
 		
+	
+		
 		&::before {
 			top: calc(var(--vertical-offset) - 2px);
 			bottom: calc(var(--vertical-offset) - 2px);
 			left: calc(var(--vertical-offset) * -1);
 			right: calc(var(--vertical-offset) * -1);
 		}
+	}	
+	&:hover .skip_btn_horizontal {
+		transform: scaleX(0);
+		
 	}
 	
-	&:hover &_horizontal {
-		transform: scaleX(0)
-	}
+	
 	
 	&_vertical {
 		--horizontal-offset: calc(var(--offset) * -1);
@@ -79,7 +83,7 @@
 		}
 	}
 	
-	&:hover &_vertical {
+	&:hover .skip_btn_vertical {
 		transform: scaleY(0);
 	}
 	

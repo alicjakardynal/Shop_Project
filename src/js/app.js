@@ -12,6 +12,9 @@ import FreestylePage from "./components/IntroSection/FreestylePage";
 import { Hash } from "crypto";
 import Fade from "react-reveal/Fade";
 
+
+
+
 class StartingPage extends Component {
   constructor(props) {
     super(props);
@@ -81,6 +84,8 @@ class Shop extends Component {
         <ShopBanner />
         <NotesWithIcons />
         <Articles />
+        {/* <CarousselWithItems/> */}
+       
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
       /* <HashRouter>
@@ -131,7 +136,7 @@ class ShopBanner extends Component {
   componentDidMount() {
     window.addEventListener("scroll", () => {
       let scrol = window.pageYOffset;
-      console.log(scrol);
+      
       this.setState({
         bannerScrolledPosition: scrol * 0.1
       });
@@ -160,19 +165,19 @@ class NotesWithIcons extends Component {
     return (
       <div className="notesWithIcons">
         <div>
-          <i class="fas fa-undo"></i>
+          <i className="fas fa-undo"></i>
           <h2>30 Days To Return</h2>
           <p>
             You have 30 days to return the product from the day you purchased it
           </p>
         </div>
         <div>
-          <i class="fas fa-shipping-fast"></i>
+          <i className="fas fa-shipping-fast"></i>
           <h2>Fast Shipping</h2>
           <p>You wait maximum 7 days for your product</p>
         </div>
         <div>
-          <i class="far fa-handshake"></i>
+          <i className="far fa-handshake"></i>
           <h2>Guarantee Of Quality</h2>
           <p>We have products of the highest quality from the best producers</p>
         </div>
@@ -211,6 +216,23 @@ class Articles extends Component {
     );
   }
 }
+ 
+
+
+// class CarousselWithItems extends  Component{
+// render(){
+//   return(<>
+//   <Carousel
+
+// >
+//   <div>Item 1</div>
+//   <div>Item 2</div>
+//   <div>Item 3</div>
+//   <div>Item 4</div>
+// </Carousel>;
+//   </>)
+// }
+// }
 //THESE THREE PRODUCTS TO MODERETE LATER
 
 // class ShopBackground extends Component {
