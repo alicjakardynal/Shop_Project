@@ -11,6 +11,7 @@ import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
 import { Hash } from "crypto";
 import Fade from "react-reveal/Fade";
+import Slider from "react-slick";
 
 
 
@@ -84,7 +85,7 @@ class Shop extends Component {
         <ShopBanner />
         <NotesWithIcons />
         <Articles />
-        {/* <CarousselWithItems/> */}
+        <CarousselWithItems/>
        
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
@@ -103,23 +104,7 @@ class Shop extends Component {
 }
 
 class ShopHeader extends Component {
-  state = {
-    pageScrolled: false
-  };
-
-  componentDidMount() {
-    document.addEventListener("scroll", () => {
-      if (window.pageYOffset > 0) {
-        this.setState({
-          pageScrolled: true
-        });
-      } else {
-        this.setState({
-          pageScrolled: false
-        });
-      }
-    });
-  }
+ 
   render() {
     return (
       <div className="shop_header">
@@ -219,20 +204,16 @@ class Articles extends Component {
  
 
 
-// class CarousselWithItems extends  Component{
-// render(){
-//   return(<>
-//   <Carousel
+class CarousselWithItems extends  Component{
+render(){
+  return(<>
+  <section className="caroussel_area">
 
-// >
-//   <div>Item 1</div>
-//   <div>Item 2</div>
-//   <div>Item 3</div>
-//   <div>Item 4</div>
-// </Carousel>;
-//   </>)
-// }
-// }
+  </section>
+ 
+  </>)
+}
+}
 //THESE THREE PRODUCTS TO MODERETE LATER
 
 // class ShopBackground extends Component {

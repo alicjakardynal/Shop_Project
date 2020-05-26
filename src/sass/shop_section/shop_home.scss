@@ -44,13 +44,14 @@
     display: flex;
     .snowboarder_img {
       background-image: url("../images/a3899072f7c2371721c493c529944516.jpg");
-      height: 70px;
-      width: 70px;
-      margin: 10px;
-
+      top: 4px;
+      height: 89%;
+      width: 54px;
       z-index: 2;
       background-position: center;
       background-size: cover;
+      position: relative;
+      left: 20px;
     }
 
     ul {
