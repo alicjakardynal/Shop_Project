@@ -104,7 +104,7 @@ class Shop extends Component {
 }
 
 class ShopHeader extends Component {
- 
+ git 
   render() {
     return (
       <div className="shop_header">
@@ -202,16 +202,40 @@ class Articles extends Component {
   }
 }
  
-
+ 
 
 class CarousselWithItems extends  Component{
 render(){
-  return(<>
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows:true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1}
+  return(
   <section className="caroussel_area">
-
+  <Slider {...settings}>
+        <div className="white-blinding">
+          <img width="100%" height="80%" src="../images/pngfuel.com.png"></img>
+        </div>
+        <div className="white-blinding">
+        <img width="100%" height="80%" src="../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png"></img>
+        </div>
+        <div>
+        <img width="100%" height="80%" src="../images/../images/pngguru.com-2.png"></img>
+        </div>
+        <div>
+        <img width="100%" height="80%" src="../images/kisspng-nitro-snowboards-snow-boot-snowboarding-faint-5b21fd5232e517.6803695715289541942085.png"></img>
+        </div>
+        <div>
+           <img width="100%" height="80%" src="../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"></img>
+        </div>
+        
+      </Slider>
   </section>
  
-  </>)
+  )
 }
 }
 //THESE THREE PRODUCTS TO MODERETE LATER

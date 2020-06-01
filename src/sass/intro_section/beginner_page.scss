@@ -75,14 +75,14 @@ left: 50%;
     animation-fill-mode: forwards;
   }
   .snowboard_gif{
-    width:500px;
+    width:400px;
     position: absolute;
-    height:45%;
+    height:51%;
     left: 60%;
     top:20%;
     margin:0 auto;
     background-image:url("../images/5dde49c4d887b.png");
-    background-size: contain;
+    background-size: cover;
     
    
       animation-name: rotate3D;
@@ -92,8 +92,8 @@ left: 50%;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     &.freeride_gif{
-        width: 400px;
-        height: 29%;
+        width: 410px;
+        height: 40%;
         top:30%;
         left:10%;
         background-image:url("../images/5ddefc043408c.png");
@@ -102,6 +102,9 @@ left: 50%;
     }
     &.freestyle_gif{
         background-image:url("../images/5ddf09b868b1f.png");
+        height:63%;
+    
+    top:14%;
     }
     
   }
