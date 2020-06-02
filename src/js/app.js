@@ -11,7 +11,8 @@ import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
 import { Hash } from "crypto";
 import Fade from "react-reveal/Fade";
-import Slider from "react-slick";
+
+
 
 
 
@@ -205,34 +206,29 @@ class Articles extends Component {
  
 
 class CarousselWithItems extends  Component{
+
 render(){
-  const settings = {
-    dots: true,
-    infinite: true,
-    arrows:true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1}
+ 
   return(
   <section className="caroussel_area">
-  <Slider {...settings}>
+ 
         <div className="white-blinding">
-          <img width="100%" height="80%" src="../images/pngfuel.com.png"></img>
+          <img width="100%"  src="../images/pngfuel.com.png"></img>1
         </div>
-        <div className="white-blinding">
-        <img width="100%" height="80%" src="../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png"></img>
+        <div className="black-purple-boot">
+        <img width="100%"  src="../images/kisspng-snowboard-boots-thirtytwo-burton-snowboards-burton-5c43989637e3c9.6418575215479338462289.png"></img>
         </div>
-        <div>
-        <img width="100%" height="80%" src="../images/../images/pngguru.com-2.png"></img>
+        <div className="red-snowboard">
+        <img width="100%"  src="../images/../images/pngguru.com-2.png"></img>
         </div>
-        <div>
-        <img width="100%" height="80%" src="../images/kisspng-nitro-snowboards-snow-boot-snowboarding-faint-5b21fd5232e517.6803695715289541942085.png"></img>
+        <div className="brown-boot">
+        <img width="100%"  src="../images/kisspng-nitro-snowboards-snow-boot-snowboarding-faint-5b21fd5232e517.6803695715289541942085.png"></img>
         </div>
-        <div>
-           <img width="100%" height="80%" src="../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"></img>
+        <div className="purple-snowboard">
+           <img width="100%"  src="../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"></img>
         </div>
         
-      </Slider>
+      
   </section>
  
   )

@@ -1,16 +1,27 @@
 .caroussel_area{
     height: 60%;
     width: 100%;
+    background-color: pink;;
     
  .slick-slider{
-    .slick-slide{
-        // height: 300px;
+     .slick-list{
+         height: 100%;
+   
+         .slick-track{
+            //  width: 100%; 
+             .slick-slide{
+                //  width: 100%;
+        
     }
-     height: 100%;
-    //  .white-blinding{
-        //  background-image: url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png");
-    //      background-size: cover;;
-    // }
+         }
+     }
+
+    
+     
+     .white-blinding{
+         background-image: url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png");
+         background-size: cover;
+    }
  }
 
 }
