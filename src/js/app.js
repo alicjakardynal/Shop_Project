@@ -205,14 +205,20 @@ class Articles extends Component {
  
  
 
+
 class CarousselWithItems extends  Component{
 
 render(){
- 
+ let arrayWithSrcOfImages=["../images/pngfuel.com.png","../images/kisspng-snowboard-boots-thirtytwo-burton-snowboards-burton-5c43989637e3c9.6418575215479338462289.png","../images/../images/pngguru.com-2.png","../images/kisspng-nitro-snowboards-snow-boot-snowboarding-faint-5b21fd5232e517.6803695715289541942085.png","../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"];
   return(
   <section className="caroussel_area">
- 
-        <div className="white-blinding">
+
+ {arrayWithSrcOfImages.map((item,index)=>{
+   return(
+   <> <div style={{backgroundImage: `url(${item})`}}>{index} </div></>
+   )
+ })}
+        {/* <div className="white-blinding">
           <img width="100%"  src="../images/pngfuel.com.png"></img>1
         </div>
         <div className="black-purple-boot">
@@ -226,7 +232,7 @@ render(){
         </div>
         <div className="purple-snowboard">
            <img width="100%"  src="../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"></img>
-        </div>
+        </div> */}
         
       
   </section>

@@ -1,20 +1,18 @@
 .caroussel_area{
     height: 60%;
     width: 100%;
-    background-color: pink;;
-    
- .slick-slider{
-     .slick-list{
-         height: 100%;
-   
-         .slick-track{
-            //  width: 100%; 
-             .slick-slide{
-                //  width: 100%;
-        
-    }
-         }
+    background-color: pink;
+    display: flex;
+    justify-content: space-around;
+
+     div{
+width: 33%;
+padding: 20px;
+height: 100%;
+box-sizing: border-box;
+background-size: cover;
      }
+ 
 
     
      
@@ -22,6 +20,6 @@
          background-image: url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png");
          background-size: cover;
     }
- }
+ 
 
 }
