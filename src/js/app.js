@@ -11,9 +11,29 @@ import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
 import { Hash } from "crypto";
 import Fade from "react-reveal/Fade";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 
-
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 
 
@@ -118,7 +138,7 @@ class ShopHeader extends Component {
 class ShopBanner extends Component {
   state = {
     bannerScrolledPosition: 0
-  };
+    };
   componentDidMount() {
     window.addEventListener("scroll", () => {
       let scrol = window.pageYOffset;
@@ -127,6 +147,16 @@ class ShopBanner extends Component {
         bannerScrolledPosition: scrol * 0.1
       });
     });
+
+    fetch("http://localhost:3000/products")
+    .then(r => r.json())
+    .then(ip => {
+      console.log(ip);
+      console.log(ip[0].imgSrc)
+    })
+    // .catch(err => {
+    //   console.log(err);
+    // });
   }
   render() {
     return (
@@ -142,6 +172,7 @@ class ShopBanner extends Component {
           <h1>SALE</h1>
         </div>
       </div>
+      
     );
   }
 }
@@ -209,31 +240,15 @@ class Articles extends Component {
 class CarousselWithItems extends  Component{
 
 render(){
- let arrayWithSrcOfImages=["../images/pngfuel.com.png","../images/kisspng-snowboard-boots-thirtytwo-burton-snowboards-burton-5c43989637e3c9.6418575215479338462289.png","../images/../images/pngguru.com-2.png","../images/kisspng-nitro-snowboards-snow-boot-snowboarding-faint-5b21fd5232e517.6803695715289541942085.png","../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"];
+ 
   return(
   <section className="caroussel_area">
-
- {arrayWithSrcOfImages.map((item,index)=>{
-   return(
-   <> <div style={{backgroundImage: `url(${item})`}}>{index} </div></>
-   )
- })}
-        {/* <div className="white-blinding">
-          <img width="100%"  src="../images/pngfuel.com.png"></img>1
-        </div>
-        <div className="black-purple-boot">
-        <img width="100%"  src="../images/kisspng-snowboard-boots-thirtytwo-burton-snowboards-burton-5c43989637e3c9.6418575215479338462289.png"></img>
-        </div>
-        <div className="red-snowboard">
-        <img width="100%"  src="../images/../images/pngguru.com-2.png"></img>
-        </div>
-        <div className="brown-boot">
-        <img width="100%"  src="../images/kisspng-nitro-snowboards-snow-boot-snowboarding-faint-5b21fd5232e517.6803695715289541942085.png"></img>
-        </div>
-        <div className="purple-snowboard">
-           <img width="100%"  src="../images/../images/pol_pl_Deska-snowboardowa-Nitro-Cinema-10741_1.png"></img>
-        </div> */}
-        
+<Carousel responsive={responsive}>
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</Carousel>;
       
   </section>
  

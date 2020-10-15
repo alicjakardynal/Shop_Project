@@ -37,7 +37,7 @@ module.exports = {
 
       // scss
       {
-        test: /\.scss$/,
+        test: /\.(sass|css|scss)$/,
         use: [
           'style-loader', // dopisz do strony css za pomocą <style/>
           'css-loader', // odczytaj css
@@ -52,6 +52,7 @@ module.exports = {
           'sass-loader', // zamien scss -> css
         ]
       },
+   
 
       // obrazy
       {

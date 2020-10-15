@@ -1,0 +1,264 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": "src/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "ridingStyle":"freestyle"
+      },
+        {
+        "id": 2,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 3,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 4,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 5,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 6,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 7,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 8,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      }, {
+        "id": 9,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 10,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 11,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 12,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 13,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 14,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+
+       {
+        "id": 15,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 16,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 17,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+
+      {
+        "id": 18,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      }, {
+        "id": 19,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 20,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 21,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 22,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+
+      {
+        "id": 23,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 24,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 25,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 26,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 27,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 28,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 29,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 30,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 31,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      },
+      {
+        "id": 32,
+        "name": "Gallardo",
+        "category": "Snowboard",
+        "brand":"Burton",
+        "price": "",
+        "imgSrc": ""
+      }
+
+     
+    ]
+}
