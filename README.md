@@ -1,6 +1,6 @@
 # Shop_Project
 
-My work is animated website of the online store with snowboarding equipment. I love snowboarding that is why i had these idea of create it and how can i help to make these shopping more satisfying.
+My work is animated website modeled on the online store with snowboarding equipment. I love snowboarding that is why i had these idea of create it and how can i help to make these shopping more satisfying.
 
 I am working with React Javascript CSS HTML.
 
