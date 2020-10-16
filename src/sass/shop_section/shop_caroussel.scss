@@ -1,25 +1,31 @@
-.caroussel_area{
+.carousel_area{
     height: 60%;
     width: 100%;
     background-color: pink;
     display: flex;
     justify-content: space-around;
+    z-index: -1;
 
-     div{
-width: 33%;
-padding: 20px;
-height: 100%;
-box-sizing: border-box;
-background-size: cover;
-     }
+//      div{
+// width: 33%;
+// padding: 20px;
+// height: 100%;
+// box-sizing: border-box;
+// background-size: cover;
+//      }
  
 
     
      
-     .white-blinding{
-         background-image: url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png");
-         background-size: cover;
-    }
+//      .white-blinding{
+//          background-image: url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png");
+//          background-size: cover;
+//     }
  
 
+}
+.product_in_carousel{
+    height: 30vh;
+    width: 30vw;
+    background-image:url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png") ;
 }

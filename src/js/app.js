@@ -125,16 +125,42 @@ class Shop extends Component {
 }
 
 class ShopHeader extends Component {
- git 
+  state={
+    headerScrolledPosition: 0
+      }
+     
+      componentDidMount() {
+        window.addEventListener("scroll", () => {
+          let scrol = window.pageYOffset;
+          if(scrol !== 0){
+            this.setState({
+              headerScrolledPosition: 1
+            })
+          }else{
+            this.setState({
+              headerScrolledPosition:0
+            })
+          }
+       
+        });
+    
+    
+      }
+     
   render() {
     return (
-      <div className="shop_header">
+      <div className={ this.state.headerScrolledPosition === 0 ? "shop_header" :"shop_header change_back_color"}>
         <Navigation />
         <AccountStripe items={this.props.items} />
       </div>
     );
   }
 }
+
+
+
+
+
 class ShopBanner extends Component {
   state = {
     bannerScrolledPosition: 0
@@ -148,15 +174,7 @@ class ShopBanner extends Component {
       });
     });
 
-    fetch("http://localhost:3000/products")
-    .then(r => r.json())
-    .then(ip => {
-      console.log(ip);
-      console.log(ip[0].imgSrc)
-    })
-    // .catch(err => {
-    //   console.log(err);
-    // });
+
   }
   render() {
     return (
@@ -242,15 +260,19 @@ class CarousselWithItems extends  Component{
 render(){
  
   return(
-  <section className="caroussel_area">
-<Carousel responsive={responsive}>
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-  <div>Item 4</div>
-</Carousel>;
+  
+<Carousel
+ 
+  responsive={responsive}
+  
+>
+  <div className="product_in_carousel">Item 1</div>
+  <div className="product_in_carousel">Item 2</div>
+  <div className="product_in_carousel">Item 3</div>
+  <div className="product_in_carousel">Item 4</div>
+</Carousel>
       
-  </section>
+
  
   )
 }
@@ -363,10 +385,11 @@ render(){
 // }
 
 class Navigation extends Component {
+  
   render() {
     return (
       <div className="navigation">
-        <div className="snowboarder_img"></div>
+       
         <ul>
           <li>
             <NavLink className="navigation_options" exact to="/snowboards">

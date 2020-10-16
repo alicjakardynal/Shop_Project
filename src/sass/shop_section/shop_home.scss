@@ -1,74 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 .shopView {
   height: 100vh;
   // width: 100%;
-  
-  .shop_header {
-    height: 10%;
-    width: 100%;
-    background-color: white;
-    position: fixed;
+}
+.shop_header {
+  height: 10%;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  // border: 2px solid rgb(189, 181, 181);
+  box-shadow: -5px -5px 22px -2px rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  color: white;
+
+  .entering_stripe {
+    position: relative;
+
+    background-color: transparent;
     display: flex;
-    justify-content: space-between;
-    border: 2px solid rgb(189, 181, 181);
-    box-shadow: -5px -5px 22px -2px rgba(0,0,0,0.75);
-    z-index: 1;
+    justify-content: flex-end;
 
-    .entering_stripe {
+    i {
+      font-size: 1rem;
+      padding: 10px 20px;
+      color: white;
+    }
+    .account::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f0dd";
       position: relative;
-
-      background-color: transparent;
-      display: flex;
-      justify-content: flex-end;
-
-      i {
-        font-size: 1rem;
-        padding: 10px 20px;
-        color: black;
-      }
-      .account::after {
-        font-family: "Font Awesome 5 Free";
-        content: "\f0dd";
-        position: relative;
-        padding: 5px;
-        font-size: 1.4rem;
-        font-weight: 900;
+      padding: 5px;
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+  }
+}
+.change_back_color {
+  background-color: white;
+  .entering_stripe {
+    i {
+      color: black;
+    }
+  }
+  .navigation{
+    ul{
+      li{
+        a{
+          color: black;
+        }
       }
     }
   }
-  
-    
-  
-  .navigation {
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  .snowboarder_img {
+    background-image: url("../images/czemuuuuuuu.png");
+    top: 4px;
+    height: 89%;
+    width: 56px;
+    z-index: 2;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    left: 20px;
+  }
+
+  ul {
     display: flex;
-    align-items: center;
-    .snowboarder_img {
-      background-image: url("../images/a3899072f7c2371721c493c529944516.jpg");
-      top: 4px;
-      height: 89%;
-      width: 54px;
-      z-index: 2;
-      background-position: center;
-      background-size: cover;
-      position: relative;
-      left: 20px;
-    }
+    justify-content: center;
+    padding: 0 50px;
+  }
 
-    ul {
-      display: flex;
-      justify-content: center;
-      padding: 0 50px;
-    }
-
-    li {
-      padding: 30px 20px;
-    }
-    .navigation_options {
-      text-decoration: none;
-      color: black;
-      font-size: 1.5rem;
-    }
+  li {
+    padding: 30px 20px;
+  }
+  .navigation_options {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
   }
 }
 
@@ -177,102 +192,96 @@
   background-attachment: fixed;
   display: flex;
   align-items: center;
-.sale{
-  height: 5%;;
-  width: 100%;
-  background-color: rgb(50, 196, 171);
-  opacity: 0.4;
-  display: flex;
-  justify-content: space-around;
-align-items:center;
-font-weight: 700;
-font-size: 1.5rem;
-h1{
-  animation: sale 4s linear infinite alternate-reverse;
-  // transform: translateX(300%)
-}
-
-}
-}
-//Articles
-.background_for_articles{
-  
-  box-sizing: border-box;
-  
-.first_article{
-  height: 60vh;
-  width: 100%;
-  display: flex;
-  position: relative;
-  align-items: center;
-  .header_for_articles{
-height: 85%;
-width: 85%;
-background-color: rgb(6, 31, 116);
-text-align: center;
-position: relative;
-left: 15%;
-display: flex;
-align-items: center;
-
-
-}
-.img_desert{
-  width: 50%;
-  background-image: url("../images/5ec83cb33ae28.jpg");
-  height: 100%;
-  background-size: cover;
-  position: relative;
-  right: 10%;
-}
-
-}
-.second_article{
-  height: 60vh;
-  width: 100%;
-  display: flex;
-  position: relative;
-  align-items: center;
-  padding: 50px 0;
-
-  .img_snowboard{
-    background-image: url("../images/5ec83c99140e3.jpg");
-    width: 49%;
-    height: 100%;
-    background-size: cover;
-  position: relative;
-  left: 10%
-  }
-  .header_for_articles{
-    height: 69%;
-    width: 36%;
-    background-color: #0f8b51;
-    text-align: center;
-    position: relative;
+  .sale {
+    height: 5%;
+    width: 100%;
+    background-color: rgb(50, 196, 171);
+    opacity: 0.4;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    z-index: -1;
-    h2{
-      padding: 120px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    h1 {
+      animation: sale 4s linear infinite alternate-reverse;
+      // transform: translateX(300%)
     }
   }
 }
-h2{
-  font-size: 1.6rem;
-  color: white;
-  position: relative;
-left: 12%;
-font-family: 'Black Ops One', cursive;
-font-weight: 400;
-}}
+//Articles
+.background_for_articles {
+  box-sizing: border-box;
 
-
-
-@keyframes sale{
-  0%{
-    transform: translateX(100%)
+  .first_article {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    .header_for_articles {
+      height: 85%;
+      width: 85%;
+      background-color: rgb(6, 31, 116);
+      text-align: center;
+      position: relative;
+      left: 15%;
+      display: flex;
+      align-items: center;
+    }
+    .img_desert {
+      width: 50%;
+      background-image: url("../images/5ec83cb33ae28.jpg");
+      height: 100%;
+      background-size: cover;
+      position: relative;
+      right: 10%;
+    }
   }
-  100%{
-    transform: translateX(-100%)
+  .second_article {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 50px 0;
+
+    .img_snowboard {
+      background-image: url("../images/5ec83c99140e3.jpg");
+      width: 49%;
+      height: 100%;
+      background-size: cover;
+      position: relative;
+      left: 10%;
+    }
+    .header_for_articles {
+      height: 69%;
+      width: 36%;
+      background-color: #0f8b51;
+      text-align: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      z-index: -1;
+      h2 {
+        padding: 120px;
+      }
+    }
+  }
+  h2 {
+    font-size: 1.6rem;
+    color: white;
+    position: relative;
+    left: 12%;
+    font-family: "Black Ops One", cursive;
+    font-weight: 400;
+  }
+}
+
+@keyframes sale {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

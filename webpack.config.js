@@ -52,11 +52,11 @@ module.exports = {
           'sass-loader', // zamien scss -> css
         ]
       },
-   
+    
 
       // obrazy
       {
-        test: /\.(jpg|jpeg|gif|png)$/,
+        test: /\.(jpg|jpeg|gif|png)$/, 
         use: {
           loader: 'file-loader',
           options: {
