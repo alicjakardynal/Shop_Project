@@ -1,10 +1,13 @@
-.carousel_area{
+.carousel-container{
     height: 60%;
     width: 100%;
-    background-color: pink;
-    display: flex;
-    justify-content: space-around;
-    z-index: -1;
+
+    box-sizing: border-box;
+    margin: 20px;
+    li{
+        left: 4%;
+    }
+    
 
 //      div{
 // width: 33%;
@@ -12,11 +15,7 @@
 // height: 100%;
 // box-sizing: border-box;
 // background-size: cover;
-//      }
- 
-
-    
-     
+//      }  
 //      .white-blinding{
 //          background-image: url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png");
 //          background-size: cover;
@@ -24,8 +23,44 @@
  
 
 }
-.product_in_carousel{
-    height: 30vh;
-    width: 30vw;
+.product{
+    height: 50vh;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    align-items: center;
+  .product_img{
+    height: 70%;
+    width: 70%;
     background-image:url("../images/PngJoy_lasso-snowboard-boots-transparent-png_11193978.png") ;
+    background-size: contain;
+    padding: 50px;
+    background-repeat: no-repeat;
+}  
+ button{
+     background:transparent;
+     text-decoration: none;
+      color: black;
+      padding: 10px;
+      border: 2px solid #946544;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: 0.25s;
+      color:  #413329;
+        border-color:#946544 ;
+   
+     &:hover{
+        box-shadow: 0 0.5em 0.5em -0.4em adjust-hue( black, 45deg);
+        transform: translateY(-0.25em);
+        color:  black;
+        border-color:black;
+      
+     }
+     h3{
+         padding: 10px;
+         font-size: 1rem;
+     }
+ }
 }

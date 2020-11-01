@@ -189,6 +189,7 @@ class ShopBanner extends Component {
           <h1>SALE</h1>
           <h1>SALE</h1>
         </div>
+        <div></div>
       </div>
       
     );
@@ -260,18 +261,56 @@ class CarousselWithItems extends  Component{
 render(){
  
   return(
-  
+   
+  <div className="carousel">
 <Carousel
- 
+ dotListClass="custom-dot-list-style"
+ itemClass="carousel-item-padding-40-px"
   responsive={responsive}
-  
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
 >
-  <div className="product_in_carousel">Item 1</div>
-  <div className="product_in_carousel">Item 2</div>
-  <div className="product_in_carousel">Item 3</div>
-  <div className="product_in_carousel">Item 4</div>
-</Carousel>
-      
+  
+          
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <button>Add to Card</button>
+  </div>
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <button>Add to Card</button>
+  </div>
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <button>Add to Card</button>
+  </div>
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <button>Add to Card</button>
+  </div>
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <button>Add to Card</button>
+  </div>
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <h3>Price: 200$</h3>
+    <button>Add to Card</button>
+  </div>
+  <div className="product">
+    <h2> Shoes Head Air Low</h2>
+    <div className="product_img"></div>
+    <button>Add to Card</button>
+  </div>
+ 
+</Carousel></div>
+      // 
 
  
   )
