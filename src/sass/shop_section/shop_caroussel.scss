@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 20px;
     li{
-        left: 4%;
+        left: 2%;
     }
     
 
@@ -25,7 +25,7 @@
 }
 .product{
     height: 50vh;
-    width: 30%;
+    width: 70%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -34,10 +34,10 @@
   .product_img{
     height: 70%;
     width: 70%;
-    
     background-size: contain;
     padding: 50px;
     background-repeat: no-repeat;
+    background-position-x: center;
 }  
  button{
      background:transparent;
@@ -56,11 +56,11 @@
         transform: translateY(-0.25em);
         color:  black;
         border-color:black;
-      
+      }
      }
      h3{
          padding: 10px;
          font-size: 1rem;
      }
- }
+ 
 }
