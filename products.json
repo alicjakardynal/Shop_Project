@@ -2,60 +2,74 @@
     "products": [
       {
         "id": 1,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "All High",
+        "category": "shoes",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": "src/images/products/shoes/burton damskei miekkie felix boa.jpg",
-        "ridingStyle":"freestyle"
+        "price": "200 $",
+        "imgSrc": "/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "ridingStyle":"freestyle",
+        "gender":"woman"
+        
       },
         {
         "id": 2,
         "name": "Gallardo",
-        "category": "Snowboard",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": "820 $",
+        "imgSrc": "/src/sass/images/products/snowboard/burton all damska.jpg",
+        "gender":"woman",
+        "ridingStyle":"all"
       },
       {
         "id": 3,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Hard Man",
+        "category": "bindings",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": "150 $",
+        "imgSrc": "/src/sass/images/products/bindings/burton twarde meskie.jpg",
+        "gender":"man",
+        "ridingStyle":"freeride"
       },
       {
         "id": 4,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Paradise",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": "1200 $",
+        "imgSrc": "/src/sass/images/products/snowboard/capita freestyle damska paradise.jpg",
+        "gender":"woman",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 5,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Btx",
+        "category": "snowboard",
+        "brand":"GNU",
+        "price": "999 $",
+        "imgSrc": "/src/sass/images/products/snowboard/gnu all meska Btx.jpg",
+        "gender":"man",
+        "ridingStyle":"all"
       },
       {
         "id": 6,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Soft New",
+        "category": "shoes",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": "250 $",
+        "imgSrc": "/src/sass/images/products/shoes/burton damskie miekkie.jpg",
+        "gender":"woman",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 7,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Exit",
+        "category": "shoes",
+        "brand":"Thirtytwo",
+        "price": "320 $",
+        "imgSrc": "/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
+        "gender":"man",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 8,

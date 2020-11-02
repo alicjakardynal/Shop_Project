@@ -257,8 +257,36 @@ class Articles extends Component {
 
 
 class CarousselWithItems extends  Component{
+state={
+  arrayWithProducts:[],
+  newArrayWithProductsToCarousel:[],
+}
 
+  componentDidMount(){
+    fetch("http://localhost:3000/products")
+    .then(resp=>{
+      return resp.json();
+    }).then(obj =>{
+      console.log(obj);
+      
+      for(let i=0;i<7;i++){
+        
+        this.setState({
+          arrayWithProducts:[...this.state.arrayWithProducts,obj[i]]
+        })
+      }
+    
+    })
+    
+  }
 render(){
+  let productListJsx = this.state.arrayWithProducts.map( product =>
+    <div className="product">
+    <h2> {product.brand} {product.name}</h2>
+    <div style={{backgroundImage: `url("${product.imgSrc}")`}} className="product_img"></div>
+    <h3>Price: {product.price}</h3>
+    <button>Add to Card</button>
+  </div>);
  
   return(
    
@@ -270,47 +298,11 @@ render(){
   containerClass="carousel-container"
   removeArrowOnDeviceType={["tablet", "mobile"]}
 >
-  
-          
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <button>Add to Card</button>
-  </div>
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <button>Add to Card</button>
-  </div>
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <button>Add to Card</button>
-  </div>
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <button>Add to Card</button>
-  </div>
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <button>Add to Card</button>
-  </div>
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <h3>Price: 200$</h3>
-    <button>Add to Card</button>
-  </div>
-  <div className="product">
-    <h2> Shoes Head Air Low</h2>
-    <div className="product_img"></div>
-    <button>Add to Card</button>
-  </div>
+{productListJsx}
+
+</Carousel>
+</div>
  
-</Carousel></div>
-      // 
 
  
   )
