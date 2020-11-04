@@ -81,9 +81,7 @@ class StartingPage extends Component {
           />
           <Route exact path="/freeride" component={FreeridePage} />
           <Route exact path="/freestyle" component={FreestylePage} />
-          <Route
-            exact
-            path="/basket"
+          <Route exact path="/basket"
             render={props => (
               <BasketInside
                 {...props}
@@ -102,11 +100,12 @@ class Shop extends Component {
   render() {
     return (
       <section className="shopView">
-        <ShopHeader />
+        <ShopHeader items={this.props.items}/>
         <ShopBanner />
         <NotesWithIcons />
         <Articles />
-        <CarousselWithItems/>
+        <CarousselWithItems addItems={this.props.addItems}/>
+        <Footer/>
        
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
@@ -126,7 +125,7 @@ class Shop extends Component {
 
 class ShopHeader extends Component {
   state={
-    headerScrolledPosition: 0
+    headerScrolledPosition: 0,
       }
      
       componentDidMount() {
@@ -148,6 +147,7 @@ class ShopHeader extends Component {
       }
      
   render() {
+    const {items}=this.props
     return (
       <div className={ this.state.headerScrolledPosition === 0 ? "shop_header" :"shop_header change_back_color"}>
         <Navigation />
@@ -182,6 +182,8 @@ class ShopBanner extends Component {
         className="banner"
         style={{ backgroundPositionY: this.state.bannerScrolledPosition }}
       >
+        <h2>SO!</h2>
+        <h2>SNOW</h2>
         <div className="sale">
           <h1>SALE</h1>
           <h1>SALE</h1>
@@ -261,7 +263,10 @@ state={
   arrayWithProducts:[],
   newArrayWithProductsToCarousel:[],
 }
-
+handleBuyButton = (productDetails) => {
+  console.log(productDetails)
+      this.props.addItems(productDetails)
+    };
   componentDidMount(){
     fetch("http://localhost:3000/products")
     .then(resp=>{
@@ -285,7 +290,7 @@ render(){
     <h2> {product.brand} {product.name}</h2>
     <div style={{backgroundImage: `url("${product.imgSrc}")`}} className="product_img"></div>
     <h3>Price: {product.price}</h3>
-    <button>Add to Card</button>
+    <button onClick={(e) => this.handleBuyButton(product)}>Add to Card</button>
   </div>);
  
   return(
@@ -308,6 +313,196 @@ render(){
   )
 }
 }
+
+class Footer extends Component{
+
+  render(){
+    return(
+
+      <>
+      <div className="footer">
+        <div className="newsletter">
+          <h3>Newsletter</h3>
+          <p>Sign to our newsletter to get all best news and prices</p>
+          <form>
+            <input classname="email" type="email" placeholder="Write your email"></input>
+            <input className="submit" type="submit" value="Send"></input>
+          </form>
+        </div>
+        <div className="footer_info">
+          <div>
+            <h3>Contact</h3>
+            <p><i class="fas fa-phone"></i>xxx xxx xxx</p>
+            <p><i class="fas fa-envelope-open-text"></i>xxx@gmail.com</p>
+          </div>
+          <div>
+            <p>Delivery Options</p>
+            <p>Return Policy</p>
+            <p>Store Locations</p>
+            <p>Help & FAQs</p>
+          </div>
+          <div>
+            <h3>SO!</h3>
+            <h3>SNOW</h3>
+            <div>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      </>
+    )
+  }
+}
+
+
+class Navigation extends Component {
+  
+  render() {
+    return (
+      <div className="navigation">
+       
+        <ul>
+          <li>
+            <NavLink className="navigation_options" exact to="/snowboards">
+              Snowboards
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navigation_options" exact to="/shoes">
+              Shoes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="navigation_options" exact to="/blindings">
+              Bindings
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+class AccountStripe extends Component {
+  state = {
+    pageScrolled: false,
+    
+  };
+  render() {
+    const { items } = this.props;
+    return (
+      <section className="entering_stripe">
+        <div>
+          <Account />
+          <NavLink exact to="/basket">
+            <i className="fas fa-shopping-basket">
+              <span>({items.length})</span>
+            </i>
+          </NavLink>
+        </div>
+      </section>
+    );
+  }
+}
+
+class Account extends Component {
+  render() {
+    return <i className="far fa-user account"> Account</i>;
+  }
+}
+class BasketInside extends Component {
+  // sumPrice=()=>{
+
+  // }
+  render() {
+    const { items } = this.props;
+    return (
+      <section className="basket">
+      <ShopHeader items={this.props.items}/>
+      
+        <div className="basket_area">
+          <div className="product_list">
+          <ol>
+            <div className="headings">
+              <h2>Brand and Name</h2>
+              <h2>Price</h2>
+              <h2>Amount</h2>
+            </div>
+            {items.map((product, index) => (
+              <ImportedProduct
+                key={index}
+                id={product.id}
+                name={product.name}
+                imageSourse={product.imgSrc}
+                price={product.price}
+                delete={this.props.delete}
+                brand={product.brand}
+              />
+            ))}
+          </ol>
+          </div>
+          <div className="order_summary">
+              <h2>Your Order</h2>
+              <p>Products Price:  <span>250 $</span></p>
+              <p>Delivery Price: :  <span>10 $</span></p>
+              <p>SUM: :  <span>260 $</span></p>
+          </div>
+        </div>
+      </section>
+      
+    );
+  }
+}
+
+class ImportedProduct extends Component {
+  handleDeleteBtn = id => {
+    this.props.delete(id);
+  };
+
+  render() {
+    return (
+      <>
+        <div className="item_in_basket">
+          <img
+            className="item_img_in_basket"
+            src={this.props.imageSourse}
+          ></img>
+          <h2 className="item_name_in_basket">{this.props.brand} - {this.props.name}</h2>
+          <p className="item_price_in_basket"> {this.props.price}</p>
+          <div className="product_counter">
+            <i class="fas fa-long-arrow-alt-left"></i>
+    <p>1</p>
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </div>
+          <button
+            onClick={() => this.handleDeleteBtn(this.props.id)}
+            className="btn_delete"
+          >
+            Delete Product
+          </button>
+        </div>
+      </>
+    );
+  }
+}
+class App extends Component {
+  render() {
+    return (
+      <>
+        <StartingPage />
+      </>
+    );
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  ReactDOM.render(<App />, document.getElementById("app"));
+});
+
+
 //THESE THREE PRODUCTS TO MODERETE LATER
 
 // class ShopBackground extends Component {
@@ -414,122 +609,3 @@ render(){
 //     );
 //   }
 // }
-
-class Navigation extends Component {
-  
-  render() {
-    return (
-      <div className="navigation">
-       
-        <ul>
-          <li>
-            <NavLink className="navigation_options" exact to="/snowboards">
-              Snowboards
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="navigation_options" exact to="/shoes">
-              Shoes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="navigation_options" exact to="/blindings">
-              Bindings
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-}
-
-class AccountStripe extends Component {
-  state = {
-    pageScrolled: false
-  };
-  render() {
-    const { items } = this.props;
-    return (
-      <section className="entering_stripe">
-        <div>
-          <Account />
-          <NavLink exact to="/basket">
-            <i className="fas fa-shopping-basket">
-              {/* <span>({items.length})</span> */}
-            </i>
-          </NavLink>
-        </div>
-      </section>
-    );
-  }
-}
-
-class Account extends Component {
-  render() {
-    return <i className="far fa-user account"> Account</i>;
-  }
-}
-class BasketInside extends Component {
-  render() {
-    const { items } = this.props;
-    return (
-      <section className="firsView">
-        <div>
-          PIĘKNIE WYSTYLIZOWANY BASKET
-          <ol>
-            {items.map((product, index) => (
-              <ImportedProduct
-                key={index}
-                id={product.id}
-                name={product.name}
-                imageSourse={product.imageSourse}
-                price={product.price}
-                delete={this.props.delete}
-              />
-            ))}
-          </ol>
-        </div>
-      </section>
-    );
-  }
-}
-
-class ImportedProduct extends Component {
-  handleDeleteBtn = id => {
-    this.props.delete(id);
-  };
-
-  render() {
-    return (
-      <>
-        <div className="item_in_basket">
-          <img
-            className="item_img_in_basket"
-            src={this.props.imageSourse}
-          ></img>
-          <h2 className="item_name_in_basket">{this.props.name}</h2>
-          <p className="item_price_in_basket">Price: {this.props.price}</p>
-          <button
-            onClick={() => this.handleDeleteBtn(this.props.id)}
-            className="btn_delete"
-          >
-            Delete Product
-          </button>
-        </div>
-      </>
-    );
-  }
-}
-class App extends Component {
-  render() {
-    return (
-      <>
-        <StartingPage />
-      </>
-    );
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  ReactDOM.render(<App />, document.getElementById("app"));
-});

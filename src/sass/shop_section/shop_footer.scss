@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+.footer{
+    clear: both;
+    position: relative;
+    height: 400px;
+    margin-top: -300px;
+    background-color: rgb(170, 209, 203);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    .newsletter{
+        padding-bottom: 50px;
+        text-align: center;    
+        h3{
+            font-size: 1.3rem;
+            font-weight: 600;
+        }    
+        p{
+            padding: 20px;
+        }
+        input{
+            padding: 15px 30px;
+            text-decoration: none;
+            box-shadow: none;border: 3px solid rgb(32, 39, 37);
+        }
+       
+        input[type=submit]{
+           border-color: black;
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            
+        }
+    }
+    .footer_info{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        div{
+            padding: 0 100px;
+            text-align: center;
+         &:first-of-type{
+             
+             h3{
+                 font-size: 1.2rem;
+                 font-weight: 600;
+                 padding: 20px 0;
+             }
+             p{
+                 font-size: 1rem;
+                 padding: 10px;
+             }
+             i{
+                 padding: 0 10px 0 0;
+             }
+
+         }  
+         &:nth-of-type(2) {
+            p{
+                padding: 15px 0;
+                text-align: left;
+                transition: 0.25s;
+            }
+            @for $i from 1 through 4{
+                p:nth-of-type(#{$i}){
+                    &:hover{
+                transform: translateY(-0.25em);
+            }
+                }
+            }
+            
+         }
+         &:nth-of-type(3){
+            h3{
+                font-family: 'Fredericka the Great', cursive;
+                font-size: 3rem;
+                text-align: left;
+            }
+            div{
+                padding: 30px 0;
+                i{
+                    font-size: 2rem;
+                    padding: 0 45px 0 0;
+                    transition: 1s;
+                    
+    
+                }
+                @for $i from 1 through 3{
+                    i:nth-of-type(#{$i}){
+                        &:hover{
+                    color: white;
+                }
+            }
+            
+         }
+        }
+
+    }
+}
+    }
+}
+    

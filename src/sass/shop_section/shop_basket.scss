@@ -1,0 +1,85 @@
+.basket{
+    .shop_header{
+        .entering_stripe {
+              i{
+                color: black;
+            }
+          }
+          .navigation{
+            ul{
+                li{
+                  a{
+                      color: black;
+                  }}}}
+          }
+
+          .basket_area{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            .product_list{
+                padding-top: 150px;
+                width: 70%;
+                .headings{
+                    display: flex;
+                    padding: 10px;
+                    font-size: 1rem;
+                    h2:first-of-type{
+                        position: relative;
+                        left: 22%;
+                        
+                    }
+                    h2:nth-of-type(2){
+                        position: relative;
+                        left: 34%;
+                        
+                    }
+                    h2:nth-of-type(3){
+                        position: relative;
+                        left: 45%;
+                        
+                    }
+                }
+            }
+            .order_summary{
+                border-radius:10px;
+                position: fixed;
+                right: 0;
+                width: 25%;
+                background-color: #b3c6df;
+                height: 70vh;
+                margin-top:150px;
+                color: white;
+                transform: translate3d(100%,0,0);
+                animation: summary  0.5s 0.3s 1 ease forwards;
+                
+                h2{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    text-align: center;
+                    padding: 50px 0 200px 0;
+                }
+                p{
+                    font-size: 1.2rem;
+                    padding: 20px 15px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-bottom: 1px solid white;
+                    span{
+                        font-weight: 800;
+                        color: rgb(60, 60, 112);
+                        
+                    }
+                }
+                
+            }
+          }
+      }
+      @keyframes summary{
+        0% {
+            transform: translate3d(100%,0,0);
+        }
+        100% {
+            transform: translate3d(0,0,0);
+        }
+      }
