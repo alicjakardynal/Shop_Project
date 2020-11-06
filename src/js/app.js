@@ -262,6 +262,7 @@ class CarousselWithItems extends  Component{
 state={
   arrayWithProducts:[],
   newArrayWithProductsToCarousel:[],
+  
 }
 handleBuyButton = (productDetails) => {
   console.log(productDetails)
@@ -413,12 +414,63 @@ class Account extends Component {
     return <i className="far fa-user account"> Account</i>;
   }
 }
-class BasketInside extends Component {
-  // sumPrice=()=>{
 
-  // }
+
+class BasketInside extends Component {
+  state={
+    counter:1,
+    withoutDuplicates:[],
+  }
+
+  // deleteObject = id => {
+  //   const newBasket = this.state.objectArray.filter(product => {
+  //     return product.id !== id;
+  //   });
+  //   this.setState({
+  //     objectArray: newBasket
+  //   });
+  //   console.log("coś się usunęło");
+  // }; 
+ componentDidMount(){
+   const {items}=this.props;
+     this.handleProductAmount(items);
+ }
+
+
+
+  handleProductAmount=(arr)=>{
+   let newarr=[];    
+arr.forEach((element,index) => {
+element.amount=1;
+    if(arr.indexOf(element) != index ){
+            element.amount+=1
+    }
+else{
+  newarr.push(element);
+}
+
+})
+this.setState({
+  withoutDuplicates:newarr,
+  })
+ 
+}
+componentDidUpdate(prevState){
+  if (prevState.withoutDuplicates !== this.state.withoutDuplicates) {
+    console.log('pokemons state has changed.')
+  }
+  // const {ar}=this.state.withoutDuplicates;
+  // console.log(this.state.withoutDuplicates)
+  this.handleProductAmount(this.state.withoutDuplicates);
+}
+//coś tu z tymi counter poprawcowac i jak wracam na strone i klikam to sie od nowa dodaje a nie powinno
+
   render() {
-    const { items } = this.props;
+    
+     const { items } = this.props;
+     
+     
+
     return (
       <section className="basket">
       <ShopHeader items={this.props.items}/>
@@ -431,7 +483,7 @@ class BasketInside extends Component {
               <h2>Price</h2>
               <h2>Amount</h2>
             </div>
-            {items.map((product, index) => (
+            {this.state.withoutDuplicates.map((product, index) => (
               <ImportedProduct
                 key={index}
                 id={product.id}
@@ -440,6 +492,7 @@ class BasketInside extends Component {
                 price={product.price}
                 delete={this.props.delete}
                 brand={product.brand}
+                
               />
             ))}
           </ol>
