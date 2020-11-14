@@ -21,6 +21,15 @@
             .product_list{
                 padding-top: 150px;
                 width: 70%;
+             
+                .empty_basket{
+                font-size: 2rem;
+                width: 80%;
+                padding: 120px 120px 120px 300px;
+                }
+                .none_empty_basket{
+                 display: none;
+                } 
                 .headings{
                     display: flex;
                     padding: 10px;
@@ -83,3 +92,7 @@
             transform: translate3d(0,0,0);
         }
       }
+
+        
+
+        

@@ -42,6 +42,7 @@ class StartingPage extends Component {
     super(props);
     this.state = {
       objectArray: [],
+      arrayWithoutDuplicatesToShowInBasket:[],
       
     };
   }
@@ -55,15 +56,6 @@ class StartingPage extends Component {
     
   };
 
-  reduceCounter=(product)=>{
-   product.counter= product.counter - 1;
-   let index=this.state.objectArray.findIndex(x=>x.name==product.name);
-   let newArrayWithReducedCounter=this.state.objectArray;
-    newArrayWithReducedCounter.splice(index, 1);
-     this.setState({
-     objectArray:newArrayWithReducedCounter
-   })
-  }
 
   addCounter=(product)=>{
     product.counter= product.counter + 1;
@@ -83,16 +75,48 @@ class StartingPage extends Component {
       objectArray: newBasket
     });
     console.log("coś się usunęło");
-
-    //tutaj coś zeby znikneło z widoku renderowania utomatycznie.
-  };
-
-
-  changeCounter= ()=>{
+    let newArray = this.state.arrayWithoutDuplicatesToShowInBasket.filter(product => {
+      return product.id !== id;
+    });
     this.setState({
-            productCounterInBasket: this.state.counter + 1
-          })
+      arrayWithoutDuplicatesToShowInBasket: newArray
+    //tutaj coś zeby znikneło z widoku renderowania utomatycznie.
+  });
+}
+
+  productsToShowInBasket=()=>{
+    let newarr=[];    
+    this.state.objectArray.forEach((element,index) => {
+        element.amount=1;
+     if(this.state.objectArray.indexOf(element) != index ){
+             element.amount+=1
+     }
+ else{
+   newarr.push(element);
+ }
+ 
+ })
+ this.setState({
+   arrayWithoutDuplicatesToShowInBasket:newarr,
+   })
+  
+ }
+
+  reduceCounter=(product)=>{
+   product.counter= product.counter - 1;
+   if(product.counter === 0){
+     this.deleteObject(product.id);
+     console.log(product.id)
+   }
+   let index=this.state.objectArray.findIndex(x=>x.name==product.name);
+   let newArrayWithReducedCounter=this.state.objectArray;
+    newArrayWithReducedCounter.splice(index, 1);
+     this.setState({
+     objectArray:newArrayWithReducedCounter
+   })
+   
   }
+  
   // checkIfWasClicked= ()=>{
   //   if(this.state.isClicked==true){
   //     this.setState({
@@ -133,9 +157,11 @@ class StartingPage extends Component {
               <BasketInside
                 {...props}
                 items={this.state.objectArray}
+                itemsToShow={this.state.arrayWithoutDuplicatesToShowInBasket}
                 delete={this.deleteObject}
                 addCounter={this.addCounter}
                 reduceCounter={this.reduceCounter}
+                productsToShowInBasket={this.productsToShowInBasket}
               />
             )}
           />
@@ -502,7 +528,7 @@ class BasketInside extends Component {
   state={
        withoutDuplicates:[],
   }
-
+ 
   // deleteObject = id => {
   //   const newBasket = this.state.objectArray.filter(product => {
   //     return product.id !== id;
@@ -513,34 +539,36 @@ class BasketInside extends Component {
   //   console.log("coś się usunęło");
   // }; 
  componentDidMount(){
-   const {items}=this.props;
-     this.handleProductAmount(items);
+  //  const {items}=this.props;
+  const {itemsToShow}=this.props
+  
+     this.props.productsToShowInBasket();
 
  }
 
 
 
-  handleProductAmount=(arr)=>{
-   let newarr=[];    
-arr.forEach((element,index) => {
-element.amount=1;
-    if(arr.indexOf(element) != index ){
-            element.amount+=1
-    }
-else{
-  newarr.push(element);
-}
+//   handleProductAmount=(arr)=>{
+//    let newarr=[];    
+// arr.forEach((element,index) => {
+// element.amount=1;
+//     if(arr.indexOf(element) != index ){
+//             element.amount+=1
+//     }
+// else{
+//   newarr.push(element);
+// }
 
-})
-this.setState({
-  withoutDuplicates:newarr,
-  })
+// })
+// this.setState({
+//   withoutDuplicates:newarr,
+//   })
  
-}
+// }
 //local storage tutaj bo nie zapisuje po odswiezeniu
 
   render() {
-    
+    const {itemsToShow}=this.props
      const { items } = this.props;
      return (
       <section className="basket">
@@ -549,12 +577,13 @@ this.setState({
         <div className="basket_area">
           <div className="product_list">
           <ol>
-            <div className="headings">
+            <div className="headings ala">
               <h2>Brand and Name</h2>
               <h2>Price</h2>
               <h2>Amount</h2>
             </div>
-            {this.state.withoutDuplicates.map((product, index) => (
+            <div className={items.length == 0 ? "empty_basket" : "none_empty_basket"}>Your Basket Is Empty</div>
+            {itemsToShow.map((product, index) => (
               <ImportedProduct
                 key={index}
                 id={product.id}
