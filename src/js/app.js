@@ -41,25 +41,71 @@ class StartingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      objectArray: []
+      objectArray: [],
+      
     };
   }
 
-  addObject = product => {
+  addObject = (product,counter) => {
+    product.counter=counter;
+        let newObjectArray = [...this.state.objectArray, product];
+    this.setState({
+      objectArray: newObjectArray
+    });
+    
+  };
+
+  reduceCounter=(product)=>{
+   product.counter= product.counter - 1;
+   let index=this.state.objectArray.findIndex(x=>x.name==product.name);
+   let newArrayWithReducedCounter=this.state.objectArray;
+    newArrayWithReducedCounter.splice(index, 1);
+     this.setState({
+     objectArray:newArrayWithReducedCounter
+   })
+  }
+
+  addCounter=(product)=>{
+    product.counter= product.counter + 1;
     let newObjectArray = [...this.state.objectArray, product];
     this.setState({
       objectArray: newObjectArray
     });
-  };
+
+  }
+
+
   deleteObject = id => {
-    const newBasket = this.state.objectArray.filter(product => {
+    let newBasket = this.state.objectArray.filter(product => {
       return product.id !== id;
     });
     this.setState({
       objectArray: newBasket
     });
     console.log("coś się usunęło");
+
+    //tutaj coś zeby znikneło z widoku renderowania utomatycznie.
   };
+
+
+  changeCounter= ()=>{
+    this.setState({
+            productCounterInBasket: this.state.counter + 1
+          })
+  }
+  // checkIfWasClicked= ()=>{
+  //   if(this.state.isClicked==true){
+  //     this.setState({
+  //       counter: this.state.counter + 1
+  //     })
+     
+  //   }else{
+  //     this.setState({
+  //       isClicked:true
+  //     })
+      
+  //   }
+  //     }
 
   render() {
     return (
@@ -76,6 +122,7 @@ class StartingPage extends Component {
                 {...props}
                 addItems={this.addObject}
                 items={this.state.objectArray}
+                changeCounter={this.changeCounter}
               />
             )}
           />
@@ -87,6 +134,8 @@ class StartingPage extends Component {
                 {...props}
                 items={this.state.objectArray}
                 delete={this.deleteObject}
+                addCounter={this.addCounter}
+                reduceCounter={this.reduceCounter}
               />
             )}
           />
@@ -104,7 +153,7 @@ class Shop extends Component {
         <ShopBanner />
         <NotesWithIcons />
         <Articles />
-        <CarousselWithItems addItems={this.props.addItems}/>
+        <CarousselWithItems addItems={this.props.addItems} changeCounter={this.props.changeCounter}/>
         <Footer/>
        
         {/* <ShopBackground addItems={this.props.addItems} /> */}
@@ -264,9 +313,9 @@ state={
   newArrayWithProductsToCarousel:[],
   
 }
-handleBuyButton = (productDetails) => {
+handleBuyButton = (productDetails,counter) => {
   console.log(productDetails)
-      this.props.addItems(productDetails)
+      this.props.addItems(productDetails,counter)
     };
   componentDidMount(){
     fetch("http://localhost:3000/products")
@@ -287,12 +336,18 @@ handleBuyButton = (productDetails) => {
   }
 render(){
   let productListJsx = this.state.arrayWithProducts.map( product =>
-    <div className="product">
-    <h2> {product.brand} {product.name}</h2>
-    <div style={{backgroundImage: `url("${product.imgSrc}")`}} className="product_img"></div>
-    <h3>Price: {product.price}</h3>
-    <button onClick={(e) => this.handleBuyButton(product)}>Add to Card</button>
-  </div>);
+   
+   <ProductInCarousel
+    product={product}
+    brand={product.brand}
+    name={product.name}
+    img={product.imgSrc}
+    price={product.price}
+    handleBuyButton={this.handleBuyButton}
+    changeCounter={this.props.changeCounter}
+
+    />
+  );
  
   return(
    
@@ -313,6 +368,33 @@ render(){
  
   )
 }
+}
+
+
+class ProductInCarousel extends Component{
+  state={
+      counter:1
+    
+  }
+manageCounter=()=>{
+  this.setState({
+            counter: this.state.counter + 1
+          })
+
+
+}
+  
+  render(){
+    return(
+      <div className="product">
+      <h2> {this.props.brand} {this.props.name}</h2>
+      <div style={{backgroundImage: `url("${this.props.img}")`}} className="product_img"></div>
+      <h3>Price: {this.props.price}</h3>
+      <button onClick={() => { this.manageCounter(); this.props.handleBuyButton(this.props.product,this.state.counter);}}>Add to Card</button>
+    </div>
+
+    )
+  }
 }
 
 class Footer extends Component{
@@ -418,8 +500,7 @@ class Account extends Component {
 
 class BasketInside extends Component {
   state={
-    counter:1,
-    withoutDuplicates:[],
+       withoutDuplicates:[],
   }
 
   // deleteObject = id => {
@@ -434,6 +515,7 @@ class BasketInside extends Component {
  componentDidMount(){
    const {items}=this.props;
      this.handleProductAmount(items);
+
  }
 
 
@@ -455,23 +537,12 @@ this.setState({
   })
  
 }
-componentDidUpdate(prevState){
-  if (prevState.withoutDuplicates !== this.state.withoutDuplicates) {
-    console.log('pokemons state has changed.')
-  }
-  // const {ar}=this.state.withoutDuplicates;
-  // console.log(this.state.withoutDuplicates)
-  this.handleProductAmount(this.state.withoutDuplicates);
-}
-//coś tu z tymi counter poprawcowac i jak wracam na strone i klikam to sie od nowa dodaje a nie powinno
+//local storage tutaj bo nie zapisuje po odswiezeniu
 
   render() {
     
      const { items } = this.props;
-     
-     
-
-    return (
+     return (
       <section className="basket">
       <ShopHeader items={this.props.items}/>
       
@@ -492,6 +563,11 @@ componentDidUpdate(prevState){
                 price={product.price}
                 delete={this.props.delete}
                 brand={product.brand}
+                amount={product.counter}
+                addCounter={this.props.addCounter}
+                reduceCounter={this.props.reduceCounter}
+                product={product}
+
                 
               />
             ))}
@@ -526,9 +602,9 @@ class ImportedProduct extends Component {
           <h2 className="item_name_in_basket">{this.props.brand} - {this.props.name}</h2>
           <p className="item_price_in_basket"> {this.props.price}</p>
           <div className="product_counter">
-            <i class="fas fa-long-arrow-alt-left"></i>
-    <p>1</p>
-            <i class="fas fa-long-arrow-alt-right"></i>
+            <i class="fas fa-long-arrow-alt-left" onClick={()=>this.props.reduceCounter(this.props.product)}></i>
+              <p>{this.props.amount}</p>
+            <i class="fas fa-long-arrow-alt-right"  onClick={()=>this.props.addCounter(this.props.product)}></i>
           </div>
           <button
             onClick={() => this.handleDeleteBtn(this.props.id)}
