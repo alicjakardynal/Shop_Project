@@ -9,127 +9,123 @@ import BeginnerPage from "./components/IntroSection/BeginnerPage";
 import IntermediatePage from "./components/IntroSection/IntermediatePage";
 import FreeridePage from "./components/IntroSection/FreeridePage";
 import FreestylePage from "./components/IntroSection/FreestylePage";
-import { Hash } from "crypto";
-import Fade from "react-reveal/Fade";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 
+import Fade from "react-reveal/Fade";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 5
+    items: 5,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
+    items: 1,
+  },
 };
-
-
 
 class StartingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       objectArray: [],
-      arrayWithoutDuplicatesToShowInBasket:[],
-      
+      arrayWithoutDuplicatesToShowInBasket: [],
+      productsPrice: 0,
     };
   }
 
-  addObject = (product,counter) => {
-    product.counter=counter;
-        let newObjectArray = [...this.state.objectArray, product];
-    this.setState({
-      objectArray: newObjectArray
-    });
-    
-  };
-
-
-  addCounter=(product)=>{
-    product.counter= product.counter + 1;
+  addObject = (product, counter) => {
+    product.counter = counter;
     let newObjectArray = [...this.state.objectArray, product];
     this.setState({
-      objectArray: newObjectArray
+      objectArray: newObjectArray,
     });
+  };
 
-  }
+  addCounter = (product) => {
+    product.counter = product.counter + 1;
+    let newObjectArray = [...this.state.objectArray, product];
+    this.setState({
+      objectArray: newObjectArray,
+    });
+  };
 
-
-  deleteObject = id => {
-    let newBasket = this.state.objectArray.filter(product => {
+  deleteObject = (id) => {
+    let newBasket = this.state.objectArray.filter((product) => {
       return product.id !== id;
     });
     this.setState({
-      objectArray: newBasket
+      objectArray: newBasket,
     });
     console.log("coś się usunęło");
-    let newArray = this.state.arrayWithoutDuplicatesToShowInBasket.filter(product => {
-      return product.id !== id;
+    let newArray = this.state.arrayWithoutDuplicatesToShowInBasket.filter(
+      (product) => {
+        return product.id !== id;
+      }
+    );
+    this.setState({
+      arrayWithoutDuplicatesToShowInBasket: newArray,
+      //tutaj coś zeby znikneło z widoku renderowania utomatycznie.
+    });
+  };
+
+  productsToShowInBasket = () => {
+    let newarr = [];
+    this.state.objectArray.forEach((element, index) => {
+      element.amount = 1;
+      if (this.state.objectArray.indexOf(element) != index) {
+        element.amount += 1;
+      } else {
+        newarr.push(element);
+      }
     });
     this.setState({
-      arrayWithoutDuplicatesToShowInBasket: newArray
-    //tutaj coś zeby znikneło z widoku renderowania utomatycznie.
-  });
-}
+      arrayWithoutDuplicatesToShowInBasket: newarr,
+    });
+  };
 
-  productsToShowInBasket=()=>{
-    let newarr=[];    
-    this.state.objectArray.forEach((element,index) => {
-        element.amount=1;
-     if(this.state.objectArray.indexOf(element) != index ){
-             element.amount+=1
-     }
- else{
-   newarr.push(element);
- }
- 
- })
- this.setState({
-   arrayWithoutDuplicatesToShowInBasket:newarr,
-   })
-  
- }
-
-  reduceCounter=(product)=>{
-   product.counter= product.counter - 1;
-   if(product.counter === 0){
-     this.deleteObject(product.id);
-     console.log(product.id)
-   }
-   let index=this.state.objectArray.findIndex(x=>x.name==product.name);
-   let newArrayWithReducedCounter=this.state.objectArray;
+  reduceCounter = (product) => {
+    product.counter = product.counter - 1;
+    if (product.counter === 0) {
+      this.deleteObject(product.id);
+      console.log(product.id);
+    }
+    let index = this.state.objectArray.findIndex((x) => x.name == product.name);
+    let newArrayWithReducedCounter = this.state.objectArray;
     newArrayWithReducedCounter.splice(index, 1);
-     this.setState({
-     objectArray:newArrayWithReducedCounter
-   })
-   
-  }
-  
-  // checkIfWasClicked= ()=>{
-  //   if(this.state.isClicked==true){
-  //     this.setState({
-  //       counter: this.state.counter + 1
-  //     })
-     
-  //   }else{
-  //     this.setState({
-  //       isClicked:true
-  //     })
-      
-  //   }
-  //     }
+    this.setState({
+      objectArray: newArrayWithReducedCounter,
+    });
+    this.sumProductsPrice();
+  };
+
+  sumProductsPrice = () => {
+    let products = this.state.objectArray;
+
+    if (products.length != 0) {
+      const sum = products.reduce((x, y) => ({ price: x.price + y.price }));
+
+      console.log(sum);
+      this.setState({
+        productsPrice: sum.price,
+      });
+    } else {
+      this.setState({
+        productsPrice: 0,
+      });
+    }
+  };
 
   render() {
     return (
@@ -141,7 +137,7 @@ class StartingPage extends Component {
           <Route
             exact
             path="/shop"
-            render={props => (
+            render={(props) => (
               <Shop
                 {...props}
                 addItems={this.addObject}
@@ -152,8 +148,10 @@ class StartingPage extends Component {
           />
           <Route exact path="/freeride" component={FreeridePage} />
           <Route exact path="/freestyle" component={FreestylePage} />
-          <Route exact path="/basket"
-            render={props => (
+          <Route
+            exact
+            path="/basket"
+            render={(props) => (
               <BasketInside
                 {...props}
                 items={this.state.objectArray}
@@ -162,6 +160,8 @@ class StartingPage extends Component {
                 addCounter={this.addCounter}
                 reduceCounter={this.reduceCounter}
                 productsToShowInBasket={this.productsToShowInBasket}
+                sum={this.state.productsPrice}
+                sumProductsPrice={this.sumProductsPrice}
               />
             )}
           />
@@ -175,13 +175,16 @@ class Shop extends Component {
   render() {
     return (
       <section className="shopView">
-        <ShopHeader items={this.props.items}/>
+        <ShopHeader items={this.props.items} />
         <ShopBanner />
         <NotesWithIcons />
         <Articles />
-        <CarousselWithItems addItems={this.props.addItems} changeCounter={this.props.changeCounter}/>
-        <Footer/>
-       
+        <CarousselWithItems
+          addItems={this.props.addItems}
+          changeCounter={this.props.changeCounter}
+        />
+        <Footer />
+
         {/* <ShopBackground addItems={this.props.addItems} /> */}
       </section>
       /* <HashRouter>
@@ -199,32 +202,35 @@ class Shop extends Component {
 }
 
 class ShopHeader extends Component {
-  state={
+  state = {
     headerScrolledPosition: 0,
-      }
-     
-      componentDidMount() {
-        window.addEventListener("scroll", () => {
-          let scrol = window.pageYOffset;
-          if(scrol !== 0){
-            this.setState({
-              headerScrolledPosition: 1
-            })
-          }else{
-            this.setState({
-              headerScrolledPosition:0
-            })
-          }
-       
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", () => {
+      let scrol = window.pageYOffset;
+      if (scrol !== 0) {
+        this.setState({
+          headerScrolledPosition: 1,
         });
-    
-    
+      } else {
+        this.setState({
+          headerScrolledPosition: 0,
+        });
       }
-     
+    });
+  }
+
   render() {
-    const {items}=this.props
+    const { items } = this.props;
     return (
-      <div className={ this.state.headerScrolledPosition === 0 ? "shop_header" :"shop_header change_back_color"}>
+      <div
+        className={
+          this.state.headerScrolledPosition === 0
+            ? "shop_header"
+            : "shop_header change_back_color"
+        }
+      >
         <Navigation />
         <AccountStripe items={this.props.items} />
       </div>
@@ -232,28 +238,23 @@ class ShopHeader extends Component {
   }
 }
 
-
-
-
-
 class ShopBanner extends Component {
   state = {
-    bannerScrolledPosition: 0
-    };
+    bannerScrolledPosition: 0,
+  };
   componentDidMount() {
     window.addEventListener("scroll", () => {
       let scrol = window.pageYOffset;
-      
+
       this.setState({
-        bannerScrolledPosition: scrol * 0.1
+        bannerScrolledPosition: scrol * 0.1,
       });
     });
-
-
   }
   render() {
     return (
       <div
+        name="start"
         className="banner"
         style={{ backgroundPositionY: this.state.bannerScrolledPosition }}
       >
@@ -268,7 +269,6 @@ class ShopBanner extends Component {
         </div>
         <div></div>
       </div>
-      
     );
   }
 }
@@ -329,167 +329,178 @@ class Articles extends Component {
     );
   }
 }
- 
- 
 
-
-class CarousselWithItems extends  Component{
-state={
-  arrayWithProducts:[],
-  newArrayWithProductsToCarousel:[],
-  
-}
-handleBuyButton = (productDetails,counter) => {
-  console.log(productDetails)
-      this.props.addItems(productDetails,counter)
-    };
-  componentDidMount(){
+class CarousselWithItems extends Component {
+  state = {
+    arrayWithProducts: [],
+    newArrayWithProductsToCarousel: [],
+  };
+  handleBuyButton = (productDetails, counter) => {
+    this.props.addItems(productDetails, counter);
+  };
+  componentDidMount() {
     fetch("http://localhost:3000/products")
-    .then(resp=>{
-      return resp.json();
-    }).then(obj =>{
-      console.log(obj);
-      
-      for(let i=0;i<7;i++){
-        
-        this.setState({
-          arrayWithProducts:[...this.state.arrayWithProducts,obj[i]]
-        })
-      }
-    
-    })
-    
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((obj) => {
+        for (let i = 0; i < 7; i++) {
+          this.setState({
+            arrayWithProducts: [...this.state.arrayWithProducts, obj[i]],
+          });
+        }
+      });
   }
-render(){
-  let productListJsx = this.state.arrayWithProducts.map( product =>
-   
-   <ProductInCarousel
-    product={product}
-    brand={product.brand}
-    name={product.name}
-    img={product.imgSrc}
-    price={product.price}
-    handleBuyButton={this.handleBuyButton}
-    changeCounter={this.props.changeCounter}
+  render() {
+    let productListJsx = this.state.arrayWithProducts.map((product) => (
+      <ProductInCarousel
+        product={product}
+        brand={product.brand}
+        name={product.name}
+        img={product.imgSrc}
+        price={product.price}
+        handleBuyButton={this.handleBuyButton}
+        changeCounter={this.props.changeCounter}
+      />
+    ));
 
-    />
-  );
- 
-  return(
-   
-  <div className="carousel">
-<Carousel
- dotListClass="custom-dot-list-style"
- itemClass="carousel-item-padding-40-px"
-  responsive={responsive}
-  containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
->
-{productListJsx}
-
-</Carousel>
-</div>
- 
-
- 
-  )
-}
-}
-
-
-class ProductInCarousel extends Component{
-  state={
-      counter:1
-    
+    return (
+      <div className="carousel">
+        <Carousel
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+          responsive={responsive}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+        >
+          {productListJsx}
+        </Carousel>
+      </div>
+    );
   }
-manageCounter=()=>{
-  this.setState({
-            counter: this.state.counter + 1
-          })
-
-
 }
-  
-  render(){
-    return(
+
+class ProductInCarousel extends Component {
+  state = {
+    counter: 1,
+  };
+  manageCounter = () => {
+    this.setState({
+      counter: this.state.counter + 1,
+    });
+  };
+
+  render() {
+    return (
       <div className="product">
-      <h2> {this.props.brand} {this.props.name}</h2>
-      <div style={{backgroundImage: `url("${this.props.img}")`}} className="product_img"></div>
-      <h3>Price: {this.props.price}</h3>
-      <button onClick={() => { this.manageCounter(); this.props.handleBuyButton(this.props.product,this.state.counter);}}>Add to Card</button>
-    </div>
-
-    )
+        <h2>
+          {" "}
+          {this.props.brand} {this.props.name}
+        </h2>
+        <div
+          style={{ backgroundImage: `url("${this.props.img}")` }}
+          className="product_img"
+        ></div>
+        <h3>Price: {this.props.price} $</h3>
+        <button
+          onClick={() => {
+            this.manageCounter();
+            this.props.handleBuyButton(this.props.product, this.state.counter);
+          }}
+        >
+          Add to Card
+        </button>
+      </div>
+    );
   }
 }
 
-class Footer extends Component{
-
-  render(){
-    return(
-
+class Footer extends Component {
+  render() {
+    return (
       <>
-      <div className="footer">
-        <div className="newsletter">
-          <h3>Newsletter</h3>
-          <p>Sign to our newsletter to get all best news and prices</p>
-          <form>
-            <input classname="email" type="email" placeholder="Write your email"></input>
-            <input className="submit" type="submit" value="Send"></input>
-          </form>
-        </div>
-        <div className="footer_info">
-          <div>
-            <h3>Contact</h3>
-            <p><i class="fas fa-phone"></i>xxx xxx xxx</p>
-            <p><i class="fas fa-envelope-open-text"></i>xxx@gmail.com</p>
+        <div className="footer">
+          <div className="newsletter">
+            <h3>Newsletter</h3>
+            <p>Sign to our newsletter to get all best news and prices</p>
+            <form>
+              <input
+                classname="email"
+                type="email"
+                placeholder="Write your email"
+              ></input>
+              <input className="submit" type="submit" value="Send"></input>
+            </form>
           </div>
-          <div>
-            <p>Delivery Options</p>
-            <p>Return Policy</p>
-            <p>Store Locations</p>
-            <p>Help & FAQs</p>
-          </div>
-          <div>
-            <h3>SO!</h3>
-            <h3>SNOW</h3>
+          <div className="footer_info">
             <div>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-instagram"></i>
+              <h3>Contact</h3>
+              <p>
+                <i class="fas fa-phone"></i>xxx xxx xxx
+              </p>
+              <p>
+                <i class="fas fa-envelope-open-text"></i>xxx@gmail.com
+              </p>
+            </div>
+            <div>
+              <p>Delivery Options</p>
+              <p>Return Policy</p>
+              <p>Store Locations</p>
+              <p>Help & FAQs</p>
+            </div>
+            <div>
+              <h3>SO!</h3>
+              <h3>SNOW</h3>
+              <div>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-instagram"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </>
-    )
+    );
   }
 }
 
-
 class Navigation extends Component {
-  
   render() {
     return (
-      <div className="navigation">
-       
-        <ul>
-          <li>
-            <NavLink className="navigation_options" exact to="/snowboards">
-              Snowboards
+      <div className="container_nav">
+        <div>
+          <Link
+            className="link below"
+            to="start"
+            spy={true}
+            smooth={true}
+            duration={700}
+          >
+            <NavLink className="title" exact to="/shop">
+              <h2>SO!</h2>
+              <h2>SNOW</h2>
             </NavLink>
-          </li>
-          <li>
-            <NavLink className="navigation_options" exact to="/shoes">
-              Shoes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="navigation_options" exact to="/blindings">
-              Bindings
-            </NavLink>
-          </li>
-        </ul>
+          </Link>
+        </div>
+        <div className="navigation">
+          <ul>
+            <li>
+              <NavLink className="navigation_options" exact to="/snowboards">
+                Snowboards
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="navigation_options" exact to="/shoes">
+                Shoes
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="navigation_options" exact to="/blindings">
+                Bindings
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
@@ -498,7 +509,6 @@ class Navigation extends Component {
 class AccountStripe extends Component {
   state = {
     pageScrolled: false,
-    
   };
   render() {
     const { items } = this.props;
@@ -523,12 +533,11 @@ class Account extends Component {
   }
 }
 
-
 class BasketInside extends Component {
-  state={
-       withoutDuplicates:[],
-  }
- 
+  state = {
+    withoutDuplicates: [],
+  };
+
   // deleteObject = id => {
   //   const newBasket = this.state.objectArray.filter(product => {
   //     return product.id !== id;
@@ -537,86 +546,98 @@ class BasketInside extends Component {
   //     objectArray: newBasket
   //   });
   //   console.log("coś się usunęło");
-  // }; 
- componentDidMount(){
-  //  const {items}=this.props;
-  const {itemsToShow}=this.props
-  
-     this.props.productsToShowInBasket();
+  // };
+  componentDidMount() {
+    //  const {items}=this.props;
+    const { itemsToShow } = this.props;
+    this.props.sumProductsPrice();
+    this.props.productsToShowInBasket();
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.items !== prevProps.items) {
+      this.props.sumProductsPrice();
+    }
+  }
 
- }
+  //   handleProductAmount=(arr)=>{
+  //    let newarr=[];
+  // arr.forEach((element,index) => {
+  // element.amount=1;
+  //     if(arr.indexOf(element) != index ){
+  //             element.amount+=1
+  //     }
+  // else{
+  //   newarr.push(element);
+  // }
 
+  // })
+  // this.setState({
+  //   withoutDuplicates:newarr,
+  //   })
 
-
-//   handleProductAmount=(arr)=>{
-//    let newarr=[];    
-// arr.forEach((element,index) => {
-// element.amount=1;
-//     if(arr.indexOf(element) != index ){
-//             element.amount+=1
-//     }
-// else{
-//   newarr.push(element);
-// }
-
-// })
-// this.setState({
-//   withoutDuplicates:newarr,
-//   })
- 
-// }
-//local storage tutaj bo nie zapisuje po odswiezeniu
+  // }
+  //local storage tutaj bo nie zapisuje po odswiezeniu
 
   render() {
-    const {itemsToShow}=this.props
-     const { items } = this.props;
-     return (
+    const { sum } = this.props;
+    const { itemsToShow } = this.props;
+    const { items } = this.props;
+    return (
       <section className="basket">
-      <ShopHeader items={this.props.items}/>
-      
+        <ShopHeader items={this.props.items} />
+
         <div className="basket_area">
           <div className="product_list">
-          <ol>
-            <div className="headings ala">
-              <h2>Brand and Name</h2>
-              <h2>Price</h2>
-              <h2>Amount</h2>
-            </div>
-            <div className={items.length == 0 ? "empty_basket" : "none_empty_basket"}>Your Basket Is Empty</div>
-            {itemsToShow.map((product, index) => (
-              <ImportedProduct
-                key={index}
-                id={product.id}
-                name={product.name}
-                imageSourse={product.imgSrc}
-                price={product.price}
-                delete={this.props.delete}
-                brand={product.brand}
-                amount={product.counter}
-                addCounter={this.props.addCounter}
-                reduceCounter={this.props.reduceCounter}
-                product={product}
-
-                
-              />
-            ))}
-          </ol>
+            <ol>
+              <div className="headings ala">
+                <h2>Brand and Name</h2>
+                <h2>Price</h2>
+                <h2>Amount</h2>
+              </div>
+              <div
+                className={
+                  items.length == 0 ? "empty_basket" : "none_empty_basket"
+                }
+              >
+                Your Basket Is Empty
+              </div>
+              {itemsToShow.map((product, index) => (
+                <ImportedProduct
+                  key={index}
+                  id={product.id}
+                  name={product.name}
+                  imageSourse={product.imgSrc}
+                  price={product.price}
+                  delete={this.props.delete}
+                  brand={product.brand}
+                  amount={product.counter}
+                  addCounter={this.props.addCounter}
+                  reduceCounter={this.props.reduceCounter}
+                  product={product}
+                />
+              ))}
+            </ol>
           </div>
           <div className="order_summary">
-              <h2>Your Order</h2>
-              <p>Products Price:  <span>250 $</span></p>
-              <p>Delivery Price: :  <span>10 $</span></p>
-              <p>SUM: :  <span>260 $</span></p>
+            <h2>Your Order</h2>
+            <p>
+              Products Price: <span>{sum} $</span> 
+            </p>
+            <p>
+              Delivery Price: : <span>10 $</span>
+            </p>
+            <p>
+              SUM: : <span>{sum + 10} $</span>
+            </p>
           </div>
         </div>
       </section>
-      
     );
   }
 }
 
 class ImportedProduct extends Component {
-  handleDeleteBtn = id => {
+  handleDeleteBtn = (id) => {
     this.props.delete(id);
   };
 
@@ -628,12 +649,20 @@ class ImportedProduct extends Component {
             className="item_img_in_basket"
             src={this.props.imageSourse}
           ></img>
-          <h2 className="item_name_in_basket">{this.props.brand} - {this.props.name}</h2>
-          <p className="item_price_in_basket"> {this.props.price}</p>
+          <h2 className="item_name_in_basket">
+            {this.props.brand} - {this.props.name}
+          </h2>
+          <p className="item_price_in_basket"> {this.props.price} $</p>
           <div className="product_counter">
-            <i class="fas fa-long-arrow-alt-left" onClick={()=>this.props.reduceCounter(this.props.product)}></i>
-              <p>{this.props.amount}</p>
-            <i class="fas fa-long-arrow-alt-right"  onClick={()=>this.props.addCounter(this.props.product)}></i>
+            <i
+              class="fas fa-long-arrow-alt-left"
+              onClick={() => this.props.reduceCounter(this.props.product)}
+            ></i>
+            <p>{this.props.amount}</p>
+            <i
+              class="fas fa-long-arrow-alt-right"
+              onClick={() => this.props.addCounter(this.props.product)}
+            ></i>
           </div>
           <button
             onClick={() => this.handleDeleteBtn(this.props.id)}
@@ -646,6 +675,7 @@ class ImportedProduct extends Component {
     );
   }
 }
+
 class App extends Component {
   render() {
     return (
@@ -656,114 +686,6 @@ class App extends Component {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   ReactDOM.render(<App />, document.getElementById("app"));
 });
-
-
-//THESE THREE PRODUCTS TO MODERETE LATER
-
-// class ShopBackground extends Component {
-//   render() {
-//     return (
-//       <div className="shop_background">
-//         <Item1 addItems={this.props.addItems}/>
-//         <Item2 addItems={this.props.addItems}/>
-//         <Item3 addItems={this.props.addItems}/>
-//       </div>
-//     );
-//   }
-// }
-
-// class Item1 extends Component {
-//   state = {
-//     object: {
-//       name: "Snowboard Burton Flex:4",
-//       price: "1500$",
-//       imageSourse: "../images/5dde49c4d887b.png",
-//       id: 1
-//     }
-//   };
-//   handleBuyButton = () => {
-//     const { addItems } = this.props;
-//     addItems(this.state.object);
-//   };
-//   render() {
-//     return (
-//       <section className="product">
-//         <h2>{this.state.object.name}</h2>
-//         <img
-//           src={this.state.object.imageSourse}
-//           className="product_image"
-//         ></img>
-//         <p className="price">{this.state.object.price}</p>
-//         <a onClick={this.handleBuyButton} className="btn_shop">
-//           Buy
-//         </a>
-//         <NavLink exact to="/product"></NavLink>
-//       </section>
-//     );
-//   }
-// }
-// class Item2 extends Component {
-//   state = {
-//     object: {
-//       name: "Snowboard Roxy Flex:7",
-//       price: "1000$",
-//       imageSourse: "../images/5dde49c4d887b.png",
-//       id: 2
-//     }
-//   };
-//   handleBuyButton = () => {
-//     const { addItems } = this.props;
-//     addItems(this.state.object);
-//   };
-
-//   render() {
-//     return (
-//       <section className="product">
-//         <h2>{this.state.object.name}</h2>
-//         <img
-//           src={this.state.object.imageSourse}
-//           className="product_image"
-//         ></img>
-//         <p className="price">{this.state.object.price}</p>
-//         <a onClick={this.handleBuyButton} className="btn_shop">
-//           Buy
-//         </a>
-//         <NavLink exact to="/product"></NavLink>
-//       </section>
-//     );
-//   }
-// }
-// class Item3 extends Component {
-//   state = {
-//     object: {
-//       name: "Snowboard Nitro N Flex:5",
-//       price: "700$",
-//       imageSourse: "../images/5dde49c4d887b.png",
-//       id: 3
-//     }
-//   };
-//   handleBuyButton = () => {
-//     const { addItems } = this.props;
-//     addItems(this.state.object);
-//   };
-
-//   render() {
-//     return (
-//       <section className="product">
-//         <h2>{this.state.object.name}</h2>
-//         <img
-//           src={this.state.object.imageSourse}
-//           className="product_image"
-//         ></img>
-//         <p className="price">{this.state.object.price}</p>
-//         <a onClick={this.handleBuyButton} className="btn_shop">
-//           Buy
-//         </a>
-//         <NavLink exact to="/product"></NavLink>
-//       </section>
-//     );
-//   }
-// }

@@ -5,7 +5,7 @@
         "name": "All High",
         "category": "shoes",
         "brand":"Burton",
-        "price": "200 $",
+        "price": 200,
         "imgSrc": "/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
         "ridingStyle":"freestyle",
         "gender":"woman"
@@ -16,7 +16,7 @@
         "name": "Gallardo",
         "category": "snowboard",
         "brand":"Burton",
-        "price": "820 $",
+        "price": 820 ,
         "imgSrc": "/src/sass/images/products/snowboard/burton all damska.jpg",
         "gender":"woman",
         "ridingStyle":"all"
@@ -26,7 +26,7 @@
         "name": "Hard Man",
         "category": "bindings",
         "brand":"Burton",
-        "price": "150 $",
+        "price": 150,
         "imgSrc": "/src/sass/images/products/bindings/burton twarde meskie.jpg",
         "gender":"man",
         "ridingStyle":"freeride"
@@ -36,7 +36,7 @@
         "name": "Paradise",
         "category": "snowboard",
         "brand":"Capita",
-        "price": "1200 $",
+        "price": 1200,
         "imgSrc": "/src/sass/images/products/snowboard/capita freestyle damska paradise.jpg",
         "gender":"woman",
         "ridingStyle":"freestyle"
@@ -46,7 +46,7 @@
         "name": "Btx",
         "category": "snowboard",
         "brand":"GNU",
-        "price": "999 $",
+        "price": 999,
         "imgSrc": "/src/sass/images/products/snowboard/gnu all meska Btx.jpg",
         "gender":"man",
         "ridingStyle":"all"
@@ -56,7 +56,7 @@
         "name": "Soft New",
         "category": "shoes",
         "brand":"Burton",
-        "price": "250 $",
+        "price": 250,
         "imgSrc": "/src/sass/images/products/shoes/burton damskie miekkie.jpg",
         "gender":"woman",
         "ridingStyle":"freestyle"
@@ -66,7 +66,7 @@
         "name": "Exit",
         "category": "shoes",
         "brand":"Thirtytwo",
-        "price": "320 $",
+        "price": 320,
         "imgSrc": "/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
         "gender":"man",
         "ridingStyle":"freestyle"
