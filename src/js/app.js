@@ -165,8 +165,111 @@ class StartingPage extends Component {
               />
             )}
           />
+          <Route
+            exact
+            path="/snowboards"
+            render={(props) => (
+              <Snowboards {...props} items={this.state.objectArray} />
+            )}
+          />
+          <Route exact path="/shoes" render={(props) => (
+              <Shoes {...props} items={this.state.objectArray} />
+            )}  />
+            <Route exact path="/bindings" render={(props) => (
+              <Bindings {...props} items={this.state.objectArray} />
+            )} />
         </Switch>
       </HashRouter>
+    );
+  }
+}
+
+class Snowboards extends Component {
+  state={
+    snowboardsArray:[]
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/products")
+      .then((resp) => {
+        if(resp.ok) return resp.json();
+        throw new Error("Problem with loading data");
+      })
+      .then((obj) => {
+        const arr=obj.filter(x=>
+          { return x.category === "snowboard"});
+          this.setState({
+            snowboardsArray: arr
+          })
+      });
+  }
+  render() {
+    return (
+      
+      <div className="snowboards_area shopView">
+        <ShopHeader items={this.props.items} />
+        <div>
+        <Filters/>
+        <SnowboardsProducts/>
+        </div>
+        <Footer/>
+      </div>
+        
+      
+    );
+  }
+}
+
+class Filters extends Component{
+  state={
+    filterClicked:false,
+  }
+  render(){
+    return(
+      
+      <div className="filters">
+        <h2>Filters</h2>
+        <div className={this.state.filterClicked ? "btn lines_effect btn_clicked" : "btn lines_effect"}>Freestyle</div>
+        <div className="btn lines_effect">Freeride</div>
+        <div className="btn lines_effect">All</div>
+      </div>
+      
+    )
+  }
+}
+
+class SnowboardsProducts extends Component{
+  render(){
+    return(
+<></>
+    )
+  }
+}
+
+
+class Shoes extends Component {
+  render() {
+    return (
+      <>
+      <div className="shoes_area">
+        <ShopHeader items={this.props.items} />
+      </div>
+        
+      </>
+    );
+  }
+}
+
+
+class Bindings extends Component {
+  render() {
+    return (
+      <>
+      <div className="bindings_area">
+        <ShopHeader items={this.props.items} />
+      </div>
+        
+      </>
     );
   }
 }
@@ -185,18 +288,7 @@ class Shop extends Component {
         />
         <Footer />
 
-        {/* <ShopBackground addItems={this.props.addItems} /> */}
-      </section>
-      /* <HashRouter>
-  <Switch>
-     <Route exact path="/basket" component={Welcome} />
-       <Route exact path="/snowboards" component={BeginnerPage} />
-     <Route exact path="/shoes" component={IntermediatePage} />
-     <Route exact path="/blindings" component={Shop} />
-    
-        
-     </Switch>
- </HashRouter>  */
+         </section>
     );
   }
 }
@@ -361,6 +453,7 @@ class CarousselWithItems extends Component {
         price={product.price}
         handleBuyButton={this.handleBuyButton}
         changeCounter={this.props.changeCounter}
+        key={product.id}
       />
     ));
 
@@ -425,7 +518,7 @@ class Footer extends Component {
             <p>Sign to our newsletter to get all best news and prices</p>
             <form>
               <input
-                classname="email"
+                className="email"
                 type="email"
                 placeholder="Write your email"
               ></input>
@@ -436,10 +529,10 @@ class Footer extends Component {
             <div>
               <h3>Contact</h3>
               <p>
-                <i class="fas fa-phone"></i>xxx xxx xxx
+                <i className="fas fa-phone"></i>xxx xxx xxx
               </p>
               <p>
-                <i class="fas fa-envelope-open-text"></i>xxx@gmail.com
+                <i className="fas fa-envelope-open-text"></i>xxx@gmail.com
               </p>
             </div>
             <div>
@@ -452,9 +545,9 @@ class Footer extends Component {
               <h3>SO!</h3>
               <h3>SNOW</h3>
               <div>
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-instagram"></i>
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-youtube"></i>
+                <i className="fab fa-instagram"></i>
               </div>
             </div>
           </div>
@@ -495,7 +588,7 @@ class Navigation extends Component {
               </NavLink>
             </li>
             <li>
-              <NavLink className="navigation_options" exact to="/blindings">
+              <NavLink className="navigation_options" exact to="/bindings">
                 Bindings
               </NavLink>
             </li>
@@ -538,17 +631,7 @@ class BasketInside extends Component {
     withoutDuplicates: [],
   };
 
-  // deleteObject = id => {
-  //   const newBasket = this.state.objectArray.filter(product => {
-  //     return product.id !== id;
-  //   });
-  //   this.setState({
-  //     objectArray: newBasket
-  //   });
-  //   console.log("coś się usunęło");
-  // };
   componentDidMount() {
-    //  const {items}=this.props;
     const { itemsToShow } = this.props;
     this.props.sumProductsPrice();
     this.props.productsToShowInBasket();
@@ -559,23 +642,6 @@ class BasketInside extends Component {
     }
   }
 
-  //   handleProductAmount=(arr)=>{
-  //    let newarr=[];
-  // arr.forEach((element,index) => {
-  // element.amount=1;
-  //     if(arr.indexOf(element) != index ){
-  //             element.amount+=1
-  //     }
-  // else{
-  //   newarr.push(element);
-  // }
-
-  // })
-  // this.setState({
-  //   withoutDuplicates:newarr,
-  //   })
-
-  // }
   //local storage tutaj bo nie zapisuje po odswiezeniu
 
   render() {
@@ -621,7 +687,7 @@ class BasketInside extends Component {
           <div className="order_summary">
             <h2>Your Order</h2>
             <p>
-              Products Price: <span>{sum} $</span> 
+              Products Price: <span>{sum} $</span>
             </p>
             <p>
               Delivery Price: : <span>10 $</span>
@@ -655,12 +721,12 @@ class ImportedProduct extends Component {
           <p className="item_price_in_basket"> {this.props.price} $</p>
           <div className="product_counter">
             <i
-              class="fas fa-long-arrow-alt-left"
+              className="fas fa-long-arrow-alt-left"
               onClick={() => this.props.reduceCounter(this.props.product)}
             ></i>
             <p>{this.props.amount}</p>
             <i
-              class="fas fa-long-arrow-alt-right"
+              className="fas fa-long-arrow-alt-right"
               onClick={() => this.props.addCounter(this.props.product)}
             ></i>
           </div>

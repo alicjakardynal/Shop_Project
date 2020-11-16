@@ -73,205 +73,520 @@
       },
       {
         "id": 8,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Skeleton",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": "1200",
+        "imgSrc":"/src/sass/images/products/snowboard/burton freeride damsak skeleton.jpg",
+        "ridingStyle":"freeride" 
       }, {
         "id": 9,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Family Tree",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 850,
+        "imgSrc":"/src/sass/images/products/snowboard/burton freeride damska family tree.jpg",
+        "ridingStyle":"freeride" 
       },
       {
         "id": 10,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Mistery",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 1500,
+        "imgSrc":"/src/sass/images/products/snowboard/burton freeride meska mis.jpg",
+        "ridingStyle":"freeride" 
       },
       {
         "id": 11,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Green Lemon",
+        "category": "snowboard",
+        "brand":"LibTech",
+        "price": 1000,
+        "imgSrc":"/src/sass/images/products/snowboard/LibTech-freeride,all.jpg",
+        "ridingStyle":"freeride" 
       },
       {
         "id": 12,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Ladies Choice",
+        "category": "snowboard",
+        "brand":"GNU",
+        "price": 1400,
+        "imgSrc":"/src/sass/images/products/snowboard/gnu freeride damska ladies choice.jpg",
+        "ridingStyle":"freeride" 
       },
       {
         "id": 13,
-        "name": "Gallardo",
+        "name": "Mullair",
         "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "brand":"GNU",
+        "price": 1500,
+        "imgSrc":"/src/sass/images/products/snowboard/gnu freeride meskamullair.jpg",
+        "ridingStyle":"freeride" 
       },
       {
         "id": 14,
         "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "category": "snowboard",
+        "brand":"GNU",
+        "price": 1500,
+        "imgSrc":"/src/sass/images/products/snowboard/gnu freeride meska.jpg",
+        "ridingStyle":"freeride" 
       },
 
        {
         "id": 15,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Blk-n-Whi",
+        "category": "snowboard",
+        "brand":"Salomon",
+        "price": 1700,
+        "imgSrc":"/src/sass/images/products/snowboard/salomon -freeride.jpg",
+        "ridingStyle":"freeride" 
       },
       {
         "id": 16,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Feel Good",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 1200,
+        "imgSrc":"/src/sass/images/products/snowboard/burton freestyle damska feelgood.jpg",
+        "ridingStyle":"freestyle" 
       },
       {
         "id": 17,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Violetolette",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 700,
+        "imgSrc":"/src/sass/images/products/snowboard/burton freestyle. meska.jpg",
+        "ridingStyle":"freestyle" 
       },
 
       {
         "id": 18,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Yeasayer",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 999,
+        "imgSrc":"/src/sass/images/products/snowboard/burton freestyle damska yeasayer.jpg",
+        "ridingStyle":"freestyle" 
       }, {
         "id": 19,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Custom",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 1800,
+        "imgSrc":"/src/sass/images/products/snowboard/burton freestylemeska cusotm.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 20,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Smalls",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 750,
+        "imgSrc":"/src/sass/images/products/snowboard/burton-freestyle-customsmalls.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 21,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Horrorscope",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": 500,
+        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle damska horrorscope.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 22,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Paradise",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": 800,
+        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle damska paradise.jpg",
+        "ridingStyle":"freestyle"
       },
 
       {
         "id": 23,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Defenders",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": 900,
+        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle meska defenders.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 24,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Indoor",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": 1400,
+        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle meska indor.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 25,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Children of the gnar",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": 800,
+        "imgSrc":"/src/sass/images/products/snowboard/capita frestyle all children of the gnar.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 26,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Glider",
+        "category": "snowboard",
+        "brand":"LibTech",
+        "price": 759,
+        "imgSrc":"/src/sass/images/products/snowboard/libtech freestyle damska glider.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 27,
         "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "category": "snowboard",
+        "brand":"LibTech",
+        "price": 559,
+        "imgSrc":"/src/sass/images/products/snowboard/LibTech freestyle meska.jpg",
+        "ridingStyle":"freestyle"
       },
       {
         "id": 28,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Foresty",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 890,
+        "imgSrc":"/src/sass/images/products/snowboard/burton all damska.jpg",
+        "ridingStyle":"all"
       },
       {
         "id": 29,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "X",
+        "category": "snowboard",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 1190,
+        "imgSrc":"/src/sass/images/products/snowboard/burton all meska custom x.jpg",
+        "ridingStyle":"all"
       },
       {
         "id": 30,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Redo",
+        "category": "snowboard",
+        "brand":"Capita",
+        "price": 950,
+        "imgSrc":"/src/sass/images/products/snowboard/capita all damska.jpg",
+        "ridingStyle":"all"
       },
       {
         "id": 31,
-        "name": "Gallardo",
-        "category": "Snowboard",
-        "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "name": "Boogie",
+        "category": "snowboard",
+        "brand":"DC",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/snowboard/dc all damska.jpg",
+        "ridingStyle":"all"
       },
       {
         "id": 32,
-        "name": "Gallardo",
-        "category": "Snowboard",
+        "name": "Gloss",
+        "category": "snowboard",
+        "brand":"GNU",
+        "price": 550,
+        "imgSrc":"/src/sass/images/products/snowboard/gnu all damska gloss.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 33,
+        "name": "Nice",
+        "category": "snowboard",
+        "brand":"GNU",
+        "price": 750,
+        "imgSrc":"/src/sass/images/products/snowboard/gnu all damska nice.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 34,
+        "name": "BTX",
+        "category": "snowboard",
+        "brand":"GNU",
+        "price": 550,
+        "imgSrc":"/src/sass/images/products/snowboard/gnu all meska Btx.jpg",
+        "ridingStyle":"all"
+      },
+
+      {
+        "id": 35,
+        "name": "Rosy",
+        "category": "snowboard",
+        "brand":"LibTech",
+        "price": 750,
+        "imgSrc":"/src/sass/images/products/snowboard/libtech all meska.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 36,
+        "name": "Rocket",
+        "category": "snowboard",
+        "brand":"LibTech",
+        "price": 1050,
+        "imgSrc":"/src/sass/images/products/snowboard/techlib all meska rocket.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 37,
+        "name": "Felix Boa Mint",
+        "category": "shoes",
         "brand":"Burton",
-        "price": "",
-        "imgSrc": ""
+        "price": 550,
+        "imgSrc":"/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 38,
+        "name": "Moto Boa",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/shoes/burton miekkie meskie moto boa.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 39,
+        "name": "Blue Mind Boa",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 400,
+        "imgSrc":"/src/sass/images/products/shoes/burton mint damskie miekkie.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 40,
+        "name": "HelloMy",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo damskie miekkie.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 41,
+        "name": "Exit",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 350,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 42,
+        "name": "STW boa",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie miekkie stw boa.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 43,
+        "name": "Driver X",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/shoes/burton meskie twarte driver x.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 44,
+        "name": "Iron",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 400,
+        "imgSrc":"/src/sass/images/products/shoes/murton meskie twarde.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 45,
+        "name": "Whity",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 300,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo damskie twarde.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 46,
+        "name": "Domain",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 335,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie tward domain.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 46,
+        "name": "Domain",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 335,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie tward domain.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 47,
+        "name": "Exit",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 350,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 48,
+        "name": "HelloMy",
+        "category": "shoes",
+        "brand":"ThirtyTwo",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/shoes/thirtytwo damskie miekkie.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 49,
+        "name": "Blue Mind Boa",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 400,
+        "imgSrc":"/src/sass/images/products/shoes/burton mint damskie miekkie.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 50,
+        "name": "Felix Boa Mint",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 550,
+        "imgSrc":"/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 51,
+        "name": "Moto Boa",
+        "category": "shoes",
+        "brand":"Burton",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/shoes/burton miekkie meskie moto boa.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 52,
+        "name": "Black Panter",
+        "category": "bindings",
+        "brand":"Burton",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/bindings/burton damskie miekkie.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 53,
+        "name": "Oranges",
+        "category": "bindings",
+        "brand":"Burton",
+        "price": 320,
+        "imgSrc":"/src/sass/images/products/bindings/burton meskie miekkie.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 54,
+        "name": "Rosa",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 450,
+        "imgSrc":"/src/sass/images/products/bindings/union damskie miekkie rosa.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 55,
+        "name": "Carmen",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 250,
+        "imgSrc":"/src/sass/images/products/bindings/union meskie srednie.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 56,
+        "name": "Flite Pro",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 400,
+        "imgSrc":"/src/sass/images/products/bindings/union flite meskie miekkie.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 57,
+        "name": "Flite",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 350,
+        "imgSrc":"/src/sass/images/products/bindings/union flite meskie miekkie pro.jpg",
+        "ridingStyle":"freestyle"
+      },
+      {
+        "id": 58,
+        "name": "Homies",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 320,
+        "imgSrc":"/src/sass/images/products/bindings/union meskie twarde.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 59,
+        "name": "Speed",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 220,
+        "imgSrc":"/src/sass/images/products/bindings/union srednie damskie milan.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 60,
+        "name": "GreenLand",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 320,
+        "imgSrc":"/src/sass/images/products/bindings/union srednie damskie.jpg",
+        "ridingStyle":"freeride"
+      },
+      {
+        "id": 61,
+        "name": "Mint",
+        "category": "bindings",
+        "brand":"Burton",
+        "price": 420,
+        "imgSrc":"/src/sass/images/products/bindings/burton twarde meskie.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 62,
+        "name": "Speed",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 220,
+        "imgSrc":"/src/sass/images/products/bindings/union srednie damskie milan.jpg",
+        "ridingStyle":"all"
+      },
+      {
+        "id": 63,
+        "name": "Flite Pro",
+        "category": "bindings",
+        "brand":"Union",
+        "price": 400,
+        "imgSrc":"/src/sass/images/products/bindings/union flite meskie miekkie.jpg",
+        "ridingStyle":"all"
       }
+
 
      
     ]
