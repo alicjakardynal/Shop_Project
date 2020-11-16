@@ -1,6 +1,11 @@
 .snowboards_area{
     height: 100%;
-    .bla{
-height: 500px;
+    .products_area{
+        display: flex;
+        justify-content: space-around;
+    }
+    .snowboard_products{
+        width: 80%;
+        
     }
 }

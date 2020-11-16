@@ -1,6 +1,5 @@
 .filters{
     height: 80vh;
-
     width: 20%;
     background-color: rgb(127, 155, 151);
     margin:  0 0 200px 0;
@@ -29,6 +28,7 @@
 	cursor: pointer;
     user-select: none;
     z-index: 1;
+    margin: 10px 0;
   }
   .btn:before, .btn:after {
 	content: '';
