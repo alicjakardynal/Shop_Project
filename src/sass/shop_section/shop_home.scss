@@ -123,12 +123,23 @@
 
   li {
     padding: 30px 20px;
+    transition: 0.5s;
   }
   .navigation_options {
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
-  }
+    
+    
+  }  @for $i from 1 through 3{
+    li:nth-of-type(#{$i}){
+     
+        &:hover{
+          box-shadow: 0em 0.5em 1em -0.8em adjust-hue( black, 45deg);
+          transform: translateY(-0.25em);
+}
+    }
+}
 }
 
 .shop_background {

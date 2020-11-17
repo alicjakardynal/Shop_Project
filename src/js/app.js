@@ -172,12 +172,20 @@ class StartingPage extends Component {
               <Snowboards {...props} items={this.state.objectArray} />
             )}
           />
-          <Route exact path="/shoes" render={(props) => (
+          <Route
+            exact
+            path="/shoes"
+            render={(props) => (
               <Shoes {...props} items={this.state.objectArray} />
-            )}  />
-            <Route exact path="/bindings" render={(props) => (
+            )}
+          />
+          <Route
+            exact
+            path="/bindings"
+            render={(props) => (
               <Bindings {...props} items={this.state.objectArray} />
-            )} />
+            )}
+          />
         </Switch>
       </HashRouter>
     );
@@ -185,140 +193,178 @@ class StartingPage extends Component {
 }
 
 class Snowboards extends Component {
-  state={
-    snowboardsArray:[],
-    freestyleArray:[],
-    freerideArray:[],
-    allArray:[],
-  }
+  state = {
+    snowboardsArray: [],
+    freestyleArray: [],
+    freerideArray: [],
+    allArray: [],
+  };
 
-  loadFreestyle=()=>{
-    let freestyle = this.state.snowboardsArray.filter(x =>
-      {return x.ridingStyle === "freestyle"});
-      this.setState({
-        freestyleArray: freestyle
-      })
-  }
+  loadFreestyle = () => {
+    let freestyle = this.state.snowboardsArray.filter((x) => {
+      return x.ridingStyle === "freestyle";
+    });
+    this.setState({
+      freestyleArray: freestyle,
+    });
+  };
 
-  loadFreeride=()=>{
-    let freeride = this.state.snowboardsArray.filter(x =>
-      {return x.ridingStyle === "freeride"});
-      this.setState({
-        freerideArray: freeride
-      })
-  }
+  loadFreeride = () => {
+    let freeride = this.state.snowboardsArray.filter((x) => {
+      return x.ridingStyle === "freeride";
+    });
+    this.setState({
+      freerideArray: freeride,
+    });
+  };
 
-  loadAll=()=>{
-    let all = this.state.snowboardsArray.filter(x =>
-      {return x.ridingStyle === "all"});
-      this.setState({
-        allArray: all
-      })
-  }
-  
+  loadAll = () => {
+    let all = this.state.snowboardsArray.filter((x) => {
+      return x.ridingStyle === "all";
+    });
+    this.setState({
+      allArray: all,
+    });
+  };
+
   componentDidMount() {
     fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
       .then((resp) => {
-        if(resp.ok) return resp.json();
+        if (resp.ok) return resp.json();
         throw new Error("Problem with loading data");
       })
       .then((obj) => {
-        const arr=obj.filter(x=>
-          { return x.category === "snowboard"});
-          this.setState({
-            snowboardsArray: arr
-          })
+        const arr = obj.filter((x) => {
+          return x.category === "snowboard";
+        });
+        this.setState({
+          snowboardsArray: arr,
+        });
       });
   }
   render() {
     return (
-      
       <div className="snowboards_area">
         <ShopHeader items={this.props.items} />
         <div className="products_area">
-        <Filters loadFreestyle={this.loadFreestyle} loadFreeride={this.loadFreeride} loadAll={this.loadAll}/>
-        <SnowboardsProducts freestyle={this.state.freestyleArray}/>
+          <Filters
+            loadFreestyle={this.loadFreestyle}
+            loadFreeride={this.loadFreeride}
+            loadAll={this.loadAll}
+          />
+          <SnowboardsProducts freestyle={this.state.freestyleArray} snowboardsArray={this.state.snowboardsArray} />
         </div>
-        <Footer/>
+        <Footer />
       </div>
-        
-      
     );
   }
 }
 
-class Filters extends Component{
-  state={
-    whatClicked:"",
-  }
+class Filters extends Component {
+  state = {
+    whatClicked: "",
+  };
 
-  handleBtn=(filter)=>{
-    if(filter === "freestyle"){
+  handleBtn = (filter) => {
+    if (filter === "freestyle") {
       this.setState({
-        whatClicked:filter
+        whatClicked: filter,
       });
       this.props.loadFreestyle();
-    }else if(filter === "freeride"){
+    } else if (filter === "freeride") {
       this.setState({
-        whatClicked:filter
+        whatClicked: filter,
       });
       this.props.loadFreeride();
-    }else{
+    } else {
       this.setState({
-        whatClicked:"all"
+        whatClicked: "all",
       });
       this.props.loadAll();
     }
-   
-  }
-  
-  render(){
-    return(
-      
+  };
+
+  render() {
+    return (
       <div className="filters">
         <h2>Filters</h2>
-        <div onClick={()=>this.handleBtn("freestyle")} className={this.state.whatClicked ==="freestyle" ? "btn lines_effect btn_clicked" : "btn lines_effect"}>Freestyle</div>
-        <div onClick={()=>this.handleBtn("freeride")} className={this.state.whatClicked ==="freeride" ? "btn lines_effect btn_clicked" : "btn lines_effect"}>Freeride</div>
-        <div onClick={()=>this.handleBtn("all")} className={this.state.whatClicked ==="all" ? "btn lines_effect btn_clicked" : "btn lines_effect"}>All</div>
+        <div
+          onClick={() => this.handleBtn("freestyle")}
+          className={
+            this.state.whatClicked === "freestyle"
+              ? "btn lines_effect btn_clicked"
+              : "btn lines_effect"
+          }
+        >
+          Freestyle
+        </div>
+        <div
+          onClick={() => this.handleBtn("freeride")}
+          className={
+            this.state.whatClicked === "freeride"
+              ? "btn lines_effect btn_clicked"
+              : "btn lines_effect"
+          }
+        >
+          Freeride
+        </div>
+        <div
+          onClick={() => this.handleBtn("all")}
+          className={
+            this.state.whatClicked === "all"
+              ? "btn lines_effect btn_clicked"
+              : "btn lines_effect"
+          }
+        >
+          All
+        </div>
       </div>
-      
-    )
+    );
   }
 }
 
-class SnowboardsProducts extends Component{
+class SnowboardsProducts extends Component {
+  render() {
+    const{snowboardsArray} =this.props;
+    return (
+      <div className="snowboard_products">
+        <h2>SNOWBOARDS</h2>
+        <div>
+          {}
+        </div>
+      </div>
+    );
+  }
+}
+
+class OneProduct extends Component{
   render(){
     return(
-        <div className="snowboard_products">
-kghkhk
-        </div>
+      <div className="one_product">
+
+      </div>
     )
   }
 }
-
-
 class Shoes extends Component {
   render() {
     return (
       <>
-      <div className="shoes_area">
-        <ShopHeader items={this.props.items} />
-      </div>
-        
+        <div className="shoes_area">
+          <ShopHeader items={this.props.items} />
+        </div>
       </>
     );
   }
 }
 
-
 class Bindings extends Component {
   render() {
     return (
       <>
-      <div className="bindings_area">
-        <ShopHeader items={this.props.items} />
-      </div>
-        
+        <div className="bindings_area">
+          <ShopHeader items={this.props.items} />
+        </div>
       </>
     );
   }
@@ -337,8 +383,7 @@ class Shop extends Component {
           changeCounter={this.props.changeCounter}
         />
         <Footer />
-
-         </section>
+      </section>
     );
   }
 }
@@ -481,14 +526,14 @@ class CarousselWithItems extends Component {
     this.props.addItems(productDetails, counter);
   };
   componentDidMount() {
-    // fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
-    fetch("http://localhost:3000/products")
+    fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+      // fetch("http://localhost:3000/products")
       .then((resp) => {
         return resp.json();
       })
       .then((obj) => {
-        console.log(obj)
-        
+        console.log(obj);
+
         for (let i = 0; i < 7; i++) {
           this.setState({
             arrayWithProducts: [...this.state.arrayWithProducts, obj[i]],

@@ -6,7 +6,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 200,
-        "imgSrc": "https://alicjakardynal.github.io/Shop_Project/src/sass/images/products/shoes/burton%20damskei%20miekkie%20felix%20boa.jpg",
+        "imgSrc": "/src/sass/images/products/shoes/burton%20damskei%20miekkie%20felix%20boa.jpg",
         "ridingStyle":"freestyle",
         "gender":"woman"
         
@@ -17,7 +17,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 820 ,
-        "imgSrc": "src/sass/images/products/snowboard/burton%20all%20damska.jpg",
+        "imgSrc": "/src/sass/images/products/snowboard/burton%20all%20damska.jpg",
         "gender":"woman",
         "ridingStyle":"all"
       },
