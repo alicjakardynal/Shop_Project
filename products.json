@@ -17,7 +17,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 820 ,
-        "imgSrc": "/src/sass/images/products/snowboard/burton%20all%20damska.jpg",
+        "imgSrc": "src/sass/images/products/snowboard/burton%20all%20damska.jpg",
         "gender":"woman",
         "ridingStyle":"all"
       },
