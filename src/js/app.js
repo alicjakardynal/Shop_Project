@@ -252,7 +252,10 @@ class Snowboards extends Component {
             loadFreeride={this.loadFreeride}
             loadAll={this.loadAll}
           />
-          <SnowboardsProducts freestyle={this.state.freestyleArray} snowboardsArray={this.state.snowboardsArray} />
+          <SnowboardsProducts
+            freestyle={this.state.freestyleArray}
+            snowboardsArray={this.state.snowboardsArray}
+          />
         </div>
         <Footer />
       </div>
@@ -325,25 +328,38 @@ class Filters extends Component {
 
 class SnowboardsProducts extends Component {
   render() {
-    const{snowboardsArray} =this.props;
+    const { snowboardsArray } = this.props;
     return (
       <div className="snowboard_products">
         <h2>SNOWBOARDS</h2>
-        <div>
-          {}
+        <div className="products_area">
+          {snowboardsArray.map((product) => (
+            <OneProduct
+              product={product}
+              brand={product.brand}
+              name={product.name}
+              img={product.imgSrc}
+              price={product.price}
+              key={product.id}
+            />
+          ))}
         </div>
       </div>
     );
   }
 }
 
-class OneProduct extends Component{
-  render(){
-    return(
-      <div className="one_product">
-
-      </div>
-    )
+class OneProduct extends Component {
+  render() {
+    return <div className="one_product">
+      <h2>{this.props.name} - {this.props.brand}</h2>
+      <div
+          style={{ backgroundImage: `url("${this.props.img}")` }}
+          className="product_img"
+        ></div>
+      <p>Price: {this.props.price} $</p>
+      <div className="product_btn">Add To Card</div>
+    </div>
   }
 }
 class Shoes extends Component {
