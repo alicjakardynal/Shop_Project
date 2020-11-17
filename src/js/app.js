@@ -481,7 +481,8 @@ class CarousselWithItems extends Component {
     this.props.addItems(productDetails, counter);
   };
   componentDidMount() {
-    fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+    // fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+    fetch("http://localhost:3000/products")
       .then((resp) => {
         return resp.json();
       })

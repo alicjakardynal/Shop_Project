@@ -6,7 +6,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 200,
-        "imgSrc": "/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "imgSrc": "Shop_Project/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
         "ridingStyle":"freestyle",
         "gender":"woman"
         
