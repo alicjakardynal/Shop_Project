@@ -129,7 +129,7 @@ class StartingPage extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <HashRouter >
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route exact path="/beginner" component={BeginnerPage} />
@@ -165,25 +165,31 @@ class StartingPage extends Component {
               />
             )}
           />
-          <Route
+          <Route onUpdate={() => window.scrollTo(0, 0)}
             exact
             path="/snowboards"
             render={(props) => (
-              <Snowboards {...props} items={this.state.objectArray} />
+              <Snowboards {...props} 
+              items={this.state.objectArray}
+              addItems={this.addObject} />
             )}
           />
           <Route
             exact
             path="/shoes"
             render={(props) => (
-              <Shoes {...props} items={this.state.objectArray} />
+              <Shoes {...props} 
+              items={this.state.objectArray}
+              addItems={this.addObject} />
             )}
           />
           <Route
             exact
             path="/bindings"
             render={(props) => (
-              <Bindings {...props} items={this.state.objectArray} />
+              <Bindings {...props} 
+              items={this.state.objectArray}
+              addItems={this.addObject} />
             )}
           />
         </Switch>
@@ -244,7 +250,7 @@ class Snowboards extends Component {
   }
   render() {
     return (
-      <div className="snowboards_area">
+      <div className="main_product_area">
         <ShopHeader items={this.props.items} />
         <div className="products_area">
           <Filters
@@ -255,6 +261,7 @@ class Snowboards extends Component {
           <SnowboardsProducts
             freestyle={this.state.freestyleArray}
             snowboardsArray={this.state.snowboardsArray}
+            addItems={this.props.addItems}
           />
         </div>
         <Footer />
@@ -329,8 +336,9 @@ class Filters extends Component {
 class SnowboardsProducts extends Component {
   render() {
     const { snowboardsArray } = this.props;
+    const {addItems}=this.props;
     return (
-      <div className="snowboard_products">
+      <div className="container_products">
         <h2>SNOWBOARDS</h2>
         <div className="products_area">
           {snowboardsArray.map((product) => (
@@ -341,6 +349,7 @@ class SnowboardsProducts extends Component {
               img={product.imgSrc}
               price={product.price}
               key={product.id}
+              addItems={addItems}
             />
           ))}
         </div>
@@ -358,34 +367,143 @@ class OneProduct extends Component {
           className="product_img"
         ></div>
       <p>Price: {this.props.price} $</p>
-      <div className="product_btn">Add To Card</div>
+      <div className="product_btn" onClick={() => this.props.addItems(this.props.product)}>Add To Card</div>
     </div>
   }
 }
+
+
 class Shoes extends Component {
+state={
+  shoesArray:[]
+}
+  
+  componentDidMount() {
+    fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+      .then((resp) => {
+        if (resp.ok) return resp.json();
+        throw new Error("Problem with loading data");
+      })
+      .then((obj) => {
+        const arr = obj.filter((x) => {
+          return x.category === "shoes";
+        });
+        this.setState({
+          shoesArray: arr,
+        });
+      });
+  }
   render() {
     return (
       <>
-        <div className="shoes_area">
-          <ShopHeader items={this.props.items} />
+        <div className="main_product_area">
+        <ShopHeader items={this.props.items} />
+        <div className="products_area">
+          <Filters
+            // loadFreestyle={this.loadFreestyle}
+            // loadFreeride={this.loadFreeride}
+            // loadAll={this.loadAll}
+          />
+          <ShoesProducts
+            freestyle={this.state.freestyleArray}
+            shoesArray={this.state.shoesArray}
+          />
+        </div>
+        <Footer />
         </div>
       </>
     );
+  }
+}
+
+class ShoesProducts extends Component{
+  render(){
+    const{shoesArray}=this.props;
+    return(
+      <div className="container_products">
+        <h2>SHOES</h2>
+        <div className="products_area">
+          {shoesArray.map((product) => (
+            <OneProduct
+              product={product}
+              brand={product.brand}
+              name={product.name}
+              img={product.imgSrc}
+              price={product.price}
+              key={product.id}
+            />
+          ))}
+        </div>
+      </div>
+    )
   }
 }
 
 class Bindings extends Component {
-  render() {
-    return (
-      <>
-        <div className="bindings_area">
+  state={
+    bindingsArray:[]
+  }
+    
+    componentDidMount() {
+      fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+        .then((resp) => {
+          if (resp.ok) return resp.json();
+          throw new Error("Problem with loading data");
+        })
+        .then((obj) => {
+          const arr = obj.filter((x) => {
+            return x.category === "bindings";
+          });
+          this.setState({
+            bindingsArray: arr,
+          });
+        });
+    }
+    render() {
+      return (
+        <>
+          <div className="main_product_area">
           <ShopHeader items={this.props.items} />
+          <div className="products_area">
+            <Filters
+              // loadFreestyle={this.loadFreestyle}
+              // loadFreeride={this.loadFreeride}
+              // loadAll={this.loadAll}
+            />
+            <BindingsProducts
+              freestyle={this.state.freestyleArray}
+              bindingsArray={this.state.bindingsArray}
+            />
+          </div>
+          <Footer />
+          </div>
+        </>
+      );
+    }
+  }
+
+class BindingsProducts extends Component{
+  render(){
+    const{bindingsArray}=this.props;
+    return(
+      <div className="container_products">
+        <h2>SHOES</h2>
+        <div className="products_area">
+          {bindingsArray.map((product) => (
+            <OneProduct
+              product={product}
+              brand={product.brand}
+              name={product.name}
+              img={product.imgSrc}
+              price={product.price}
+              key={product.id}
+            />
+          ))}
         </div>
-      </>
-    );
+      </div>
+    )
   }
 }
-
 class Shop extends Component {
   render() {
     return (
