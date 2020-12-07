@@ -23,11 +23,11 @@
       },
       {
         "id": 3,
-        "name": "Hard Man",
+        "name": "Lexa Man",
         "category": "bindings",
         "brand":"Burton",
         "price": 150,
-        "imgSrc": "/images/products/bindings/burton twarde meskie.jpg",
+        "imgSrc": "/images/products/bindings/burton damskie twarde lexa.jpg",
         "gender":"man",
         "ridingStyle":"freeride"
       },
