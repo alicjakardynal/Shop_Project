@@ -234,7 +234,7 @@ class Snowboards extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+    fetch("https://api.npoint.io/b72a9368b693999e465d/products")
       .then((resp) => {
         if (resp.ok) return resp.json();
         throw new Error("Problem with loading data");
@@ -379,7 +379,7 @@ state={
 }
   
   componentDidMount() {
-    fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+    fetch("https://api.npoint.io/b72a9368b693999e465d/products")
       .then((resp) => {
         if (resp.ok) return resp.json();
         throw new Error("Problem with loading data");
@@ -445,7 +445,7 @@ class Bindings extends Component {
   }
     
     componentDidMount() {
-      fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
+      fetch("https://api.npoint.io/b72a9368b693999e465d/products")
         .then((resp) => {
           if (resp.ok) return resp.json();
           throw new Error("Problem with loading data");
