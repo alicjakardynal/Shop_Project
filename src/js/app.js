@@ -174,7 +174,7 @@ class StartingPage extends Component {
               addItems={this.addObject} />
             )}
           />
-          <Route
+          <Route onUpdate={() => window.scrollTo(0, 0)}
             exact
             path="/shoes"
             render={(props) => (
@@ -183,7 +183,7 @@ class StartingPage extends Component {
               addItems={this.addObject} />
             )}
           />
-          <Route
+          <Route onUpdate={() => window.scrollTo(0, 0)}
             exact
             path="/bindings"
             render={(props) => (
@@ -660,8 +660,8 @@ class CarousselWithItems extends Component {
     this.props.addItems(productDetails, counter);
   };
   componentDidMount() {
-    fetch("https://api.npoint.io/cf8c1b814d82abdc8bef/products")
-      // fetch("http://localhost:3000/products")
+    fetch("https://api.npoint.io/c29cd463efc4aeba0ed4/products")
+      // fetch("http://localhost:3000/products")"https://api.npoint.io/cf8c1b814d82abdc8bef/products"
       .then((resp) => {
         return resp.json();
       })
