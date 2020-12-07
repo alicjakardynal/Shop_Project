@@ -6,7 +6,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 200,
-        "imgSrc": "/src/sass/images/products/shoes/burton%20damskei%20miekkie%20felix%20boa.jpg",
+        "imgSrc": "./images/products/shoes/burton%20damskei%20miekkie%20felix%20boa.jpg",
         "ridingStyle":"freestyle",
         "gender":"woman"
         
@@ -17,7 +17,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 820 ,
-        "imgSrc": "/src/sass/images/products/snowboard/burton%20all%20damska.jpg",
+        "imgSrc": "/images/products/snowboard/burton%20all%20damska.jpg",
         "gender":"woman",
         "ridingStyle":"all"
       },
@@ -27,7 +27,7 @@
         "category": "bindings",
         "brand":"Burton",
         "price": 150,
-        "imgSrc": "/src/sass/images/products/bindings/burton twarde meskie.jpg",
+        "imgSrc": "/images/products/bindings/burton twarde meskie.jpg",
         "gender":"man",
         "ridingStyle":"freeride"
       },
@@ -37,7 +37,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 1200,
-        "imgSrc": "/src/sass/images/products/snowboard/capita freestyle damska paradise.jpg",
+        "imgSrc": "/images/products/snowboard/capita freestyle damska paradise.jpg",
         "gender":"woman",
         "ridingStyle":"freestyle"
       },
@@ -47,7 +47,7 @@
         "category": "snowboard",
         "brand":"GNU",
         "price": 999,
-        "imgSrc": "/src/sass/images/products/snowboard/gnu all meska Btx.jpg",
+        "imgSrc": "/images/products/snowboard/gnu all meska Btx.jpg",
         "gender":"man",
         "ridingStyle":"all"
       },
@@ -57,7 +57,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 250,
-        "imgSrc": "/src/sass/images/products/shoes/burton damskie miekkie.jpg",
+        "imgSrc": "/images/products/shoes/burton damskie miekkie.jpg",
         "gender":"woman",
         "ridingStyle":"freestyle"
       },
@@ -67,7 +67,7 @@
         "category": "shoes",
         "brand":"Thirtytwo",
         "price": 320,
-        "imgSrc": "/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
+        "imgSrc": "/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
         "gender":"man",
         "ridingStyle":"freestyle"
       },
@@ -77,7 +77,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": "1200",
-        "imgSrc":"/src/sass/images/products/snowboard/burton freeride damsak skeleton.jpg",
+        "imgSrc":"/images/products/snowboard/burton freeride damsak skeleton.jpg",
         "ridingStyle":"freeride" 
       }, {
         "id": 9,
@@ -85,7 +85,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 850,
-        "imgSrc":"/src/sass/images/products/snowboard/burton freeride damska family tree.jpg",
+        "imgSrc":"/images/products/snowboard/burton freeride damska family tree.jpg",
         "ridingStyle":"freeride" 
       },
       {
@@ -94,7 +94,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 1500,
-        "imgSrc":"/src/sass/images/products/snowboard/burton freeride meska mis.jpg",
+        "imgSrc":"/images/products/snowboard/burton freeride meska mis.jpg",
         "ridingStyle":"freeride" 
       },
       {
@@ -103,7 +103,7 @@
         "category": "snowboard",
         "brand":"LibTech",
         "price": 1000,
-        "imgSrc":"/src/sass/images/products/snowboard/LibTech-freeride,all.jpg",
+        "imgSrc":"/images/products/snowboard/LibTech-freeride,all.jpg",
         "ridingStyle":"freeride" 
       },
       {
@@ -112,7 +112,7 @@
         "category": "snowboard",
         "brand":"GNU",
         "price": 1400,
-        "imgSrc":"/src/sass/images/products/snowboard/gnu freeride damska ladies choice.jpg",
+        "imgSrc":"/images/products/snowboard/gnu freeride damska ladies choice.jpg",
         "ridingStyle":"freeride" 
       },
       {
@@ -121,7 +121,7 @@
         "category": "Snowboard",
         "brand":"GNU",
         "price": 1500,
-        "imgSrc":"/src/sass/images/products/snowboard/gnu freeride meskamullair.jpg",
+        "imgSrc":"/images/products/snowboard/gnu freeride meskamullair.jpg",
         "ridingStyle":"freeride" 
       },
       {
@@ -130,7 +130,7 @@
         "category": "snowboard",
         "brand":"GNU",
         "price": 1500,
-        "imgSrc":"/src/sass/images/products/snowboard/gnu freeride meska.jpg",
+        "imgSrc":"/images/products/snowboard/gnu freeride meska.jpg",
         "ridingStyle":"freeride" 
       },
 
@@ -140,7 +140,7 @@
         "category": "snowboard",
         "brand":"Salomon",
         "price": 1700,
-        "imgSrc":"/src/sass/images/products/snowboard/salomon -freeride.jpg",
+        "imgSrc":"/images/products/snowboard/salomon -freeride.jpg",
         "ridingStyle":"freeride" 
       },
       {
@@ -149,7 +149,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 1200,
-        "imgSrc":"/src/sass/images/products/snowboard/burton freestyle damska feelgood.jpg",
+        "imgSrc":"/images/products/snowboard/burton freestyle damska feelgood.jpg",
         "ridingStyle":"freestyle" 
       },
       {
@@ -158,7 +158,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 700,
-        "imgSrc":"/src/sass/images/products/snowboard/burton freestyle. meska.jpg",
+        "imgSrc":"/images/products/snowboard/burton freestyle. meska.jpg",
         "ridingStyle":"freestyle" 
       },
 
@@ -168,7 +168,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 999,
-        "imgSrc":"/src/sass/images/products/snowboard/burton freestyle damska yeasayer.jpg",
+        "imgSrc":"/images/products/snowboard/burton freestyle damska yeasayer.jpg",
         "ridingStyle":"freestyle" 
       }, {
         "id": 19,
@@ -176,7 +176,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 1800,
-        "imgSrc":"/src/sass/images/products/snowboard/burton freestylemeska cusotm.jpg",
+        "imgSrc":"/images/products/snowboard/burton freestylemeska cusotm.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -185,7 +185,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 750,
-        "imgSrc":"/src/sass/images/products/snowboard/burton-freestyle-customsmalls.jpg",
+        "imgSrc":"/images/products/snowboard/burton-freestyle-customsmalls.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -194,7 +194,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 500,
-        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle damska horrorscope.jpg",
+        "imgSrc":"/images/products/snowboard/capita freestyle damska horrorscope.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -203,7 +203,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 800,
-        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle damska paradise.jpg",
+        "imgSrc":"/images/products/snowboard/capita freestyle damska paradise.jpg",
         "ridingStyle":"freestyle"
       },
 
@@ -213,7 +213,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 900,
-        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle meska defenders.jpg",
+        "imgSrc":"/images/products/snowboard/capita freestyle meska defenders.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -222,7 +222,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 1400,
-        "imgSrc":"/src/sass/images/products/snowboard/capita freestyle meska indor.jpg",
+        "imgSrc":"/images/products/snowboard/capita freestyle meska indor.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -231,7 +231,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 800,
-        "imgSrc":"/src/sass/images/products/snowboard/capita frestyle all children of the gnar.jpg",
+        "imgSrc":"/images/products/snowboard/capita frestyle all children of the gnar.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -240,7 +240,7 @@
         "category": "snowboard",
         "brand":"LibTech",
         "price": 759,
-        "imgSrc":"/src/sass/images/products/snowboard/libtech freestyle damska glider.jpg",
+        "imgSrc":"/images/products/snowboard/libtech freestyle damska glider.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -249,7 +249,7 @@
         "category": "snowboard",
         "brand":"LibTech",
         "price": 559,
-        "imgSrc":"/src/sass/images/products/snowboard/LibTech freestyle meska.jpg",
+        "imgSrc":"/images/products/snowboard/LibTech freestyle meska.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -258,7 +258,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 890,
-        "imgSrc":"/src/sass/images/products/snowboard/burton all damska.jpg",
+        "imgSrc":"/images/products/snowboard/burton all damska.jpg",
         "ridingStyle":"all"
       },
       {
@@ -267,7 +267,7 @@
         "category": "snowboard",
         "brand":"Burton",
         "price": 1190,
-        "imgSrc":"/src/sass/images/products/snowboard/burton all meska custom x.jpg",
+        "imgSrc":"/images/products/snowboard/burton all meska custom x.jpg",
         "ridingStyle":"all"
       },
       {
@@ -276,7 +276,7 @@
         "category": "snowboard",
         "brand":"Capita",
         "price": 950,
-        "imgSrc":"/src/sass/images/products/snowboard/capita all damska.jpg",
+        "imgSrc":"/images/products/snowboard/capita all damska.jpg",
         "ridingStyle":"all"
       },
       {
@@ -285,7 +285,7 @@
         "category": "snowboard",
         "brand":"DC",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/snowboard/dc all damska.jpg",
+        "imgSrc":"/images/products/snowboard/dc all damska.jpg",
         "ridingStyle":"all"
       },
       {
@@ -294,7 +294,7 @@
         "category": "snowboard",
         "brand":"GNU",
         "price": 550,
-        "imgSrc":"/src/sass/images/products/snowboard/gnu all damska gloss.jpg",
+        "imgSrc":"/images/products/snowboard/gnu all damska gloss.jpg",
         "ridingStyle":"all"
       },
       {
@@ -303,7 +303,7 @@
         "category": "snowboard",
         "brand":"GNU",
         "price": 750,
-        "imgSrc":"/src/sass/images/products/snowboard/gnu all damska nice.jpg",
+        "imgSrc":"/images/products/snowboard/gnu all damska nice.jpg",
         "ridingStyle":"all"
       },
       {
@@ -312,7 +312,7 @@
         "category": "snowboard",
         "brand":"GNU",
         "price": 550,
-        "imgSrc":"/src/sass/images/products/snowboard/gnu all meska Btx.jpg",
+        "imgSrc":"/images/products/snowboard/gnu all meska Btx.jpg",
         "ridingStyle":"all"
       },
 
@@ -322,7 +322,7 @@
         "category": "snowboard",
         "brand":"LibTech",
         "price": 750,
-        "imgSrc":"/src/sass/images/products/snowboard/libtech all meska.jpg",
+        "imgSrc":"/images/products/snowboard/libtech all meska.jpg",
         "ridingStyle":"all"
       },
       {
@@ -331,7 +331,7 @@
         "category": "snowboard",
         "brand":"LibTech",
         "price": 1050,
-        "imgSrc":"/src/sass/images/products/snowboard/techlib all meska rocket.jpg",
+        "imgSrc":"/images/products/snowboard/techlib all meska rocket.jpg",
         "ridingStyle":"all"
       },
       {
@@ -340,7 +340,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 550,
-        "imgSrc":"/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "imgSrc":"/images/products/shoes/burton damskei miekkie felix boa.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -349,7 +349,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/shoes/burton miekkie meskie moto boa.jpg",
+        "imgSrc":"/images/products/shoes/burton miekkie meskie moto boa.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -358,7 +358,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 400,
-        "imgSrc":"/src/sass/images/products/shoes/burton mint damskie miekkie.jpg",
+        "imgSrc":"/images/products/shoes/burton mint damskie miekkie.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -367,7 +367,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo damskie miekkie.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo damskie miekkie.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -376,7 +376,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 350,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -385,7 +385,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie miekkie stw boa.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo meskie miekkie stw boa.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -394,7 +394,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/shoes/burton meskie twarte driver x.jpg",
+        "imgSrc":"/images/products/shoes/burton meskie twarte driver x.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -403,7 +403,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 400,
-        "imgSrc":"/src/sass/images/products/shoes/murton meskie twarde.jpg",
+        "imgSrc":"/images/products/shoes/murton meskie twarde.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -412,7 +412,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 300,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo damskie twarde.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo damskie twarde.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -421,7 +421,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 335,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie tward domain.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo meskie tward domain.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -430,7 +430,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 335,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie tward domain.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo meskie tward domain.jpg",
         "ridingStyle":"all"
       },
       {
@@ -439,7 +439,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 350,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo meskie miekkie exit.jpg",
         "ridingStyle":"all"
       },
       {
@@ -448,7 +448,7 @@
         "category": "shoes",
         "brand":"ThirtyTwo",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/shoes/thirtytwo damskie miekkie.jpg",
+        "imgSrc":"/images/products/shoes/thirtytwo damskie miekkie.jpg",
         "ridingStyle":"all"
       },
       {
@@ -457,7 +457,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 400,
-        "imgSrc":"/src/sass/images/products/shoes/burton mint damskie miekkie.jpg",
+        "imgSrc":"/images/products/shoes/burton mint damskie miekkie.jpg",
         "ridingStyle":"all"
       },
       {
@@ -466,7 +466,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 550,
-        "imgSrc":"/src/sass/images/products/shoes/burton damskei miekkie felix boa.jpg",
+        "imgSrc":"/images/products/shoes/burton damskei miekkie felix boa.jpg",
         "ridingStyle":"all"
       },
       {
@@ -475,7 +475,7 @@
         "category": "shoes",
         "brand":"Burton",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/shoes/burton miekkie meskie moto boa.jpg",
+        "imgSrc":"/images/products/shoes/burton miekkie meskie moto boa.jpg",
         "ridingStyle":"all"
       },
       {
@@ -484,7 +484,7 @@
         "category": "bindings",
         "brand":"Burton",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/bindings/burton damskie miekkie.jpg",
+        "imgSrc":"/images/products/bindings/burton damskie miekkie.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -493,7 +493,7 @@
         "category": "bindings",
         "brand":"Burton",
         "price": 320,
-        "imgSrc":"/src/sass/images/products/bindings/burton meskie miekkie.jpg",
+        "imgSrc":"/images/products/bindings/burton meskie miekkie.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -502,7 +502,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 450,
-        "imgSrc":"/src/sass/images/products/bindings/union damskie miekkie rosa.jpg",
+        "imgSrc":"/images/products/bindings/union damskie miekkie rosa.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -511,7 +511,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 250,
-        "imgSrc":"/src/sass/images/products/bindings/union meskie srednie.jpg",
+        "imgSrc":"/images/products/bindings/union meskie srednie.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -520,7 +520,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 400,
-        "imgSrc":"/src/sass/images/products/bindings/union flite meskie miekkie.jpg",
+        "imgSrc":"/images/products/bindings/union flite meskie miekkie.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -529,7 +529,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 350,
-        "imgSrc":"/src/sass/images/products/bindings/union flite meskie miekkie pro.jpg",
+        "imgSrc":"/images/products/bindings/union flite meskie miekkie pro.jpg",
         "ridingStyle":"freestyle"
       },
       {
@@ -538,7 +538,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 320,
-        "imgSrc":"/src/sass/images/products/bindings/union meskie twarde.jpg",
+        "imgSrc":"/images/products/bindings/union meskie twarde.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -547,7 +547,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 220,
-        "imgSrc":"/src/sass/images/products/bindings/union srednie damskie milan.jpg",
+        "imgSrc":"/images/products/bindings/union srednie damskie milan.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -556,7 +556,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 320,
-        "imgSrc":"/src/sass/images/products/bindings/union srednie damskie.jpg",
+        "imgSrc":"/images/products/bindings/union srednie damskie.jpg",
         "ridingStyle":"freeride"
       },
       {
@@ -565,7 +565,7 @@
         "category": "bindings",
         "brand":"Burton",
         "price": 420,
-        "imgSrc":"/src/sass/images/products/bindings/burton twarde meskie.jpg",
+        "imgSrc":"/images/products/bindings/burton twarde meskie.jpg",
         "ridingStyle":"all"
       },
       {
@@ -574,7 +574,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 220,
-        "imgSrc":"/src/sass/images/products/bindings/union srednie damskie milan.jpg",
+        "imgSrc":"/images/products/bindings/union srednie damskie milan.jpg",
         "ridingStyle":"all"
       },
       {
@@ -583,7 +583,7 @@
         "category": "bindings",
         "brand":"Union",
         "price": 400,
-        "imgSrc":"/src/sass/images/products/bindings/union flite meskie miekkie.jpg",
+        "imgSrc":"/images/products/bindings/union flite meskie miekkie.jpg",
         "ridingStyle":"all"
       }
 
