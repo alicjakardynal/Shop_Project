@@ -1,7 +1,7 @@
 # Shop_Project
 
 My work is animated website modeled on the online store with snowboarding equipment.
-It has a basket with price calculation and the ability to filter products by riding style. I love snowboarding that is why i had these idea of create it and how can i help to make these shopping more satisfying.
+There is a basket with price calculation and the ability to filter products by riding style. I love snowboarding that is why i had these idea of create it and how can i help to make these shopping more satisfying.
 
 I am working with React Javascript CSS HTML.
 
