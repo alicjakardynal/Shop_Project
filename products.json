@@ -27,7 +27,7 @@
         "category": "bindings",
         "brand":"Burton",
         "price": 150,
-        "imgSrc": "/images/products/bindings/burton damskie twarde lexa.jpg",
+        "imgSrc": "./images/products/bindings/burton damskie twarde lexa.jpg",
         "gender":"man",
         "ridingStyle":"freeride"
       },

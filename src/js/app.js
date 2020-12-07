@@ -17,7 +17,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
+    
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -76,7 +76,7 @@ class StartingPage extends Component {
     );
     this.setState({
       arrayWithoutDuplicatesToShowInBasket: newArray,
-      //tutaj coś zeby znikneło z widoku renderowania utomatycznie.
+      
     });
   };
 
@@ -134,7 +134,7 @@ class StartingPage extends Component {
           <Route exact path="/" component={Welcome} />
           <Route exact path="/beginner" component={BeginnerPage} />
           <Route exact path="/intermediate" component={IntermediatePage} />
-          <Route
+          <Route onUpdate={() => window.scrollTo(0, 0)}
             exact
             path="/shop"
             render={(props) => (
@@ -201,9 +201,7 @@ class StartingPage extends Component {
 class Snowboards extends Component {
   state = {
     snowboardsArray: [],
-    freestyleArray: [],
-    freerideArray: [],
-    allArray: [],
+    filteredArray:[],
   };
 
   loadFreestyle = () => {
@@ -211,7 +209,7 @@ class Snowboards extends Component {
       return x.ridingStyle === "freestyle";
     });
     this.setState({
-      freestyleArray: freestyle,
+      filteredArray: freestyle,
     });
   };
 
@@ -220,21 +218,20 @@ class Snowboards extends Component {
       return x.ridingStyle === "freeride";
     });
     this.setState({
-      freerideArray: freeride,
+      filteredArray: freeride,
     });
   };
 
   loadAll = () => {
-    let all = this.state.snowboardsArray.filter((x) => {
-      return x.ridingStyle === "all";
-    });
+    
     this.setState({
-      allArray: all,
+      filteredArray: this.state.snowboardsArray,
     });
   };
 
   componentDidMount() {
-    fetch("https://api.npoint.io/50e69c6bc6f917a95f1b/products")
+      fetch("https://api.npoint.io/50e69c6bc6f917a95f1b/products")
+      //if from server local need to be change src  to src/sass  sthbecause githubpages change source...
       .then((resp) => {
         if (resp.ok) return resp.json();
         throw new Error("Problem with loading data");
@@ -245,6 +242,7 @@ class Snowboards extends Component {
         });
         this.setState({
           snowboardsArray: arr,
+          filteredArray:arr,
         });
       });
   }
@@ -261,6 +259,7 @@ class Snowboards extends Component {
           <SnowboardsProducts
             freestyle={this.state.freestyleArray}
             snowboardsArray={this.state.snowboardsArray}
+            filteredArray={this.state.filteredArray}
             addItems={this.props.addItems}
           />
         </div>
@@ -336,12 +335,13 @@ class Filters extends Component {
 class SnowboardsProducts extends Component {
   render() {
     const { snowboardsArray } = this.props;
+    const {filteredArray} = this.props;
     const {addItems}=this.props;
     return (
       <div className="container_products">
         <h2>SNOWBOARDS</h2>
         <div className="products_area">
-          {snowboardsArray.map((product) => (
+          {filteredArray.map((product) => (
             <OneProduct
               product={product}
               brand={product.brand}
@@ -375,9 +375,32 @@ class OneProduct extends Component {
 
 class Shoes extends Component {
 state={
-  shoesArray:[]
+  shoesArray:[],
+  filteredArray:[]
 }
-  
+loadFreestyle = () => {
+  let freestyle = this.state.shoesArray.filter((x) => {
+    return x.ridingStyle === "freestyle";
+  });
+  this.setState({
+    filteredArray: freestyle,
+  });
+};
+
+loadFreeride = () => {
+  let freeride = this.state.shoesArray.filter((x) => {
+    return x.ridingStyle === "freeride";
+  });
+  this.setState({
+    filteredArray: freeride,
+  });
+};
+
+loadAll = () => {
+   this.setState({
+    filteredArray: this.state.shoesArray,
+  });
+};
   componentDidMount() {
     fetch("https://api.npoint.io/50e69c6bc6f917a95f1b/products")
       .then((resp) => {
@@ -390,6 +413,7 @@ state={
         });
         this.setState({
           shoesArray: arr,
+          filteredArray:arr,
         });
       });
   }
@@ -400,12 +424,12 @@ state={
         <ShopHeader items={this.props.items} />
         <div className="products_area">
           <Filters
-            // loadFreestyle={this.loadFreestyle}
-            // loadFreeride={this.loadFreeride}
-            // loadAll={this.loadAll}
+            loadFreestyle={this.loadFreestyle}
+            loadFreeride={this.loadFreeride}
+            loadAll={this.loadAll}
           />
           <ShoesProducts
-            freestyle={this.state.freestyleArray}
+            filteredArray={this.state.filteredArray}
             shoesArray={this.state.shoesArray}
           />
         </div>
@@ -419,11 +443,12 @@ state={
 class ShoesProducts extends Component{
   render(){
     const{shoesArray}=this.props;
+    const{filteredArray}=this.props;
     return(
       <div className="container_products">
         <h2>SHOES</h2>
         <div className="products_area">
-          {shoesArray.map((product) => (
+          {filteredArray.map((product) => (
             <OneProduct
               product={product}
               brand={product.brand}
@@ -441,9 +466,32 @@ class ShoesProducts extends Component{
 
 class Bindings extends Component {
   state={
-    bindingsArray:[]
+    bindingsArray:[],
+    filteredArray:[]
   }
-    
+  loadFreestyle = () => {
+    let freestyle = this.state.bindingsArray.filter((x) => {
+      return x.ridingStyle === "freestyle";
+    });
+    this.setState({
+      filteredArray: freestyle,
+    });
+  };
+  
+  loadFreeride = () => {
+    let freeride = this.state.bindingsArray.filter((x) => {
+      return x.ridingStyle === "freeride";
+    });
+    this.setState({
+      filteredArray: freeride,
+    });
+  };
+  
+  loadAll = () => {
+        this.setState({
+      filteredArray: this.state.bindingsArray,
+    });
+  };
     componentDidMount() {
       fetch("https://api.npoint.io/50e69c6bc6f917a95f1b/products")
         .then((resp) => {
@@ -456,6 +504,7 @@ class Bindings extends Component {
           });
           this.setState({
             bindingsArray: arr,
+            filteredArray:arr,
           });
         });
     }
@@ -466,12 +515,12 @@ class Bindings extends Component {
           <ShopHeader items={this.props.items} />
           <div className="products_area">
             <Filters
-              // loadFreestyle={this.loadFreestyle}
-              // loadFreeride={this.loadFreeride}
-              // loadAll={this.loadAll}
+              loadFreestyle={this.loadFreestyle}
+              loadFreeride={this.loadFreeride}
+              loadAll={this.loadAll}
             />
             <BindingsProducts
-              freestyle={this.state.freestyleArray}
+              filteredArray={this.state.filteredArray}
               bindingsArray={this.state.bindingsArray}
             />
           </div>
@@ -485,11 +534,12 @@ class Bindings extends Component {
 class BindingsProducts extends Component{
   render(){
     const{bindingsArray}=this.props;
+    const{filteredArray}=this.props;
     return(
       <div className="container_products">
-        <h2>SHOES</h2>
+        <h2>BINDINGS</h2>
         <div className="products_area">
-          {bindingsArray.map((product) => (
+          {filteredArray.map((product) => (
             <OneProduct
               product={product}
               brand={product.brand}
@@ -579,6 +629,12 @@ class ShopBanner extends Component {
         className="banner"
         style={{ backgroundPositionY: this.state.bannerScrolledPosition }}
       >
+        <NavLink className="btn_to_go_to_intro" exact to="/"><div className="circle">
+            <div id="cta">
+            <span class="arrow primera next "></span>
+            <span class="arrow segunda next "></span>
+            </div>
+        </div></NavLink>
         <h2>SO!</h2>
         <h2>SNOW</h2>
         <div className="sale">
