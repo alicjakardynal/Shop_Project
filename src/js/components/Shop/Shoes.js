@@ -34,7 +34,7 @@ class Shoes extends Component {
       });
     };
       componentDidMount() {
-        fetch("https://api.npoint.io/50e69c6bc6f917a95f1b/products")
+        fetch("https://api.npoint.io/61f59afc88313e1da81f/products")
           .then((resp) => {
             if (resp.ok) return resp.json();
             throw new Error("Problem with loading data");
